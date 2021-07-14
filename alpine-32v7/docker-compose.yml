@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   alpine-default:
-    image: alpine
+    image: alpine:latest
     container_name: ap
     restart: unless-stopped
     command: tail -F anything
