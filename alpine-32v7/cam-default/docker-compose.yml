@@ -5,7 +5,7 @@ version: '3.8'
 
 services:
   python-cam:
-    image: alpine
+    image: # hier muss waas anederes hin
     container_name: pycam
     restart: unless-stopped
     environment:
