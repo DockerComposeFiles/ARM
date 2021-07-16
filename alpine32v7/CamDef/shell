@@ -1,0 +1,4 @@
+# command to build raspberry container with camera connection
+
+--name cam -p 344:80 -v /opt/vc:/opt/vc --env LD_LIBRARY_PATH=/opt/vc/lib --restart unless-stopped
+
