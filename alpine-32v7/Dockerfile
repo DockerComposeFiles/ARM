@@ -1,8 +1,8 @@
 # einfaches Baseimage
 FROM arm32v7/alpine:latest
 
-# funktioniert nicht
-RUN apk update
+# update methode
+#RUN su root apk update
 #RUN apk upgrade
 
 
