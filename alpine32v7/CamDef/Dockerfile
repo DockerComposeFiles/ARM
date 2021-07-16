@@ -1,4 +1,4 @@
 FROM python:3
-ADD script.py /
+ADD https://github.com/DockerComposeFiles/ARM/blob/main/alpine32v7/CamDef/script.py /
 RUN pip install picamera
 CMD [ "python", "./my_script.py" ]
