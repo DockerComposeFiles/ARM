@@ -1,4 +1,4 @@
-FROM arm32v7/python:alpine
+FROM arm32v7/python:rc-alpine
 
 # installiere nano, für eine bessere Analyse
 RUN apk update
