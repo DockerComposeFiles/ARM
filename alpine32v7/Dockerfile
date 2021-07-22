@@ -6,3 +6,5 @@ FROM arm32v7/alpine:latest
 #RUN apk upgrade
 
 
+# festlegen des entrypoint - keep alive
+ENTRYPOINT ["tail", "-f", "/dev/null"]
