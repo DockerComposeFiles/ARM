@@ -4,11 +4,22 @@
 import sys
 import time
 
-filename = "passwords"
+# Messen der Lesezeiten
+readStart = time.time()
 
-# Datei wird als f geöffnet und gelesen
-with open(filename) as f:
+# Testdatei
+readFile = "passwords"
+# Datei wird in f geöffnet und gelesen
+with open(readFile) as f:
     content = f.readlines()
+f.close()
+
+# Berechnung der Lesezeiten
+readTime = (time.time() - readStart)
+print(readTime)
+
+# Messen der Schreibzeiten
+writeStart = time.time()
 
 # Schreiben des Inhalts in eine Datei
 o = open('passwords_output', 'w')
@@ -16,4 +27,9 @@ for line in content:
     o.write(line)
 o.close()
 
+# Berechnung der Schreibzeiten
+writeTime = (time.time() - writeStart)
+print(writeTime)
+
+# Laufen lassen des Containers für 200 Sekunden
 time.sleep(200)

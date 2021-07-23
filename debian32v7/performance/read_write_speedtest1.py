@@ -4,8 +4,10 @@
 import sys
 import time
 
-filename = "passwords"
+# Messen der Lesezeiten
+readStart = time.time()
 
+filename = "passwords"
 # Datei wird als f geöffnet und gelesen
 with open(filename) as f:
     content = f.readlines()
@@ -17,6 +19,10 @@ for line in content:
     print(line),
 # erzwingen der Ausgabe
 sys.stdout.flush()
+
+# Berechnung der Lesezeiten
+readTime = (time.time() - readStart)
+print(readTime)
 
 # Schreiben des Inhalts in eine Datei
 
