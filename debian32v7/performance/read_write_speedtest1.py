@@ -22,7 +22,7 @@ sys.stdout.flush()
 
 # Berechnung der Lesezeiten
 readTime = (time.time() - readStart)
-print(readTime)
+print('print out time: ' + readTime)
 
 # Schreiben des Inhalts in eine Datei
 

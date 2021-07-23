@@ -16,7 +16,9 @@ f.close()
 
 # Berechnung der Lesezeiten
 readTime = (time.time() - readStart)
-print(readTime)
+print('readTime: ' + readTime)
+# erzwingen der Ausgabe
+sys.stdout.flush()
 
 # Messen der Schreibzeiten
 writeStart = time.time()
@@ -27,12 +29,11 @@ for line in content:
     o.write(line)
 o.close()
 
-# erzwingen der Ausgabe
-sys.stdout.flush()
-
 # Berechnung der Schreibzeiten
 writeTime = (time.time() - writeStart)
 print(writeTime)
+# erzwingen der Ausgabe
+sys.stdout.flush()
 
 # Laufen lassen des Containers für 200 Sekunden
 # time.sleep(200)
