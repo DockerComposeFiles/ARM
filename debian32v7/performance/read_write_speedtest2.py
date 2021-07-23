@@ -35,4 +35,4 @@ writeTime = (time.time() - writeStart)
 print(writeTime)
 
 # Laufen lassen des Containers für 200 Sekunden
-time.sleep(200)
+# time.sleep(200)
