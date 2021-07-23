@@ -10,7 +10,7 @@ filename = "passwords"
 with open(filename) as f:
     content = f.readlines()
 
-# Ausgabe jeder einzelnen Zeile
+# Ausgabe jeder einzelnen Zeile nach den stdout
 # We added the comma to print single newlines and not double newlines.
 # This is because the lines contain the newline character '\n'.
 for line in content:
