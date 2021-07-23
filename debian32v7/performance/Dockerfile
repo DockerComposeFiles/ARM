@@ -9,7 +9,7 @@ RUN apt-get install nano
 RUN pip install speedtest-cli
 
 # Skript zum testen der Lese- und Schreibleistung
-COPY ./read_write_speedtest.py /
+COPY ./read_write_speedtest.py ./read_write_speedtest.py
 # Testdatei
 ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
 # Ausführung des Skriptes
