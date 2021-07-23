@@ -16,7 +16,8 @@ f.close()
 
 # Berechnung der Lesezeiten
 readTime = (time.time() - readStart)
-print('readTime: ' + readTime)
+print('readTime:')
+print(readTime)
 # erzwingen der Ausgabe
 sys.stdout.flush()
 
@@ -31,6 +32,7 @@ o.close()
 
 # Berechnung der Schreibzeiten
 writeTime = (time.time() - writeStart)
+print('writeTime:')
 print(writeTime)
 # erzwingen der Ausgabe
 sys.stdout.flush()
