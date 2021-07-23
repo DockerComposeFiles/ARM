@@ -16,3 +16,4 @@ for line in content:
     o.write(line)
 o.close()
 
+time.sleep(200)
