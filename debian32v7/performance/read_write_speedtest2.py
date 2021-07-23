@@ -27,6 +27,9 @@ for line in content:
     o.write(line)
 o.close()
 
+# erzwingen der Ausgabe
+sys.stdout.flush()
+
 # Berechnung der Schreibzeiten
 writeTime = (time.time() - writeStart)
 print(writeTime)
