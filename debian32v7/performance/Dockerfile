@@ -15,4 +15,4 @@ ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/C
 # Ausführung des Skriptes
 CMD [ "python", "./read_write_speedtest.py" ]
 # festlegen des entrypoint - keep alive
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
