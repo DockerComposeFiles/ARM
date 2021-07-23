@@ -14,9 +14,13 @@ with open(filename) as f:
 # We added the comma to print single newlines and not double newlines.
 # This is because the lines contain the newline character '\n'.
 for line in content:
-    print(line), \
+    print(line),
+# erzwingen der Ausgabe
 sys.stdout.flush()
 
-# erzwingen der Ausgabe
+# Schreiben des Inhalts in eine Datei
 
-# Schreiben einer Datei
+
+
+
+
