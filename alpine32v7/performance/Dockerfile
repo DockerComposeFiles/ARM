@@ -1,8 +1,8 @@
 FROM arm32v7/python:rc-alpine
 
 # installiere nano, für eine bessere Analyse
-RUN apk update
-RUN apk add --upgrade nano
+# RUN apk update
+# RUN apk add --upgrade nano
 
 # "command line interface" zum testen der Internetgeschwindigkeit
 # Aufruf mit: speedtest-cli
