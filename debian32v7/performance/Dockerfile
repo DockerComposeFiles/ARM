@@ -12,8 +12,7 @@ RUN pip install speedtest-cli
 COPY read_write_speedtest.py /
 # Testdatei
 ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
-
-
+# Ausführung des Skriptes
 CMD [ "python", "./read_write_speedtest.py" ]
 # festlegen des entrypoint - keep alive
 ENTRYPOINT ["tail", "-f", "/dev/null"]

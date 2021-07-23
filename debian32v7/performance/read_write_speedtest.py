@@ -1,15 +1,22 @@
 #!/usr/bin/env python
 
-# Define a filename.
+# Auslesen einer Datei
+import sys
+import time
+
 filename = "passwords"
 
-# Open the file as f.
-# The function readlines() reads the file.
+# Datei wird als f geöffnet und gelesen
 with open(filename) as f:
     content = f.readlines()
 
-# Show the file contents line by line.
+# Ausgabe jeder einzelnen Zeile
 # We added the comma to print single newlines and not double newlines.
 # This is because the lines contain the newline character '\n'.
 for line in content:
-    print(line),
+    print(line), \
+sys.stdout.flush()
+
+# erzwingen der Ausgabe
+
+# Schreiben einer Datei
