@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  performance: # Berechnungen der Geschwindigkeiten
+  performance: # Berechnungen der Performance auf den Mikrocontrollern
     build:
       ./Dockerfile
-    image: 326567/debian:p1
+    image: 326567/debian
     container_name: deb-performance
     deploy:
       mode: global
