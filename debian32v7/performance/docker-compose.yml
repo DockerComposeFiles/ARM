@@ -5,6 +5,7 @@ services:
       ./Dockerfile
     image: 326567/debian
     container_name: deb-performance
+    restart: on-failure
     deploy:
       mode: global
       placement:
