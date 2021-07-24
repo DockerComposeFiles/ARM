@@ -1,0 +1,19 @@
+version: "3"
+
+networks:
+  logging:
+
+services:
+  logspout:
+    image: gliderlabs/logspout
+    networks:
+      - logging
+    volumes:
+      - /etc/hostname:/etc/host_hostname:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      SYSLOG_STRUCTURED_DATA: "<Loggly Customer Token>@41058"
+      tag: "<custom tag>"
+    command: syslog+tcp://logs-01.loggly.com:514
+    deploy:
+      mode: global

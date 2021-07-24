@@ -6,6 +6,7 @@ services:
     image: 326567/debian:p1
     container_name: deb-performance
     deploy:
+      mode: global
       placement:
         constraints:
           - node.labels.test==performance
