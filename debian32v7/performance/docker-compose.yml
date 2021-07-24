@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  performance: # Berechnungen der Geschwindigkeiten
+    build:
+      ./Dockerfile
+    image: 326567/debian-performanc
+    container_name: deb-performance
+    deploy:
+      placement:
+        constraints:
+          - node.labels.test==performance
