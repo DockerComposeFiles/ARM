@@ -8,6 +8,7 @@ RUN apt-get install nano
 # Aufruf mit: speedtest-cli
 RUN pip install speedtest-cli
 RUN speedtest-cli
+
 # Testdatei zum auslesen
 ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
 # Skript zum testen der Lese- und Schreibleistung

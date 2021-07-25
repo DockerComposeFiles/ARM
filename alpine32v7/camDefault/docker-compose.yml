@@ -1,11 +1,11 @@
 # This container will connect to the Raspberry Camera
-# test1
+# initial it only shot a picture
 
 version: '3.8'
 
 services:
   python-cam:
-    image: # hier muss waas anederes hin
+    image: 326567/raspi-cam-default
     container_name: pycam
     restart: unless-stopped
     environment:
@@ -15,4 +15,7 @@ services:
       - 144:80
     volumes:
       - /opt/vc:/opt/vc
-
+    deploy:
+      placement:
+        constraints:
+          - node.labels.connect==cam
