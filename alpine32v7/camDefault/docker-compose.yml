@@ -16,6 +16,7 @@ services:
     volumes:
       - /opt/vc:/opt/vc
     deploy:
+      mode: global
       placement:
         constraints:
           - node.labels.connect==cam
