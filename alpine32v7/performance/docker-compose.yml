@@ -4,7 +4,7 @@ services:
     build:
       ./Dockerfile
     image: 326567/alp
-    container_name: alp-performance
+    container_name: alp_performance
     restart: on-failure
     deploy:
       mode: global
