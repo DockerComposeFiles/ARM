@@ -3,12 +3,12 @@ services:
   performance: # Berechnungen der Performance auf den Mikrocontrollern
     build:
       ./Dockerfile
-    image: 326567/debian
-    container_name: deb-performance
+    image: 326567/alp
+    container_name: alp-performance
     restart: on-failure
     deploy:
       mode: global
       placement:
         constraints:
           - node.labels.test==performance
-          - node.labels.plattform==raspi
+          - node.labels.plattform==beagle
