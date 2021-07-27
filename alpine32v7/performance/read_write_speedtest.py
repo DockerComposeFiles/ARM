@@ -1,6 +1,9 @@
-# import datetime
-import time
+import datetime
 
-# print(datetime.date)
+# keine Berechtigung
+#import time
+
+print(datetime.date)
+
 # Laufen lassen des Containers für 200 Sekunden
-time.sleep(200)
+#time.sleep(200)
