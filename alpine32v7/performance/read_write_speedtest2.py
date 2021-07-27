@@ -3,8 +3,10 @@
 # Auslesen einer Datei
 import sys
 import time
+import datetime
 
 # Messen der Lesezeiten
+print(datetime.date)
 readStart = time.time()     #Operation wird nicht erlaubt
 
 # Testdatei
