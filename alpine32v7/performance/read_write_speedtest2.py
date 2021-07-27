@@ -5,7 +5,7 @@ import sys
 import time
 
 # Messen der Lesezeiten
-readStart = time.time()
+readStart = time.time()     #Operation wird nicht erlaubt
 
 # Testdatei
 readFile = "passwords"

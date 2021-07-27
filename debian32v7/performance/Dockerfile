@@ -14,5 +14,5 @@ ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/C
 # Skript zum testen der Lese- und Schreibleistung
 ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/performance/read_write_speedtest2.py ./read_write_speedtest2.py
 # Ausführung des Skriptes
-CMD [ "python", "./read_write_speedtest2.py" ]
+CMD [ "sudo python", "./read_write_speedtest2.py" ]
 
