@@ -6,6 +6,8 @@ services:
     image: 326567/alp_performance
     # container_name: alp_performance
     restart: on-failure
+    environment:
+      - DEBUG
     deploy:
       mode: global
       placement:
