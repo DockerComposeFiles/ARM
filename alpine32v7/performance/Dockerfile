@@ -12,7 +12,7 @@ RUN speedtest-cli
 # Testdatei zum auslesen
 ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
 # Skript zum testen der Lese- und Schreibleistung
-ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/performance/read_write_speedtest.py ./read_write_speedtest.py
+ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/alpine32v7/performance/read_write_speedtest.py /read_write_speedtest.py
 # Vergeben von Berechtigung
 RUN chown root /read_write_speedtest.py
 RUN chmod 777 /read_write_speedtest.py
