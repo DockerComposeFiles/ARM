@@ -17,5 +17,5 @@ ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/per
 RUN chown root /read_write_speedtest2.py
 RUN chmod 777 /read_write_speedtest2.py
 # Ausführung des Skriptes
-CMD [ "python", "./read_write_speedtest2.py" ]
+CMD [ "python", "./read_write_speedtest.py" ]
 
