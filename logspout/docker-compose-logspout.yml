@@ -1,3 +1,5 @@
+# Container für ein zentralisiertes Logging in Docker Swarm
+
 version: "3"
 
 networks:

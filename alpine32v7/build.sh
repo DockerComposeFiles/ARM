@@ -5,3 +5,5 @@ if [ $# -eq 0 ]
   else
     tag=$1
 fi
+
+# Skript für eine bessere Kontrolle über das Docker TAG System

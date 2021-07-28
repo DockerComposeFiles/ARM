@@ -1,11 +1,11 @@
 version: '3.8'
 services:
-  performance: # Berechnungen der Performance auf den Mikrocontrollern
-    image: 326567/debian
-    container_name: deb-performance
+  performance: # Standard Ubuntu Image
+    image: 326567/ubuntu_default
+    container_name: ubuntu
     restart: on-failure
     deploy:
-      mode: global
+      mode: replicated
       placement:
         constraints:
           - node.labels.test==performance

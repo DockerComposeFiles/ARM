@@ -1,8 +1,6 @@
 version: '3.8'
 services:
   performance: # Berechnungen der Performance auf den Mikrocontrollern
-    build:
-      ./Dockerfile
     image: 326567/alp_performance
     # container_name: alp_performance
     restart: on-failure
