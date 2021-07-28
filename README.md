@@ -6,6 +6,8 @@ Auf dem raspberry Pi muss Docker durch das Convience Skript installiert werden. 
 
 https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script
 
+---
+
 Die Docker API sollte mit Benutzerrechten angesprochen werden. Füge darum dein Benutzer der Docker Gruppe hinzu:
 
 usermod -aG docker pi
