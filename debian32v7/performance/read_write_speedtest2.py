@@ -4,6 +4,8 @@
 import sys
 import time
 
+print("Test start")
+
 # Messen der Lesezeiten
 readStart = time.time()
 
@@ -39,3 +41,4 @@ sys.stdout.flush()
 
 # Laufen lassen des Containers für 2 Minuten
 time.sleep(120)
+print("Test end")

@@ -15,7 +15,7 @@ ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/C
 ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/performance/read_write_speedtest2.py ./read_write_speedtest2.py
 
 # Aufruf des Internettests mit speedtest-cli
-CMD ["spedtest-cli"]
+CMD ["speedtest-cli"]
 
 # Ausführung des Skriptes
 CMD [ "python", "./read_write_speedtest2.py" ]
