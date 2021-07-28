@@ -9,14 +9,16 @@ RUN apt install nano
 RUN pip install speedtest-cli
 
 # Testdatei zum auslesen
-ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
-# Skript zum testen der Lese- und Schreibleistung.
-# ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/performance/speedtest.py ./speedtest.py
-COPY ./speedtest.py /speedtest.py
+COPY ./passwords.txt /
+# Die Originaldatei ist unter
+# https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
+# zu finden.
 
-# Aufruf des Internettests mit speedtest-cli
-CMD ["speedtest-cli"]
+# Skript zum testen der Lese- und Schreibleistung.
+COPY ./speedtest.py /
 
 # Ausführung des Skriptes
 CMD [ "python", "./speedtest.py" ]
 
+# Aufruf des Internettests mit speedtest-cli
+CMD ["speedtest-cli"]
