@@ -9,4 +9,3 @@ services:
       placement:
         constraints:
           - node.labels.test==performance
-          - node.labels.plattform==raspi
