@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   performance: # Berechnungen der Performance auf den Mikrocontrollern
-    image: 326567/debian
+    image: 326567/debian-performance
     container_name: deb-performance
     restart: on-failure
     deploy:

@@ -3,7 +3,7 @@ FROM arm32v7/python:rc-buster
 # Aktualisierung der Paketquellen vergrößert Image um c.a. 200 MB
 # RUN apt update
 # Installiert nano, für eine bessere Analyse
-RUN apt-get install nano
+RUN apt install nano
 
 # "command line interface" zum testen der Internetgeschwindigkeit
 RUN pip install speedtest-cli
