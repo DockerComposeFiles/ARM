@@ -1,7 +1,7 @@
 FROM arm32v7/python:rc-buster
 
 # Aktualisierung der Paketquellen vergrößert Image um c.a. 200 MB
-# RUN apt update
+RUN apt update
 # Installiert nano, für eine bessere Analyse
 RUN apt install nano
 
