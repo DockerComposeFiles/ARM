@@ -11,13 +11,12 @@ RUN pip install speedtest-cli
 # Testdatei zum auslesen
 ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
 # Skript zum testen der Lese- und Schreibleistung.
-# Ein Lokales hinzufügen der Datei über den ADD oder COPY Befehl schlug Fehl. Deswegen wird die Datei über Github hinzugefügt.
-ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/performance/read_write_speedtest2.py ./read_write_speedtest2.py
-# COPY read_write_speedtest2 /read_write_speedtest2.py
+# ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/debian32v7/performance/speedtest.py ./speedtest.py
+COPY ./speedtest.py /speedtest.py
 
 # Aufruf des Internettests mit speedtest-cli
 CMD ["speedtest-cli"]
 
 # Ausführung des Skriptes
-CMD [ "python", "./read_write_speedtest2.py" ]
+CMD [ "python", "./speedtest.py" ]
 
