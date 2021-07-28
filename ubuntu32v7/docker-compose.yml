@@ -8,5 +8,4 @@ services:
       mode: replicated
       placement:
         constraints:
-          - node.labels.test==performance
-          - node.labels.plattform==raspi
+          - node.labels.?==?

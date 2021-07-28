@@ -6,3 +6,5 @@ RUN apt update && apt upgrade
 # Installiert nano, für eine bessere Analyse
 RUN apt install nano
 
+# festlegen des entrypoint - keep alive
+ENTRYPOINT ["tail", "-f", "/dev/null"]
