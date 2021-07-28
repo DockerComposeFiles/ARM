@@ -39,6 +39,6 @@ print(writeTime)
 # erzwingen der Ausgabe
 sys.stdout.flush()
 
-# Laufen lassen des Containers für 2 Minuten
-time.sleep(120)
+# Laufen lassen des Containers für 3 Minuten
+time.sleep(180)
 print("Test end")
