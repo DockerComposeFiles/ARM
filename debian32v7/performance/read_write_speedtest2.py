@@ -37,5 +37,5 @@ print(writeTime)
 # erzwingen der Ausgabe
 sys.stdout.flush()
 
-# Laufen lassen des Containers für 200 Sekunden
-# time.sleep(200)
+# Laufen lassen des Containers für 2 Minuten
+time.sleep(120)

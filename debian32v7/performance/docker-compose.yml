@@ -4,6 +4,8 @@ services:
     image: 326567/debian-performance
     container_name: deb-performance
     deploy:
+      restart_policy:
+        condition: none
       mode: global
       placement:
         constraints:
