@@ -1,15 +1,10 @@
-Image für BeagleBone Black und Raspberry Pi
+Basis-Image für alpine Systeme
 
 
-
-## Kamera Setup
-siehe Container cam-default
-
-
-## History
+## Image Quelle
 https://hub.docker.com/r/arm64v8/alpine/
 
 https://hub.docker.com/r/arm32v7/alpine/
 
-https://braspi.de/blogs/braspi-blog/anschliessen-und-betreiben-einer-raspberry-pi-kamera
+
 

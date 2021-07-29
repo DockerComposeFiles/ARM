@@ -1,4 +1,4 @@
-FROM arm32v7/python:rc-buster
+FROM arm32v7/debian
 
 # installiere nano, für eine bessere Analyse
 RUN apt update
