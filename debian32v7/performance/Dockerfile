@@ -21,7 +21,6 @@ COPY speedtest.py /speedtest.py
 ADD start.sh /
 RUN chmod +x /start.sh
 
+# Ausführen der Skripte
 CMD ["/start.sh"]
 
-#CMD [ "python", "./speedtest.py" ]
-#CMD ["speedtest-cli"]
