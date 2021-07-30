@@ -17,5 +17,11 @@ COPY passwords.txt passwords
 # Skript zum testen der Lese- und Schreibleistung.
 COPY speedtest.py /speedtest.py
 
-# Ausführung des Skriptes
-CMD [ "python", "./speedtest.py" ]
+# Ausführung der Skripte
+ADD start.sh /
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
+
+#CMD [ "python", "./speedtest.py" ]
+#CMD ["speedtest-cli"]

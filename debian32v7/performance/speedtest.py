@@ -11,7 +11,7 @@ readStart = time.time()
 
 # Testdatei
 readFile = "passwords"
-# Datei wird in f geöffnet und gelesen
+# Datei wird in f geoeffnet und gelesen
 with open(readFile) as f:
     content = f.readlines()
 f.close()
@@ -39,6 +39,6 @@ print(writeTime)
 # erzwingen der Ausgabe
 sys.stdout.flush()
 
-# Container wird für 3 Minuten im Leerlauf gehalten, bevor er stoppt
+
 time.sleep(180)
 print("Test end")
