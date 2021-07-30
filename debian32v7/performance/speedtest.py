@@ -39,6 +39,6 @@ print(writeTime)
 # erzwingen der Ausgabe
 sys.stdout.flush()
 
-
+# container bleibt zum Debuggen fuer weitere drei minuten in Betrieb
 time.sleep(180)
 print("Test end")
