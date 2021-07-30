@@ -4,7 +4,7 @@
 import sys
 import time
 
-print("Test start")
+print("access-Test start")
 
 # Messen der Lesezeiten
 readStart = time.time()
@@ -41,4 +41,4 @@ sys.stdout.flush()
 
 # container bleibt zum Debuggen fuer weitere drei minuten in Betrieb
 time.sleep(180)
-print("Test end")
+print("access-Test end")
