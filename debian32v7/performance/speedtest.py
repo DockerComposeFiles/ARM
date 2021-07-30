@@ -34,11 +34,18 @@ o.close()
 
 # Berechnung der Schreibzeiten
 writeTime = (time.time() - writeStart)
-print("writeTime:")
+print("writeTime bevor flush:")
 print(writeTime)
+
 # erzwingen der Ausgabe
 sys.stdout.flush()
 
+# Erneute Berechnung der Schreibzeit
+print("writeTime after flush:")
+writeTime = (time.time() - writeStart)
+print(writeTime)
+print("access-Test end")
+
 # container bleibt zum Debuggen fuer weitere drei minuten in Betrieb
 time.sleep(180)
-print("access-Test end")
+

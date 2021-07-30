@@ -1,5 +1,6 @@
 #!/bin/bash
 
-/usr/bin/python ./speedtest.py
 speedtest-cli
+/usr/bin/python ./speedtest.py
+
 
