@@ -1,17 +1,17 @@
 # Deutsch
-Dieses Repository enthält Dockerfiles und Compose Dateien zum ausführen von Arm Containern.
+Dieses Repository enthält Dockerfiles und Compose Dateien zum Ausführen von Arm Containern.
 
-# Setup
-Auf dem raspberry Pi muss Docker durch das Convience Skript installiert werden. Die Dokumentation befindet sich unter:
+## Setup
+Auf dem raspberry Pi muss Docker durch das Convenience Skript installiert werden. Die Dokumentation befindet sich unter:
 
 https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script
-
-
 
 Die Docker API sollte mit Benutzerrechten angesprochen werden. Füge darum dein Benutzer der Docker Gruppe hinzu:
 
 usermod -aG docker pi
 
+## Images bauen
+"Docker build" sollte auf einem Arm-Gerät ausgeführt werden.
 
 ---
 
