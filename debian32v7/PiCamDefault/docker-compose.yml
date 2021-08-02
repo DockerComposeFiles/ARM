@@ -11,8 +11,9 @@ services:
       - LD_LIBRARY_PATH=/opt/vc/lib
     devices:
       - /dev/vchiq
-    device_cgroup_rules:
-      - /dev/vchiq
+    # not allowed
+    #device_cgroup_rules:
+    #  - /dev/vchiq
     ports:
       - 144:80
     volumes:
