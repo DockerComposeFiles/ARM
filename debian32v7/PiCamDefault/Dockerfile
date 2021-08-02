@@ -1,5 +1,4 @@
-# FROM arm32v7/python:rc-buster
-FROM arm32v7/python
+FROM arm32v7/python:rc-buster
 ADD script.py /
 RUN apt update
 RUN pip install picamera
