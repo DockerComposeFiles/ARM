@@ -6,7 +6,7 @@ version: '3.8'
 services:
   python-cam:
     image: 326567/raspi-cam-default
-    # not supported in global  mode
+    # not supported in global mode
     # container_name: pycam
     restart: unless-stopped
     environment:

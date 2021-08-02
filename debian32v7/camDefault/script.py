@@ -1,16 +1,11 @@
 from time import sleep
 from picamera import PiCamera
 
+from time import sleep
+from picamera import PiCamera
 camera = PiCamera()
 camera.resolution = (1024, 768)
 camera.start_preview()
 sleep(2)
-camera.capture('out_capture.jpg')
-sleep(200)
-sleep(200)
-sleep(200)
-sleep(200)
-sleep(200)
-sleep(200)
-sleep(200)
+camera.capture('output.jpg')
 exit()
