@@ -1,3 +1,4 @@
+#!/bin/sh
 # Dieses Skript gibt die über i2C erkannten GPIO Geraete aus.
 
 # Zeigt installierte BUS Adapter an
