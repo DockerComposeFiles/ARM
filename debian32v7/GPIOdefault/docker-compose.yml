@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  gpio-default:
+    build:
+      context: ./GPIOdefault/
+      dockerfile: ./GPIOdefault/Dockerfile
+  gpio-BMP180:
