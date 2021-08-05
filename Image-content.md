@@ -14,3 +14,5 @@ welcher den Container bei der Ausführung hält
 
 CentOS und Fedora Unterstützen kein Arm 32bit Paketmanager.
 
+Raspberry und BeagleBone Black können nur v7 Container ausführen.
+

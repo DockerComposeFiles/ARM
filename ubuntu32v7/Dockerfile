@@ -9,4 +9,4 @@ FROM arm32v7/ubuntu
 
 # Festlegen des entrypoint, um den Container dauerhaft laufen zu lassen. Funktion gibt folgenden Fehler zurück:
 # „tail: cannot read realtime clock: Operation not permitted”
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]

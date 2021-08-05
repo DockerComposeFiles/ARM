@@ -1,5 +1,6 @@
 FROM arm64v8/alpine:latest
 
+# Ungetestet
 #Update Methode funktioniert nicht
 #RUN su root apk clean
 #RUN apt update
