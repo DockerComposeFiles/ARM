@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   ubuntuDef: # Standard Ubuntu Image
-    #image: 326567/ubuntu_defaultv7
+    #image: 326567/ubuntu_defaultv8
     build:
       context: /
       dockerfile: /Dockerfile
-    container_name: ubuntuv7
+    container_name: ubuntuv8
     restart: on-failure
     deploy:
       mode: replicated

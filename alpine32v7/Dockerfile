@@ -6,5 +6,6 @@ FROM arm32v7/alpine:latest
 #RUN apk upgrade
 #RUN apk install nano
 
+# Entrypoint ist zusätzlich in docker-compose festgelegt
 ENTRYPOINT ["tail"]
 CMD ["-f","/dev/null"]
