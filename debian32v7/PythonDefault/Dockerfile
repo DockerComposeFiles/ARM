@@ -2,7 +2,7 @@ FROM arm32v7/python:rc-buster
 
 RUN apt clean
 RUN apt update
-RUN apt upgrade
+RUN apt -y upgrade
 RUN apt install -y nano
 
 # Standard Entrypoint
