@@ -12,4 +12,4 @@ services:
           - node.labels.gpio == default
     devices:
       - /dev/gpiomem -d blink
-      - /dev/i2c-1
+      - /dev/i2c-1 --privileged
