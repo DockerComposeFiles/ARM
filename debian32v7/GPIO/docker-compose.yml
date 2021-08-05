@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  gpio-default:
+    #image: 326567/raspberry_gpio
+    container_name: gpio
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    deploy:
+      placement:
+        constraints:
+          - node.labels.gpio == default
+    devices:
+      - /dev/gpiomem -d blink

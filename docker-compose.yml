@@ -1,6 +1,0 @@
-version: "3.3"
-services:
-  GPIO:
-    build:
-      context: ./debian32v7/GPIOdefault/
-      dockerfile: ./debian32v7/GPIOdefault/Dockerfile

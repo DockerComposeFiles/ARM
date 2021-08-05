@@ -1,5 +1,5 @@
 FROM arm32v7/python:rc-buster
-RUN apt clean
+#RUN apt clean
 RUN apt update
 
 # Bibliotheken

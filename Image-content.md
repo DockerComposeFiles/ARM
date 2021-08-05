@@ -10,7 +10,6 @@ welcher den Container bei der Ausführung hält
 - Ersten 3 Punkte des Basis-Images
 - Installation spezifischer Bibliotheken
 - Hinzufügen Arbeitsdateien und Ausführung dieser
-- Festlegen des Standard Entrypoint
 
 CentOS und Fedora Unterstützen kein Arm 32bit Paketmanager.
 
