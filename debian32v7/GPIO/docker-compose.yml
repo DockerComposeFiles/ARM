@@ -11,5 +11,13 @@ services:
         constraints:
           - node.labels.gpio == default
     devices:
-      - /dev
-      - /dev/gpiomem -d blink
+      - /dev/
+      - /dev/mem
+      - /dev/gpiomem
+
+      - /dev/i2c-1
+      - /dev/i2c-0
+      - /dev/i2c/1
+      - /dev/i2c/0
+
+      - /dev/gpio
