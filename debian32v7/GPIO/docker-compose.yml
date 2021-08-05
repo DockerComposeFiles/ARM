@@ -13,3 +13,6 @@ services:
     devices:
       - /dev/gpiomem -d blink
       - /dev/i2c-1 --privileged
+      - /dev/i2c-0
+      - /dev/i2c/1
+      - /dev/i2c/0
