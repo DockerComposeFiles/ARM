@@ -5,6 +5,6 @@ RUN apt update
 # Bibliotheken
 RUN apt install -y apt-utils i2c-tools python3-smbus
 # Shellskript zum erfassen angeschlossener Geräte
-ADD script.sh /
+ADD script.sh /bin/script.sh
 # RUN chmod a+rx script.sh
-RUN /script.sh
+ENTRYPOINT ["/bin/sh/", "script.sh"]
