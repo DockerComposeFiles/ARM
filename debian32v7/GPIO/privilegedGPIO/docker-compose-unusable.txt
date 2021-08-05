@@ -1,7 +1,9 @@
 version: "3.3"
 services:
-  gpio:
-    container_name: gpio
+  gpio-priv:
+    privileged: true # docker-compose unterstützt privilegierte Container nicht
+    # Ausführung mittels docker-compose ist daher nicht möglich
+    container_name: priv-gpio
     build:
       context: ./
       dockerfile: ./Dockerfile
