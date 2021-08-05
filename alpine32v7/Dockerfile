@@ -1,12 +1,10 @@
-# einfaches Baseimage
 FROM arm32v7/alpine:latest
 
-# update methode funktioniert nicht
-#RUN su root apk update
+#Update Methode funktioniert nicht
+#RUN su root apk clean
+#RUN apt update
 #RUN apk upgrade
+#RUN apk install nano
 
-# Hinzufügen eines Entrypoints
-RUN apk add --no-cache bash
-# festlegen des entrypoint
-ADD entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["tail"]
+CMD ["-f","/dev/null"]

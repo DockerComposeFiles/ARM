@@ -4,8 +4,7 @@ FROM arm32v7/ubuntu
 #RUN apt clean && apt update && apt upgrade
 
 # Installiert nano, für eine bessere Analyse
-RUN apt update
-RUN apt install nano
+RUN apt update && apt install nano
 
 # festlegen des entrypoint, um den Container dauerhaft laufen zu lassen. Funktion gibt folgenden fehler zurück:
 # „tail: cannot read realtime clock: Operation not permitted”

@@ -11,7 +11,7 @@ Die Docker API sollte mit Benutzerrechten angesprochen werden. Füge darum dein 
 usermod -aG docker pi
 
 ## Images bauen
-"Docker build" sollte auf einem Arm-Gerät ausgeführt werden.
+"Docker build" sollte auf einem Arm-Gerät ausgeführt werden, um Fehler vorzubeugen.
 
 ---
 
