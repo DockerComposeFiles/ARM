@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   alpine-default:
-    #image: arm32v7/alpine:latest
+    #image: 326567/alpine:v7
     build:
       context: /
       dockerfile: /Dockerfile

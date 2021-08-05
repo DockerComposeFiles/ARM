@@ -1,8 +1,8 @@
 FROM arm32v7/debian
 
-# installiere nano, für eine bessere Analyse
+RUN apt clean
 RUN apt update
+RUN apt upgrade
 RUN apt install nano
 
-# festlegen des entrypoint, um den Container endlos laufen zu lassen
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
