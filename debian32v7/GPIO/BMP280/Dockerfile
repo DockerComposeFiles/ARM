@@ -4,7 +4,7 @@ RUN apt update
 
 # Bibliotheken
 RUN apt install -y apt-utils i2c-tools python-smbus
-RUN pip3 install -y smbus
+RUN pip3 install smbus
 #RUN apt install -y python3-smbus
 
 # BMP Bibliothek, Als Adresse ist 76 eingetragen
