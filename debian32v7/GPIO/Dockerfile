@@ -9,4 +9,4 @@ RUN pip3 install smbus
 # Shellskript zum erfassen angeschlossener Geräte
 ADD script.sh /
 RUN chmod a+rx /script.sh
-RUN /script.sh
+CMD ["./script.sh"]
