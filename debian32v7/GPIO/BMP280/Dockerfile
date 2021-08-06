@@ -9,4 +9,5 @@ RUN apt install -y apt-utils i2c-tools python3-smbus
 # Als Adresse ist 76 eingetragen
 ADD /bme280.py /
 ADD /script.py /
+RUN ls
 CMD ["python3" ,"/script.py" ]
