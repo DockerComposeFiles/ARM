@@ -1,7 +1,7 @@
 version: "3.3"
 services:
-  gpio-BMP180:
-    container_name: BMP180
+  gpio-bmp180:
+    container_name: bmp180
     build:
       context: ./
       dockerfile: ./Dockerfile
