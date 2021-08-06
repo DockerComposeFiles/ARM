@@ -11,6 +11,6 @@ RUN pip3 install smbus
 ADD /bme280.py /
 ADD /script.py /script.py
 
-RUN chmod 777 script.py
-RUN chmod 777 bme280.py
+#RUN chmod 777 script.py
+#RUN chmod 777 bme280.py
 CMD ["python3" ,"./script.py" ]
