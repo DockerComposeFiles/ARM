@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Einbindung der Python Bibliothek
+# Angepasste Form
 import bme280
 
 # Messdaten Holen
