@@ -1,0 +1,1 @@
+https://hub.docker.com/r/arm32v7/influxdb
