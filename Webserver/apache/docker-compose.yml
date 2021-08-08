@@ -5,7 +5,7 @@ services:
       context: /
       dockerfile: /Dockerfile
     container_name: httpdv7
-    expose:
+    ports:
       - 80:80
       - 433:433
     volumes:
