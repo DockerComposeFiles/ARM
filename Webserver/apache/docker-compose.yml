@@ -1,9 +1,10 @@
 version: '3.8'
 services:
   apache-default:
-    container_name: httpdv7
     build:
       context: /
+      dockerfile: /Dockerfile
+    container_name: httpdv7
     ports:
       - 80:80
       - 433:433
