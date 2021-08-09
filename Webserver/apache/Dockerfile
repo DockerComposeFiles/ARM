@@ -5,7 +5,7 @@ RUN apt update
 #RUN apt -y upgrade
 RUN apt install -y nano
 
-COPY /website/* /usr/local/apache2/htdocs/*
+COPY /htdocs/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
