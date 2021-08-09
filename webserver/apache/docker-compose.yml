@@ -4,10 +4,6 @@ services:
     container_name: httpdv7
     build: .
     ports:
-      - "8080:80"
       - "80"
-      - "433:433"
     volumes:
       - /htdocs/ /usr/local/apache2/htdocs/
-    network_mode:
-      bridge
