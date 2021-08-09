@@ -4,7 +4,6 @@ services:
     container_name: httpdv7
     build:
       context: /
-      dockerfile: Dockerfile
     ports:
       - 80:80
       - 433:433
