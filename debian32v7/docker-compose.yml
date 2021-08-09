@@ -2,10 +2,9 @@ version: '3.8'
 services:
   debian-default:
     #image: 326567/debian:v7
+    container_name: debv7
     build:
       context: /
       dockerfile: /Dockerfile
-    container_name: debv7
     restart: unless-stopped
     command: tail -F anything
-
