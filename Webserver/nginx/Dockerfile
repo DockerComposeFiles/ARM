@@ -6,4 +6,4 @@ RUN apt update
 RUN apt install -y nano
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY index.html /
+COPY index.html /usr/share/nginx/index.html
