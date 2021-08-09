@@ -1,7 +1,8 @@
 services:
-  web:
-    image: arm32v7/nginx
+  nginx_default:
+    #image: arm32v7/nginx
     container_name: nginx_default
+    build: .
     volumes:
       - ./templates:/etc/nginx/templates
     ports:
