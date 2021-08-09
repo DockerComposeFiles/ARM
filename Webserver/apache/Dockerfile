@@ -8,5 +8,5 @@ RUN apt install -y nano
 COPY /website/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+#CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 433 80
