@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   apache-default:
-    container_name: httpdv7
+    container_name: visualizer
     build: .
     ports:
       - "80"
