@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 3.9" />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/.bin" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/anymatch" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/binary-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/braces" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/chokidar" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/fill-range" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/glob-parent" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/is-binary-path" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/is-extglob" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/is-glob" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/is-number" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/normalize-path" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/npm" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/picomatch" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/readdirp" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/sass" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/to-regex-range" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/yuicompressor" />
+      <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Python 3.9 interpreter library" level="application" />
+  </component>
+</module>
