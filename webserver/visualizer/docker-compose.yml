@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  apache-default:
+    container_name: httpdv7
+    build: .
+    ports:
+      - "80"
+    volumes:
+      - /htdocs/ /usr/local/apache2/htdocs/
