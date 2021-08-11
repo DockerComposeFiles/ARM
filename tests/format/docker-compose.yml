@@ -1,0 +1,41 @@
+# Documentation at:
+#
+
+# File_version
+# more info at:
+#
+
+version: '3.8'
+
+services:
+
+  example1:
+    # short form
+    build: .
+    # deploy on all instances one Container
+    deploy:
+      mode: global
+    #first option
+    restart: no
+    # short form
+    environment:
+      - LD_LIBRARY_PATH=/opt/vc/lib
+
+  example2:
+    # long form
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      #Deploy a specific number of Container
+    deploy:
+        mode: replicated
+      # second option
+    restart: unless-stopped
+
+  example3:
+    # third option
+    restart: always
+
+  example4:
+    # only restart, when no -1 code
+    restart: on-failure

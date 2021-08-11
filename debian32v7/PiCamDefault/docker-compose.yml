@@ -5,7 +5,8 @@ version: '3.8'
 
 services:
   python-cam:
-    image: 326567/raspi-cam-default
+    # image: 326567/raspi-cam-default
+    build: .
     restart: unless-stopped
     environment:
       - LD_LIBRARY_PATH=/opt/vc/lib
