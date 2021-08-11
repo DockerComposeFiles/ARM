@@ -1,4 +1,4 @@
-FROM arm32v7/python:rc-buster
+FROM arm64v8/python:rc-buster
 #RUN apt clean
 RUN apt update
 
