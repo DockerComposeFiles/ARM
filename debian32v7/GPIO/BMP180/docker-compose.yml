@@ -5,3 +5,10 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile
+    devices:
+      - /dev/gpiomem
+      - /dev/i2c-1
+    deploy:
+      placement:
+        constraints:
+          - node.hostname==R4
