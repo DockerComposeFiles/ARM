@@ -7,7 +7,3 @@ RUN apt install -y nano
 
 # Standard Entrypoint
 ENTRYPOINT ["/bin/sh", "-c"]
-
-# Standard Entrypoint
-#ADD entrypoint.sh /
-#ENTRYPOINT ["/entrypoint.sh"]
