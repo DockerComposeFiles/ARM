@@ -18,6 +18,7 @@ RUN apt clean
 # node js wird im Unterverzeichniss betrieben
 WORKDIR /home/node/app
 COPY . .
+WORKDIR /
 
 EXPOSE 8081
 CMD ["node", "server.js"]
