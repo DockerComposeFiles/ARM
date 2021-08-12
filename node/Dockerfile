@@ -16,7 +16,7 @@ RUN npm install
 RUN apt clean
 
 # node js wird im Unterverzeichniss betrieben
-WORKDIR /usr/src/app
+WORKDIR /home/node/app
 COPY . .
 
 CMD ["node", "server.js"]
