@@ -5,22 +5,20 @@ RUN apt update
 RUN apt install -y nano
 
 # Installieren von NPM Abhängigkeiten
-# Entwicklungsumgebung
 WORKDIR /modules
 COPY package.json .
-RUN npm install
+RUN if [ "$NODE_ENV" = "development" ]; \
+        # Entwicklungsumgebung
+	then npm install;  \
+        # Produktionsumgebung
+	else npm install --only=production; \
+	fi
 ENV NODE_PATH=/modules/node_modules
-
-# Produktionsumgebung
-#WORKDIR /modules
-#COPY package.json .
-#RUN npm ci --only=production
-#ENV NODE_PATH=/modules/node_modules
 
 # Node js wird im Benutzerverzeichnis gestartet
 WORKDIR /home/node/app
 COPY . .
-WORKDIR /
+#WORKDIR /
 
 # verkleinern des Images
 #RUN apt clean
