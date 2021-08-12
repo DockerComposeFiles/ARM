@@ -4,9 +4,7 @@ RUN apt update
 #RUN apt -y upgrade
 RUN apt install -y nano
 
-#Installieren von NPM Abhängigkeiten
-COPY package*.json ./
-
+# Installieren von NPM Abhängigkeiten
 # Entwicklungsumgebung
 WORKDIR /modules
 COPY package.json .
@@ -25,7 +23,7 @@ COPY . .
 WORKDIR /
 
 # verkleinern des Images
-RUN apt clean
+#RUN apt clean
 
 EXPOSE 8081
 CMD ["node", "server.js"]
