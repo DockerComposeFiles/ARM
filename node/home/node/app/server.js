@@ -4,7 +4,7 @@ const express = require('express');
 
 // Constants
 const PORT = 8081;
-const HOST = '0.0.0.0';
+const HOST = '172.25.1.2';
 
 // App
 const app = express();
@@ -13,4 +13,4 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log(`Running on http:slashslash${HOST}:${PORT}`);
+console.log(`Running on http:slash_slash${HOST}:${PORT}`);

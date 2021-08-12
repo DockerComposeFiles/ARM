@@ -1,4 +1,4 @@
-FROM arm32v7/node
+FROM arm32v7/node:14.17.5
 
 RUN apt update
 #RUN apt -y upgrade
@@ -21,5 +21,5 @@ COPY . .
 WORKDIR /
 
 EXPOSE 8081
-CMD ["node", "servefr.js"]
+CMD ["node", "server.js"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
