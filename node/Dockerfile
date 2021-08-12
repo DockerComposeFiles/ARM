@@ -19,13 +19,13 @@ ENV NODE_PATH=/modules/node_modules
 #RUN npm ci --only=production
 #ENV NODE_PATH=/modules/node_modules
 
-# verkleinern des Images
-RUN apt clean
-
-# node js wird im Benutzerverzeichnis gestartet
+# Node js wird im Benutzerverzeichnis gestartet
 WORKDIR /home/node/app
 COPY . .
 WORKDIR /
+
+# verkleinern des Images
+RUN apt clean
 
 EXPOSE 8081
 CMD ["node", "server.js"]
