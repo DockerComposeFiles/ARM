@@ -19,5 +19,6 @@ RUN apt clean
 WORKDIR /home/node/app
 COPY . .
 
-#CMD ["node", "server.js"]
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+EXPOSE 8081
+CMD ["node", "server.js"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
