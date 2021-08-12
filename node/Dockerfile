@@ -21,5 +21,5 @@ COPY . .
 WORKDIR /
 
 EXPOSE 8081
-CMD ["node", "server.js"]
+CMD ["node", "servefr.js"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
