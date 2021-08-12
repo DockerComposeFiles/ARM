@@ -27,7 +27,6 @@
       <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/to-regex-range" />
       <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/yuicompressor" />
       <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/node/node_modules" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
