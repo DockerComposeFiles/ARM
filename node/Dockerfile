@@ -1,11 +1,22 @@
 FROM arm32v7/node
 
-RUN apt clean
 RUN apt update
 #RUN apt -y upgrade
 RUN apt install -y nano
 
-COPY app.js /
-COPY script.sh /
+#Installieren von NPM Abhängigkeiten
+COPY package*.json ./
 
-# CMD []
+# Entwicklungsumgebung
+RUN npm install
+
+# Produktionsumgebung
+# RUN npm ci --only=production
+
+RUN apt clean
+
+# node js wird im Unterverzeichniss betrieben
+WORKDIR /usr/src/app
+COPY . .
+
+CMD ["node", "server.js"]
