@@ -1,4 +1,4 @@
-FROM arm32v7/node:14.17.5
+FROM arm32v7/node:14.17.4
 
 RUN apt update
 #RUN apt -y upgrade
