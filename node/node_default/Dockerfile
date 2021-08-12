@@ -25,4 +25,3 @@ RUN pwd && ls
 
 EXPOSE 8081
 CMD ["node", "server.js"]
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
