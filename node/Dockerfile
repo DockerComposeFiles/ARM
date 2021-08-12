@@ -8,14 +8,21 @@ RUN apt install -y nano
 COPY package*.json ./
 
 # Entwicklungsumgebung
+WORKDIR /modules
+COPY package.json .
 RUN npm install
+ENV NODE_PATH=/modules/node_modules
 
 # Produktionsumgebung
-# RUN npm ci --only=production
+#WORKDIR /modules
+#COPY package.json .
+#RUN npm ci --only=production
+#ENV NODE_PATH=/modules/node_modules
 
+# verkleinern des Images
 RUN apt clean
 
-# node js wird im Unterverzeichniss betrieben
+# node js wird im Benutzerverzeichnis gestartet
 WORKDIR /home/node/app
 COPY . .
 WORKDIR /
