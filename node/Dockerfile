@@ -3,7 +3,7 @@ RUN pwd
 RUN apt update
 #RUN apt -y upgrade
 RUN apt install -y nano
-RUN pwd
+RUN pwd && ls
 # Installieren von NPM Abhängigkeiten
 WORKDIR /modules
 COPY package.json .
@@ -14,12 +14,12 @@ RUN if [ "$NODE_ENV" = "development" ]; \
 	else npm install --only=production; \
 	fi
 ENV NODE_PATH=/modules/node_modules
-RUN pwd
+RUN pwd && ls
 # Node js wird im Benutzerverzeichnis gestartet
 WORKDIR /home/node/app
 COPY . .
 #WORKDIR /
-RUN pwd
+RUN pwd && ls
 # verkleinern des Images
 #RUN apt clean
 
