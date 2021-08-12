@@ -119,3 +119,4 @@ dist
 
 /webserver/visualizer/htdocs/node_modules/
 /node/ignoreme.txt
+node/node_modules/ignoreme.txt
