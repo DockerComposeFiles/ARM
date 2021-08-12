@@ -5,5 +5,10 @@ services:
     expose:
       - "8080"
     networks:
-      back:
-          ipv4_address: 172.25.1.2
+      backend:
+        ipv4_address: 172.25.1.2
+
+
+networks:
+    backend:
+      driver: bridge
