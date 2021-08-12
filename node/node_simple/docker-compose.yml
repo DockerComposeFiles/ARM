@@ -4,3 +4,6 @@ services:
     build: .
     expose:
       - "8080"
+    networks:
+      vpcbr:
+        ipv4_address: 172.25.1.2
