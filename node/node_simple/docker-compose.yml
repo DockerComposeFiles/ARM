@@ -5,5 +5,5 @@ services:
     expose:
       - "8080"
     networks:
-      vpcbr:
+      bridge:
         ipv4_address: 172.25.1.2
