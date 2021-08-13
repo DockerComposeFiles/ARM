@@ -11,4 +11,7 @@ services:
 
 networks:
     backend:
-      driver: bridge
+      driver: custom_driver
+      driver_opts:
+        subnet: 255.255.255.0
+
