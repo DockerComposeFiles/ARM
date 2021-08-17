@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  python-default:
+    #image: 326567/python:v7
+    build:
+      context: /
+      dockerfile: /Dockerfile
+    container_name: py7_backend
+    restart: unless-stopped
+    command: tail -F anything
+
