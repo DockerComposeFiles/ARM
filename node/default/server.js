@@ -2,9 +2,9 @@
 
 const express = require('express');
 
-// Constants
-const PORT = 8080;
-const HOST = '172.25.1.2';
+// Constants - Werden aus irgendeinen Grund nicht gefunden
+const PORT = $PORT;
+const HOST = $HOST;
 
 // App
 const app = express();
@@ -13,4 +13,4 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log(`Server is Running on http://${HOST}:${PORT}`);
+console.log(`Running on http:slash_slash${HOST}:${PORT}`);

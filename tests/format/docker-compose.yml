@@ -20,6 +20,9 @@ services:
     # short form
     environment:
       - LD_LIBRARY_PATH=/opt/vc/lib
+    # run container endless
+    command:
+      - tail -F anything
 
   example2:
     # long form
