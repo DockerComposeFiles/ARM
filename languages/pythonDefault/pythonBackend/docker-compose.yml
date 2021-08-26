@@ -4,7 +4,7 @@ services:
     #image: 326567/python:v7
     build:
       context: ./
-      dockerfile: ./
+      dockerfile: ./Dockerfile
     volumes:
       - /data
     container_name: py_backend
