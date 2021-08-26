@@ -13,4 +13,5 @@ services:
 
 volumes:
   data:
-    external: true
+#docker volume create --name=data
+#    external: true
