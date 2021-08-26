@@ -1,10 +1,10 @@
 version: '3.8'
 services:
-  python-default:
+  python-backend:
     #image: 326567/python:v7
     build:
-      context: /
-      dockerfile: /Dockerfile
+      context: ./
+      dockerfile: ./
     volumes:
       - /data
     container_name: py_backend
