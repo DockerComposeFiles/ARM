@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  BMP280:
+    container_name: bmp280
+    build:
+      context: ./sensor/
+      dockerfile: ./sensor/Dockerfile
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == R3
+    devices:
+      - /dev/
+    volumes:
+      - data
+
+  Visualiser:
+    container_name: data_visualizer
+    build:
+      context: ./combined/
+      dockerfile: ./combined/Dockerfile
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == R3
+    volumes:
+      - data
+
+volumes:
+  data:
