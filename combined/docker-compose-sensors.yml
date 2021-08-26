@@ -2,21 +2,10 @@ version: "3.3"
 services:
   gpio:
     container_name: gpio
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
+    build: .
     deploy:
       placement:
         constraints:
           - node.labels.gpio == default
     devices:
       - /dev/
-      - /dev/mem
-      - /dev/gpiomem
-
-      - /dev/i2c-1
-      - /dev/i2c-0
-      - /dev/i2c/1
-      - /dev/i2c/0
-
-      - /dev/gpio
