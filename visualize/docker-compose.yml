@@ -3,7 +3,7 @@ services:
   bmp280:
     container_name: bmp280
     build:
-      context: bmp280_send/
+      context: /
       dockerfile: bmp280_send/Dockerfile
     deploy:
       placement:
