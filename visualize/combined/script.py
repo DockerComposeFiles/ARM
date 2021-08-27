@@ -16,7 +16,7 @@ if fileObj.is_file:
 # Einlesen der Daten in einer Endlosschleife
 i = 1
 while i <= 10:
-
+    i = i + 1
     print("Main Routine")
     # Daten auslesen
 
@@ -29,4 +29,5 @@ while i <= 10:
     except:
         print("exception: no file")
         time.sleep(3)
+
 
