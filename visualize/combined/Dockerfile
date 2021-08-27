@@ -10,5 +10,8 @@ RUN apt clean
 FROM python_def
 # Bibliothek zum senden der Daten
 RUN pip install websockets
+
+# Anlegen des Volume Ordfners zum späteren Mounten
+RUN MKDIR data
 ADD script.py /
 CMD ["python3", "./script.py"]
