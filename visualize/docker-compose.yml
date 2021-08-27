@@ -26,7 +26,7 @@ services:
         constraints:
           - node.hostname == R3
     volumes:
-      - type: bind
+      - type: volume
         source: data  # Volume Name
         target: /data
         read_only: true
