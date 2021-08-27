@@ -12,6 +12,10 @@ FROM python_def
 RUN pip install websockets
 
 # Anlegen des Volume Ordfners zum späteren Mounten
-RUN MKDIR /data
+
+
+RUN mkdir /data
+
+# Ausführung
 ADD script.py /
 CMD ["python3", "./script.py"]
