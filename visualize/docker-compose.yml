@@ -9,6 +9,8 @@ services:
           - node.hostname == R3
     devices:
       - /dev/
+      - /dev/gpiomem
+      - /dev/i2c-1
     volumes:
       - /data
 
