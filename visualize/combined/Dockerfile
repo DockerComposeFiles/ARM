@@ -14,7 +14,7 @@ RUN pip install websockets
 # Anlegen des Volume Ordfners zum späteren Mounten
 
 
-RUN mkdir /data
+RUN mkdir data
 
 # Ausführung
 ADD script.py /
