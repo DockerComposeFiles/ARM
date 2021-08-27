@@ -8,8 +8,8 @@ temperatur, druck, x = bme280.readBME280All()
 
 # Daten in volume schreiben
 fo = open('/data/data.txt', 'w')
-fo.write(temperatur)
-fo.write(druck)
+fo.write(str(temperatur))
+fo.write(str(druck))
 fo.close()
 print("write_finish")
 
