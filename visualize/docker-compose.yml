@@ -14,9 +14,7 @@ services:
 
   visualiser:
     container_name: data_visualizer
-    build:
-      context: /
-      dockerfile: combined/Dockerfile
+    build: ./combined
     deploy:
       placement:
         constraints:
