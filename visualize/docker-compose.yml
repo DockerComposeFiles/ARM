@@ -27,9 +27,8 @@ services:
           - node.hostname == R3
     volumes:
       - type: bind
-        source: data
+        source: /data/
         target: /data
-
 
 volumes:
   data:
