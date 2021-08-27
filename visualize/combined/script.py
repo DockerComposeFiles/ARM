@@ -11,15 +11,22 @@ while not fileObj.is_file:
     print("no_File")
     time.sleep(5)
 if fileObj.is_file:
-    print("file exist:" + str(fileObj) + fileName)
+    print("file exist:" + str(fileObj) + "-Objekt , Name-" + fileName)
 
 # Einlesen der Daten in einer Endlosschleife
-i = 0
-while i <= 1:
+i = 1
+while i <= 10:
 
+    print("Main Routine")
     # Daten auslesen
-    fo = open('/data/data.txt', 'r')
-    for line in fo:
-        print(line.rstrip())
-    fo.close()
-    time.sleep(1)
+
+    try:
+        fo = open('/data/data.txt', 'r')
+        for line in fo:
+            print(line.rstrip())
+        fo.close()
+        time.sleep(1)
+    except:
+        print("exception: no file")
+        time.sleep(3)
+
