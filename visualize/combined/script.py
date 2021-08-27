@@ -2,8 +2,8 @@ import time
 
 print("reading start")
 # Endlosschleife
-i = 1
-while i <= 0:
+i = 0
+while i <= 1:
 
     # Daten auslesen
     fo = open('/data/data.txt', 'r')
