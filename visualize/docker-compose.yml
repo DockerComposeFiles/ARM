@@ -12,7 +12,6 @@ services:
       - /dev/i2c-1
     volumes:
       - /data
-    restart: no
 
   visualiser:
     container_name: data_visualizer
@@ -23,7 +22,6 @@ services:
           - node.hostname == R3
     volumes:
       - /data
-    restart: no
 
 volumes:
   data:
