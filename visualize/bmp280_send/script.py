@@ -11,8 +11,8 @@ fo = open('/data/data.txt', 'w')
 fo.write(temperatur)
 fo.write(druck)
 fo.close()
-print("finish")
+print("write_finish")
 
-# Ausgabe kommt dann weg
-print("Temperatur : ", temperatur, "C")
-print("Druck: ", druck, "hPa")
+# Ausgabe
+#print("Temperatur : ", temperatur, "C")
+#print("Druck: ", druck, "hPa")

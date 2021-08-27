@@ -1,6 +1,7 @@
-# Endlosschleife
 import time
 
+print("reading start")
+# Endlosschleife
 i = 1
 while i <= 0:
 
