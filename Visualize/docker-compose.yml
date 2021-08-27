@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  BMP280:
+  bmp280:
     container_name: bmp280
     build:
       context: ./bmp280_send/
@@ -14,7 +14,7 @@ services:
     volumes:
       - data
 
-  Visualiser:
+  visualiser:
     container_name: data_visualizer
     build:
       context: ./combined/
