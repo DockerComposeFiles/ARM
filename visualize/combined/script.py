@@ -10,7 +10,7 @@ fileObj = Path(fileName)
 while not fileObj.is_file:
     print("no_File")
     time.sleep(5)
-while fileObj.is_file:
+if fileObj.is_file:
     print("file exist")
 
 # Einlesen der Daten in einer Endlosschleife
