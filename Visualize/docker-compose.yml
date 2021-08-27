@@ -3,8 +3,8 @@ services:
   bmp280:
     container_name: bmp280
     build:
-      context: /bmp280_send/
-      dockerfile: /bmp280_send/Dockerfile
+      context: bmp280_send/
+      dockerfile: bmp280_send/Dockerfile
     deploy:
       placement:
         constraints:
@@ -17,8 +17,8 @@ services:
   visualiser:
     container_name: data_visualizer
     build:
-      context: /combined/
-      dockerfile: /combined/Dockerfile
+      context: combined/
+      dockerfile: combined/Dockerfile
     deploy:
       placement:
         constraints:
