@@ -11,7 +11,7 @@ while not fileObj.is_file:
     print("no_File")
     time.sleep(5)
 if fileObj.is_file:
-    print("file exist:" + fileObj + fileName)
+    print("file exist:" + str(fileObj) + fileName)
 
 # Einlesen der Daten in einer Endlosschleife
 i = 0
