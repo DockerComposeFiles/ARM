@@ -14,8 +14,8 @@ if fileObj.is_file:
     print("file exist:" + str(fileObj) + "-Objekt , Name-" + fileName)
 
 # Einlesen der Daten in einer Endlosschleife
-i = 1
-while i <= 10:
+i = 0
+while i <= 2:
     i = i + 1
     print("Main Routine")
     # Daten auslesen
@@ -30,4 +30,4 @@ while i <= 10:
         print("exception: no file")
         time.sleep(3)
 
-
+quit()
