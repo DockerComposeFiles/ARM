@@ -11,17 +11,23 @@ services:
       - /dev/gpiomem
       - /dev/i2c-1
     volumes:
-      - /data
+      - type: bind
+        source: data
+        target: /data
 
   visualiser:
     container_name: data_visualizer
     build: ./combined
     deploy:
       placement:
+        max_replicas_per_node: 1
         constraints:
           - node.hostname == R3
     volumes:
-      - /data
+      - type: bind
+        source: data
+        target: /data
+
 
 volumes:
   data:

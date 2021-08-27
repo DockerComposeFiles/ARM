@@ -1,0 +1,4 @@
+Einfaches Einbinden
+volumes:
+      - /data
+
