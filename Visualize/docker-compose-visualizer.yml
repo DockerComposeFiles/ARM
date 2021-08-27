@@ -3,8 +3,8 @@ services:
   BMP280:
     container_name: bmp280
     build:
-      context: ./sensor/
-      dockerfile: ./sensor/Dockerfile
+      context: ./bmp280_send/
+      dockerfile: ./bmp280_send/Dockerfile
     deploy:
       placement:
         constraints:
