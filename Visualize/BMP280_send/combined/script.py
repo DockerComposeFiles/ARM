@@ -1,6 +1,12 @@
-fo = open('/data/my_file.txt', 'r')
-for line in fo:
-    print(line.rstrip())
-fo.close()
+# Endlosschleife
+import time
 
-print("finish")
+i = 1
+while i <= 0:
+
+    # Daten auslesen
+    fo = open('/data/data.txt', 'r')
+    for line in fo:
+        print(line.rstrip())
+    fo.close()
+    time.sleep(1)
