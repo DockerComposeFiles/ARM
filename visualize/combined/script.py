@@ -18,7 +18,7 @@ i = 0
 while i <= 200:
     # Zu Testzwecken wird nach 200 Werten Abgebrochen
     i = i + 1
-
+    print(i)
     # Auslesen der Daten
     try:
         # Einlesen des letzten Wertes

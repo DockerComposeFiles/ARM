@@ -11,9 +11,7 @@ FROM python_def
 # Bibliothek zum senden der Daten
 RUN pip install websockets
 
-# Anlegen des Volume Ordfners zum späteren Mounten
-
-
+# Anlegen des Volume Ordners zum späteren Mounten
 RUN mkdir /data
 
 # Ausführung

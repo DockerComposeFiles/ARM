@@ -20,8 +20,9 @@ fa = open('/data/all_data.txt', 'a')
 fa.write((str(temperatur)))
 fa.write(str(druck))
 fa.close()
+
 print("write_finish")
 
 # Ausgabe
-#print("Temperatur : ", temperatur, "C")
-#print("Druck: ", druck, "hPa")
+print("Temperatur : ", temperatur, "C")
+print("Druck: ", druck, "hPa")
