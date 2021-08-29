@@ -13,18 +13,27 @@ while not fileObj.is_file:
 if fileObj.is_file:
     print("file exist: " + str(fileObj) + "->Objekt , Name<-" + fileName)
 
-# Einlesen der Daten in einer Endlosschleife
+# Einlesen der Daten (in einer Endlosschleife)
 i = 0
-while i <= 2:
+while i <= 200:
+    # Zu Testzwecken wird nach 200 Werten Abgebrochen
     i = i + 1
-    print("Main Routine")
-    # Daten auslesen
 
+    # Auslesen der Daten
     try:
+        # Einlesen des letzten Wertes
         fo = open('/data/data.txt', 'r')
         for line in fo:
             print(line.rstrip())
         fo.close()
+
+        # Einlesen aller Werte
+        fa = open('/data/all_data', 'r')
+        for line in fa:
+            print(line)
+        fa.close()
+
+        # Warten bis der Controller den nächsten Wert senden kann
         time.sleep(1)
     except:
         print("exception: no file")

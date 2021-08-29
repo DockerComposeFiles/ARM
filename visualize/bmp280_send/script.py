@@ -3,6 +3,10 @@
 # Angepasste Form
 import bme280
 
+
+# Hauptschleife
+
+
 # Messdaten Holen
 temperatur, druck, x = bme280.readBME280All()
 
@@ -11,6 +15,10 @@ fo = open('/data/data.txt', 'w')
 fo.write(str(temperatur))
 fo.write(str(druck))
 fo.close()
+
+fa = open('/data/all_data.txt', 'a')
+fa.write((str(temperatur)))
+fa.write(str(druck))
 print("write_finish")
 
 # Ausgabe
