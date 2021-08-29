@@ -15,7 +15,7 @@ if fileObj.is_file:
 
 # Einlesen der Daten (in einer Endlosschleife)
 i = 0
-while i <= 200:
+while i <= 20:
     # Zu Testzwecken wird nach 200 Werten Abgebrochen
     i = i + 1
     print(i)
@@ -28,9 +28,9 @@ while i <= 200:
         fo.close()
 
         # Einlesen aller Werte
-        fa = open('/data/all_data', 'r')
+        fa = open('/data/all_data.txt', 'r')
         for line in fa:
-            print(line)
+            print("all:" + line)
         fa.close()
 
         # Warten bis der Controller den nächsten Wert senden kann
