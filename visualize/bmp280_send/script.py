@@ -1,8 +1,12 @@
 #!/usr/bin/python
 # Einbindung der Python Bibliothek
 # Angepasste Form
+import os
 import bme280
 
+# Löschen vorheriger Daten
+os.remove('/data/data.txt')
+os.remove('/data/all_data.txt')
 
 # Hauptschleife
 
