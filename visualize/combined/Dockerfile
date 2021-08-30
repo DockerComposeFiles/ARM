@@ -13,7 +13,7 @@ RUN pip install websockets
 # Anlegen des Volume Ordners zum späteren Mounten
 RUN mkdir /data
 
-FROM web_send AS website
+FROM web_backend AS website
 
 # Apache Dateieen und statische Webseite
 COPY /htdocs/ /usr/local/apache2/htdocs/
