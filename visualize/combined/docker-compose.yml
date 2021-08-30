@@ -1,17 +1,14 @@
 version: '3.8'
 services:
-  python-backend:
-    #image: 326567/python:v7
-    build:
-      context: ./
-      dockerfile: ./Dockerfile
+  web:
+    build: .
     volumes:
       - /data
-    container_name: py_backend
-    #restart: unless-stopped
+      - /htdocs/ /usr/local/apache2/htdocs/
+    container_name: bmp_280_web
+    ports:
+      - "80"
     command: tail -F anything
 
 volumes:
   data:
-#docker volume create --name=data
-#    external: true

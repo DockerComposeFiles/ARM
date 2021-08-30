@@ -19,7 +19,7 @@ services:
 
   visualiser:
     container_name: data_visualizer
-    build: combined
+    build: data_get
     deploy:
       placement:
         max_replicas_per_node: 1

@@ -7,19 +7,10 @@ RUN apt update
 RUN apt install -y nano && apt install tree
 RUN apt clean
 
-FROM python_def AS web_send
-# Bibliothek zum senden der Daten
-RUN pip install websockets
-
+FROM python_def
 # Anlegen des Volume Ordners zum späteren Mounten
 RUN mkdir /data
 
-FROM web_send
-
-COPY /htdocs/ /usr/local/apache2/htdocs/
-COPY httpd.conf /usr/local/apache2/httpd.conf
-EXPOSE 433 80
-
 # Ausführung
-ADD send_data.py /
-CMD ["python3", "./send_data.py"]
+ADD script.py /
+CMD ["python3", "./script.py"]

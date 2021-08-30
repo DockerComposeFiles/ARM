@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Docker Apache Server</title>
+
+    <!-- CSS Import -->
+    <link href="css/style.min.css" rel="stylesheet" title="Cool stylesheet" type="text/css">
+
+</head>
+<body>
+
+<!-- Navigation bar -->
+<ul>
+    <li>
+        <h2>
+            Data Visualizer
+        </h2>
+    </li>
+</ul>
+<div class="placeholder"><p>Invisible</p></div>
+
+<!-- some text -->
+<p>This is a Visualisation of BMP180 incoming Data</p>
+
+<!-- Diagram's -->
+<div style="width: 48%" class="box">
+    <h3>Live Data</h3>
+    <canvas id="Live_Chart">nix</canvas>
+</div>
+
+<div style="width: 48%" class="box">
+    <h3>Minute Data</h3>
+    <canvas id="Minute_Chart"></canvas>
+</div>
+
+<div style="width: 95%">
+    <h3>All Data</h3>
+    <canvas id="All_Chart"></canvas>
+</div>
+
+</body>
+
+<!-- JS Import -->
+<script src="js/function.js"></script>
+    <!-- Chart.js Library first -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js"></script>
+<!-- https://frappe.io wasn't used in this project
+<script src="js/frappe.js"></script>-->
+<noscript>
+    <h1>JavaScript is deactivated</h1>
+</noscript>
+
+</html>
