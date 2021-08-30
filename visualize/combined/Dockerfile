@@ -25,4 +25,4 @@ RUN apt clean
 # Ausführung
 ADD send_data.py /
 #CMD ["python3", "./send_data.py"]
-#CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
