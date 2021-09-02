@@ -1,0 +1,26 @@
+# This container will connect to the Raspberry Camera
+# initial it only shot a picture
+
+version: '3.8'
+
+services:
+  python-cam:
+    # image: 326567/raspi-cam-default
+    build: .
+    restart: unless-stopped
+    environment:
+      - LD_LIBRARY_PATH=/opt/vc/lib
+    devices:
+      - /dev/vchiq
+    # not allowed
+    #device_cgroup_rules:
+    #  - /dev/vchiq
+    ports:
+      - 144:80
+    volumes:
+      - /opt/vc:/opt/vc
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.connect==cam
