@@ -10,7 +10,7 @@ FROM python_def AS web_backend
 
 # Bibliothek zum senden der Daten
 RUN pip install "python-socketio[client]"
-RUN pip install "python-socketio[asyncio_client]" \
+RUN pip install "python-socketio[asyncio_client]"
 
 # Anlegen des Volume Ordners zum späteren Mounten
 RUN mkdir /data
