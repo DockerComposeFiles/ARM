@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   web:
-    container_name: bmp_280_web
+    container_name: bmp_280_web_visualizer
     build: .
     volumes:
       - /data
