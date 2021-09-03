@@ -19,7 +19,7 @@ services:
 
   visualiser:
     container_name: data_visualizer
-    build: combined
+    build: combined_python
     deploy:
       placement:
         max_replicas_per_node: 1
