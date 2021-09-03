@@ -20,7 +20,7 @@ COPY /htdocs/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
 # Port ist im compose Festgelegt
-#EXPOSE 433 80
+EXPOSE 433 80
 
 RUN apt clean
 
