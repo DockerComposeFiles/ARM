@@ -28,7 +28,7 @@ def connect():
 
 @sio.event
 def connect_error(data):
-    print("The connection failed!")
+    print("The connection failed:" + connect_error )
 
 
 @sio.event
