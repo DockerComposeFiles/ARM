@@ -4,9 +4,9 @@ FROM python:3
 #RUN apt -y upgrade
 
 # Kamera Bibliothek
-RUN pip install python3-picamera
+RUN pip install picamera
 
-# Ausführung des hauptscriptes
+# Ausführung des Hauptscriptes
 ADD script.py /
 RUN apt clean
 CMD [ "python", "./script.py" ]
