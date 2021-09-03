@@ -36,4 +36,4 @@ def disconnect():
     print("I'm disconnected!")
 
 
-sio.connect('http://localhost:3000')
+sio.connect('http://localhost:3000/')

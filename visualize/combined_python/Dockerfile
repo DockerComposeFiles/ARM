@@ -23,7 +23,8 @@ COPY httpd.conf /usr/local/apache2/httpd.conf
 
 RUN apt clean
 
-# Ausführung
+## Ausführung
+#
 ARG CACHEBUST=1
 ADD send_data.py /
 CMD ["python3", "./send_data.py"]
