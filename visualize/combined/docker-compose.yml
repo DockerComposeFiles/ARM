@@ -1,15 +1,17 @@
 version: '3.8'
 services:
   web:
+    container_name: bmp_280_web
     build: .
     volumes:
       - /data
       - /htdocs/ /usr/local/apache2/htdocs/
-    container_name: bmp_280_web
-# Ports in Config?
-#    ports:
-#      - "80"
+
+    # Ports in Dockerfile funktionieren nicht
+    ports:
+      - "80"
 #      - "433"
+
     command: tail -F anything
 
 volumes:
