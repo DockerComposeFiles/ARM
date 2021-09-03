@@ -6,9 +6,10 @@ services:
       - /data
       - /htdocs/ /usr/local/apache2/htdocs/
     container_name: bmp_280_web
-    ports:
-      - "80"
-      - "433"
+# Ports in Config?
+#    ports:
+#      - "80"
+#      - "433"
     command: tail -F anything
 
 volumes:
