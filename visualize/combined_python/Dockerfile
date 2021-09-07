@@ -6,7 +6,7 @@ RUN apt -y upgrade
 RUN apt install -y nano && apt install tree && apt install -y lynx
 
 # Installieren von Python (letzte version)
-RUN apt install -y python &&apt install -y python-pip && apt install -y python3-pip
+RUN apt install -y python3 &&apt install -y python-pip && apt install -y python3-pip
 
 FROM python_def AS web_backend
 
