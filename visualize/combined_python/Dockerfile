@@ -4,7 +4,7 @@ FROM python:rc-buster AS python_def
 # Updaten des Images
 RUN apt update
 RUN apt -y upgrade
-RUN apt install -y nano && apt install tree && apt install lynx
+RUN apt install -y nano && apt install tree && apt install -y lynx
 
 FROM python_def AS web_backend
 
