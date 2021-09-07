@@ -7,7 +7,10 @@ const io = new socket_io_1.Server(httpServer, {
 //
 });
 io.on("connection", (socket) => {
-    // ...
+    const uuid = require("uuid");
+    io.engine.generateId = (req) => {
+        return uuid.v4;
+    };
 });
 httpServer.listen(3000);
 //# sourceMappingURL=get_data.js.map
