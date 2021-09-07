@@ -12,6 +12,9 @@ io.on("connection", (socket) => {
     io.engine.generateId = (req) => {
         return uuid.v4;
     };
+    socket.on('disconnect', function () {
+        console.log("Verbindung geschlossen");
+    });
 });
 httpServer.listen(3000);
 //# sourceMappingURL=get_data.js.map

@@ -11,6 +11,7 @@ services:
     ports:
       - "80"
       - "433"
+      - "3000"
 
     #command: tail -F anything
 

@@ -35,5 +35,16 @@ def connect_error(err):
 def disconnect():
     print("I'm disconnected!")
 
+# Testen, ob Apache verfügbar ist
+import os
+
+hostname = "localhost"
+response = os.system("ping -n 1 " + hostname)
+
+#and then check the response...
+if response == 0:
+    print(hostname, 'is up!')
+else:
+    print(hostname, 'is down!')
 
 sio.connect('http://localhost:3000/')
