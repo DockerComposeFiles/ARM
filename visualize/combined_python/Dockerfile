@@ -2,7 +2,7 @@ FROM arm32v7/httpd AS python_def
 
 # Updaten des Images
 RUN apt update
-RUN apt -y upgrade
+#RUN apt -y upgrade
 RUN apt install -y nano && apt install tree && apt install -y lynx
 
 # Installieren von Python (letzte version)
