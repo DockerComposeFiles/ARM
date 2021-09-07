@@ -6,13 +6,13 @@ RUN apt -y upgrade
 RUN apt install -y nano && apt install tree && apt install -y lynx
 
 # Installieren von Python (letzte version)
-RUN apt install -y python3 &&apt install -y python-pip && apt install -y python3-pip
+RUN apt install -y python3.9.7 &&apt install -y python-pip && apt install -y python3-pip
 
 FROM python_def AS web_backend
 
 # Bibliothek zum senden der Daten
-RUN pip install "python-socketio[client]"
-RUN pip install "python-socketio[asyncio_client]"
+RUN pip3 install "python-socketio[client]"
+RUN pip3 install "python-socketio[asyncio_client]"
 
 # Anlegen des Volume Ordners zum späteren Mounten
 RUN mkdir /data
