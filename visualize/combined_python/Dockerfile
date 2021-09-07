@@ -31,4 +31,4 @@ CMD ["python3", "./send_data.py"]
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
-EXPOSE 433 80 3000
+EXPOSE 433 80
