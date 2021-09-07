@@ -1,10 +1,12 @@
-# FROM arm32v7/python:rc-buster
-FROM python:rc-buster AS python_def
+FROM arm32v7/httpd AS python_def
 
 # Updaten des Images
 RUN apt update
 RUN apt -y upgrade
 RUN apt install -y nano && apt install tree && apt install -y lynx
+
+# Installieren von Python (letzte version)
+RUN apt install -y python && apt install -y pip3
 
 FROM python_def AS web_backend
 
@@ -24,7 +26,7 @@ COPY httpd.conf /usr/local/apache2/httpd.conf
 RUN apt clean
 
 ## Ausführung
-#
+# send_data wird des öfteren geändert, Cacheburst deaktiviert das cachen dieser Datei
 ARG CACHEBUST=1
 ADD send_data.py /
 CMD ["python3", "./send_data.py"]
