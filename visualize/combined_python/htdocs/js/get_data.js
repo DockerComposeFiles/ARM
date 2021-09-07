@@ -7,6 +7,7 @@ const io = new socket_io_1.Server(httpServer, {
 //
 });
 io.on("connection", (socket) => {
+    console.log("IN FUNCTION: io.on(connection)");
     const uuid = require("uuid");
     io.engine.generateId = (req) => {
         return uuid.v4;
