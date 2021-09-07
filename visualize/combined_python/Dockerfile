@@ -4,7 +4,7 @@ FROM python:rc-buster AS python_def
 # Updaten des Images
 RUN apt update
 RUN apt -y upgrade
-RUN apt install -y nano && apt install tree
+RUN apt install -y nano && apt install tree && apt install lynx
 
 FROM python_def AS web_backend
 
@@ -31,4 +31,4 @@ CMD ["python3", "./send_data.py"]
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
-EXPOSE 433 80
+EXPOSE 433 80 3000

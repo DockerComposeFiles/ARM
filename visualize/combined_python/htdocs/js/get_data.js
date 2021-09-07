@@ -17,4 +17,5 @@ io.on("connection", (socket) => {
     });
 });
 httpServer.listen(3000);
+console.log("get_data.js success");
 //# sourceMappingURL=get_data.js.map
