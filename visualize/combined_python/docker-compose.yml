@@ -12,8 +12,16 @@ services:
       - "80"
       - "433"
     #  - "3000"
+    networks:
+      macvlan0:
+        ipv4_address: 172.24.0.2
 
     #command: tail -F anything
 
 volumes:
   data:
+
+networks:
+  macvlan0:
+    external:
+      name: macvlan0
