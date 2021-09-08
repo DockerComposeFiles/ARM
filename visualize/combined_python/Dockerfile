@@ -26,7 +26,7 @@ COPY /htdocs/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
 # Pakete werden an dieser Stelle installiert, um das bisherige Image zu behalten.
-RUN apt install -y ping
+RUN apt install -y iputils-ping
 RUN apt clean
 
 ## Ausführung des backend
