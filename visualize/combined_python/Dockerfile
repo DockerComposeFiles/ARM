@@ -36,8 +36,15 @@ ARG CACHEBUST=1
 ADD send_data.py /
 CMD ["python3", "./send_data.py"]
 
-# Apache startet auch ohne diese Angabe
+# Apache startet ohne Angabe con CMD automatisch,
+# hier musste die Auführung erzwungen werden
+# Apache liegt in einem spezifischen Ordner
+
+# StandardOrdner
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+# Docker spez. Ordner
+CMD ["/usr/local/apache2/bin/apachectl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
 EXPOSE 433 80
