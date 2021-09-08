@@ -41,37 +41,23 @@ def disconnect():
 # Warten, damit Apache bereit ist
 time.sleep(10)
 
-# Testen, ob Localhost (127.0.0.1) verfügbar ist
-hostname = "localhost"
-response = os.system("ping -n 1 " + hostname)
 
-if response == 0:
-    print(hostname, 'is up')
-else:
-    print(hostname, 'is down')
-# localhost funktioniert nicht, um den Apache anzusprechen
+# Testen, ob Localhost (127.0.0.0, 127.0.0.1),
+# die feste IP 172.24.0.2 und ? 0.0.0.0 verfügbar ist.
+# Zugriff auf den Apache Server wird getestet
+# Der Websocket läuft auf Port 3000
 
-# Testen ob die feste IP verfügbar ist
-ipname = "172.24.0.2:3000"
-response = os.system("ping -n 1 " + ipname)
+IPs = ["localhost", "127.0.0.0", "127.0.0.1", "172.24.0.2", "0.0.0.0",
+       "127.0.0.0:3000", "127.0.0.1:3000", "172.24.0.2:3000", "0.0.0.0:3000"]
+for e in IPs:
+    response = os.system("ping -n 1 " + e)
 
-if response == 0:
-    print(ipname, 'is up')
-else:
-    print(ipname, 'is down')
-# Apache ist unter der festgelegten IP nicht verfügbar
-
-# Testen ob Apache unter 127.0.0.1 verfügbar ist
-lh = "127.0.0.1:3000"
-response = os.system("ping -n 1 " + lh)
-
-if response == 0:
-    print(lh, 'is up')
-else:
-    print(lh, 'is down')
-# ?
+    if response == 0:
+        print(e, 'is up')
+    else:
+        print(e, 'is down')
 
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
 
-time.sleep(100)
+time.sleep(200)
