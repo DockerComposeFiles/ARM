@@ -3,7 +3,7 @@
 # Alternativ kann auch supervisor genutzt werden
 
 # Python Backend
-python3 ./send_data -D
+python3 /send_data.py -D
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start Backend: $status"
