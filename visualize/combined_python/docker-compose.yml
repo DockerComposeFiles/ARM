@@ -5,7 +5,7 @@ services:
     build: .
     volumes:
       - /data
-      - /htdocs/ /usr/local/apache2/htdocs/
+    #  - /htdocs/ /usr/local/apache2/htdocs/
 
     # Ports in Dockerfile funktionieren nicht
     ports:

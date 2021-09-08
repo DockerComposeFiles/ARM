@@ -19,7 +19,7 @@ RUN mkdir /data
 
 FROM web_backend AS website
 
-# Apache Dateieen und statische Webseite
+# Apache Dateien und statische Webseite
 COPY /htdocs/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
