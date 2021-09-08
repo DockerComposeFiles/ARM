@@ -1,8 +1,10 @@
 FROM arm32v7/httpd AS python_def
 
 # Updaten des Images
-RUN apt update
-#RUN apt -y upgrade
+RUN apt update && apt -y upgrade
+# Zum starten mehrerer Prozesse
+RUN apt install -y supervisor
+# Für Debug Zwecke
 RUN apt install -y nano && apt install tree && apt install -y lynx
 
 # Installieren von Python (letzte version)
@@ -30,10 +32,10 @@ WORKDIR /
 # send_data wird des öfteren geändert, Cacheburst deaktiviert das cachen dieser Datei
 ARG CACHEBUST=1
 ADD send_data.py /
-#CMD ["python3", "./send_data.py"]
+CMD ["python3", "./send_data.py"]
 
 # Apache startet auch ohne diese Angabe
-#CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
 EXPOSE 433 80
