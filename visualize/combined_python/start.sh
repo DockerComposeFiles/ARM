@@ -12,6 +12,7 @@ else echo "Apache run"
 fi
 
 sleep 1
+echo "start Apache finished"
 
 # Python Backend
 python3 /send_data.py
@@ -26,4 +27,4 @@ sleep 60
 
 # nohub Schreibweise
 #nohup python3 ./send_data &
-echo start.sh_finished
+echo "start.sh_finished"
