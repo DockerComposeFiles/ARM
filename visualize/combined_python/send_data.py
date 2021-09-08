@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 
 import socketio
+import os
 
 # standard Python
 sio = socketio.Client()
@@ -35,9 +36,8 @@ def connect_error(err):
 def disconnect():
     print("I'm disconnected!")
 
-# Testen, ob Apache verfügbar ist
-import os
 
+# Testen, ob Localhost verfügbar ist
 hostname = "localhost"
 response = os.system("ping -n 1 " + hostname)
 
@@ -45,5 +45,17 @@ if response == 0:
     print(hostname, 'is up!')
 else:
     print(hostname, 'is down!')
+# localhost funktioniert nicht, um den Apache anzusprechen
 
+# Testen ob die feste IP verfügbar ist
+ipname = "172.24.0.2"
+response = os.system("ping -n 1 " + ipname)
+
+if response == 0:
+    print(ipname, 'is up!')
+else:
+    print(ipname, 'is down!')
+# ?
+
+# Mit Host Verbinden
 sio.connect('http://localhost:3000/')
