@@ -34,8 +34,9 @@ WORKDIR /
 # send_data wird des öfteren geändert, Cacheburst deaktiviert das cachen dieser Datei
 ARG CACHEBUST=1
 ADD send_data.py /
-ADD start.sh /
 
+ADD start.sh /
+RUN chmod +x ./start.sh
 CMD ["./start.sh"]
 
 #CMD ["python3", "./send_data.py"]
