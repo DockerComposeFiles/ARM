@@ -37,6 +37,7 @@ def connect_error(err):
 def disconnect():
     print("I'm disconnected!")
 
+
 # Warten, damit Apache bereit ist
 time.sleep(10)
 
@@ -72,3 +73,5 @@ else:
 
 # Mit Host Verbinden
 sio.connect('http://0.0.0.0:3000/')
+
+time.sleep(10)
