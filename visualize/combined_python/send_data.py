@@ -52,7 +52,7 @@ else:
 # localhost funktioniert nicht, um den Apache anzusprechen
 
 # Testen ob die feste IP verfügbar ist
-ipname = "172.24.0.2"
+ipname = "172.24.0.2:3000"
 response = os.system("ping -n 1 " + ipname)
 
 if response == 0:
@@ -62,7 +62,7 @@ else:
 # Apache ist unter der festgelegten IP nicht verfügbar
 
 # Testen ob Apache unter 127.0.0.1 verfügbar ist
-lh = "127.0.0.1"
+lh = "127.0.0.1:3000"
 response = os.system("ping -n 1 " + lh)
 
 if response == 0:
