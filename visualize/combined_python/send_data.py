@@ -46,9 +46,9 @@ hostname = "localhost"
 response = os.system("ping -n 1 " + hostname)
 
 if response == 0:
-    print(hostname, 'is up!')
+    print(hostname, 'is up')
 else:
-    print(hostname, 'is down!')
+    print(hostname, 'is down')
 # localhost funktioniert nicht, um den Apache anzusprechen
 
 # Testen ob die feste IP verfügbar ist
@@ -56,9 +56,9 @@ ipname = "172.24.0.2:3000"
 response = os.system("ping -n 1 " + ipname)
 
 if response == 0:
-    print(ipname, 'is up!')
+    print(ipname, 'is up')
 else:
-    print(ipname, 'is down!')
+    print(ipname, 'is down')
 # Apache ist unter der festgelegten IP nicht verfügbar
 
 # Testen ob Apache unter 127.0.0.1 verfügbar ist
@@ -66,12 +66,12 @@ lh = "127.0.0.1:3000"
 response = os.system("ping -n 1 " + lh)
 
 if response == 0:
-    print(lh, 'is up!')
+    print(lh, 'is up')
 else:
-    print(lh, 'is down!')
+    print(lh, 'is down')
 # ?
 
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
 
-time.sleep(10)
+time.sleep(100)
