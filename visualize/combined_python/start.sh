@@ -8,11 +8,12 @@ status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start Apache_Frontend: $status"
   exit $status
-else echo "Apache run"
+else echo "Apache arbeitet"
 fi
 
-sleep 60
-echo "start Apache finished"
+echo "start Apache fin"
+sleep 10
+echo "10 sec vergangen"
 
 # Python Backend
 python3 /send_data.py
@@ -23,7 +24,9 @@ if [ $status -ne 0 ]; then
 else echo "Python-Backend run"
 fi
 
-sleep 60
+echo "start backend fin"
+sleep 10
+echo "2 x 10 sec vergangen"
 
 # nohub Schreibweise
 #nohup python3 ./send_data &
