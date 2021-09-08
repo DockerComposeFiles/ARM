@@ -49,7 +49,7 @@ CMD ["./start.sh"]
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Docker spez. Ordner
-#CMD ["/usr/local/apache2/bin/apachectl", "-D", "FOREGROUND"]
+CMD ["/usr/local/apache2/bin/apachectl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
 EXPOSE 433 80
