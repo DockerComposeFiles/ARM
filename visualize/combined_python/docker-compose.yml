@@ -23,5 +23,3 @@ volumes:
 
 networks:
   macvlan0:
-    external:
-      name: macvlan0
