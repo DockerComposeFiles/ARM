@@ -11,7 +11,7 @@ if [ $status -ne 0 ]; then
 else echo "Apache run"
 fi
 
-sleep 1
+sleep 60
 echo "start Apache finished"
 
 # Python Backend
