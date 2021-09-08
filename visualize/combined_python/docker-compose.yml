@@ -16,7 +16,7 @@ services:
       macvlan0:
         ipv4_address: 172.24.0.2
 
-    command: tail -F anything
+    #command: tail -F anything
 
 volumes:
   data:

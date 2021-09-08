@@ -60,4 +60,4 @@ for e in IPs:
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
 
-time.sleep(100)
+time.sleep(10)
