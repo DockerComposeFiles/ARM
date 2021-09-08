@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
+import time
 
 import socketio
 import os
@@ -36,8 +37,10 @@ def connect_error(err):
 def disconnect():
     print("I'm disconnected!")
 
+# Warten, damit Apache bereit ist
+time.sleep(10)
 
-# Testen, ob Localhost verfügbar ist
+# Testen, ob Localhost (127.0.0.1) verfügbar ist
 hostname = "localhost"
 response = os.system("ping -n 1 " + hostname)
 
@@ -55,6 +58,16 @@ if response == 0:
     print(ipname, 'is up!')
 else:
     print(ipname, 'is down!')
+# Apache ist unter der festgelegten IP nicht verfügbar
+
+# Testen ob Apache unter 127.0.0.1 verfügbar ist
+lh = "172.24.0.2"
+response = os.system("ping -n 1 " + lh)
+
+if response == 0:
+    print(lh, 'is up!')
+else:
+    print(lh, 'is down!')
 # ?
 
 # Mit Host Verbinden
