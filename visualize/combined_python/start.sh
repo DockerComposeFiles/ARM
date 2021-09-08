@@ -1,25 +1,25 @@
 #!/bin/sh
-
-# Alternativ kann auch supervisor genutzt werden
-
-# Python Backend
-python3 /send_data.py -D
-status=$?
-if [ $status -ne 0 ]; then
-  echo "Failed to start Backend: $status"
-  exit $status
-else echo "Python-Backend run"
-fi
-
-sleep 10
+# Alternativ kann auch supervisor genutzt werden,
+# um beide Prozesse zu starten
 
 # Apache Frontend
-/usr/local/apache2/bin/apachectl -D
+/usr/local/apache2/bin/apachectl &
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start Apache_Frontend: $status"
   exit $status
 else echo "Apache run"
+fi
+
+sleep 1
+
+# Python Backend
+python3 /send_data.py
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Failed to start Backend: $status"
+  exit $status
+else echo "Python-Backend run"
 fi
 
 sleep 60
