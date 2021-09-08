@@ -30,9 +30,10 @@ RUN apt clean
 ARG CACHEBUST=1
 ADD send_data.py /
 RUN pwd
-#CMD ["python3", "./send_data.py"]
+CMD ["python3", "./send_data.py"]
+
 # Apache startet auch ohne diese Angabe
-#CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
 EXPOSE 433 80
