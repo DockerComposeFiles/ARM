@@ -5,13 +5,13 @@ services:
     build: .
     volumes:
       - /data
-    #  - /htdocs/ /usr/local/apache2/htdocs/
+      - /htdocs/ /usr/local/apache2/htdocs/
 
     # Ports in Dockerfile funktionieren nicht
     ports:
       - "80"
       - "433"
-    #  - "3000"
+      - "3000"
     networks:
       macvlan0:
         ipv4_address: 172.24.0.2

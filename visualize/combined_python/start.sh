@@ -8,6 +8,7 @@ status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start Backend: $status"
   exit $status
+else echo "Python-Backend run"
 fi
 
 sleep 10
@@ -18,7 +19,7 @@ status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start Apache_Frontend: $status"
   exit $status
-  else echo "Apache run"
+else echo "Apache run"
 fi
 
 sleep 60
