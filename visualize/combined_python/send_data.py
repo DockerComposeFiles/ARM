@@ -61,7 +61,7 @@ else:
 # Apache ist unter der festgelegten IP nicht verfügbar
 
 # Testen ob Apache unter 127.0.0.1 verfügbar ist
-lh = "172.24.0.2"
+lh = "127.0.0.1"
 response = os.system("ping -n 1 " + lh)
 
 if response == 0:
@@ -71,4 +71,4 @@ else:
 # ?
 
 # Mit Host Verbinden
-sio.connect('http://localhost:3000/')
+sio.connect('http://0.0.0.0:3000/')
