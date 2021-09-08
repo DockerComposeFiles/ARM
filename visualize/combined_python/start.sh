@@ -18,6 +18,7 @@ status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start Apache_Frontend: $status"
   exit $status
+  else echo "Apache run"
 fi
 
 sleep 60
