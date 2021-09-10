@@ -1,6 +1,6 @@
 #!/bin/sh
-# Alternativ kann auch supervisor genutzt werden,
-# um beide Prozesse zu starten
+
+# NOCH Zwischengespeichert
 
 # Apache Frontend
 #/usr/local/apache2/bin/apachectl &

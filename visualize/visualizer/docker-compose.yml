@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  web:
+    container_name: bmp_280_web_visualizer
+    build: .
+    volumes:
+      - /htdocs/ /usr/local/apache2/htdocs/
+    ports:
+      - "80"
+      - "433"
+      - "3000"
+    networks:
+      macvlan0:
+        ipv4_address: 172.24.0.2
+
+    #command: tail -F anything
+
+networks:
+  macvlan0:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.24.0.0/24
+          gateway: 172.24.0.1
