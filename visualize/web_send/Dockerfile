@@ -1,4 +1,4 @@
-FROM arm32v7/buster AS base
+FROM arm32v7/debian:buster-slim AS base
 
 # Behebt Fehler
 RUN apt clean
