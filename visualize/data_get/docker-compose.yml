@@ -8,7 +8,6 @@ services:
     volumes:
       - /data
     container_name: py_backend
-    #restart: unless-stopped
     command: tail -F anything
 
 volumes:

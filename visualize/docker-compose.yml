@@ -1,3 +1,4 @@
+# Verbindet alle 3 Container miteinander
 version: '3.8'
 services:
   bmp280:

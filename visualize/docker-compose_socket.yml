@@ -1,35 +1,27 @@
+# Verbindet den Websocket miteinander
 version: '3.8'
 services:
-  bmp280:
-    container_name: bmp280
-    build: ./bmp280_send
+  backend:
+    container_name: backend
+    build: ./web_send
     deploy:
       placement:
         constraints:
           - node.hostname == R3
-    devices:
-      - /dev/gpiomem
-      - /dev/i2c-1
     volumes:
       - type: volume
-        source: data  # Volume Name
+        source: data  # volume Name
         target: /data
         volume:
           nocopy: true
 
   visualiser:
     container_name: data_visualizer
-    build: data_get
+    build: ./visualizer
     deploy:
       placement:
-        max_replicas_per_node: 1
         constraints:
           - node.hostname == R3
-    volumes:
-      - type: volume
-        source: data  # Volume Name
-        target: /data
-        read_only: true
 
 volumes:
   data:

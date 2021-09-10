@@ -1,0 +1,8 @@
+services:
+  example:
+    deploy:
+      placement:
+        max_replicas_per_node: 2
+        constraints:
+          - node.hostname == hostname
+          - node.labels.label == label
