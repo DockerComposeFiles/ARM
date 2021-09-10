@@ -5,12 +5,13 @@ import time
 import socketio
 import os
 
+print("backend alive")
+
 # standard Python
 sio = socketio.Client()
 
 # asyncio
 asio = socketio.AsyncClient()
-
 
 # Event handler
 @sio.on('*')
@@ -39,7 +40,7 @@ def disconnect():
 
 
 # Warten, damit Apache bereit ist
-time.sleep(10)
+time.sleep(20)
 
 
 # Testen, ob Localhost (127.0.0.0, 127.0.0.1),
