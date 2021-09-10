@@ -1,4 +1,4 @@
-FROM arm32v7/buster-rc AS base
+FROM arm32v7/buster AS base
 
 # Behebt Fehler
 RUN apt clean
