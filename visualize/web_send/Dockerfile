@@ -1,5 +1,7 @@
-FROM arm32v7/debian AS base
+FROM arm32v7/buster-rc AS base
 
+# Behebt Fehler
+RUN apt clean
 # Updaten des Images
 RUN apt update && apt -y upgrade
 # Debug Programme
