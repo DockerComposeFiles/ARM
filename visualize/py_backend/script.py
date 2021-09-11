@@ -38,7 +38,7 @@ def disconnect():
 
 # Warten, damit Apache bereit ist
 time.sleep(20)
-
+print("go to ip test", flush=True)
 
 # Testen, ob Localhost (127.0.0.0, 127.0.0.1),
 # die feste IP 172.24.0.2 und ? 0.0.0.0 verfügbar ist.
@@ -47,7 +47,7 @@ time.sleep(20)
 
 IPs = ["localhost", "127.0.0.0", "127.0.0.1", "172.24.0.2", "0.0.0.0",
        "127.0.0.0:3000", "127.0.0.1:3000", "172.24.0.2:3000", "0.0.0.0:3000"]
-for e in IPs:
+for e in range(IPs):
     response = os.system("ping -n 1 " + e)
 
     if response == 0:
