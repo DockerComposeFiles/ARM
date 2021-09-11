@@ -44,8 +44,8 @@ print("go to ip array", flush=True)
 # Zugriff auf den Apache Server wird getestet
 # Der Websocket läuft auf Port 3000
 
-IPs = ['localhost', '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
-       '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000']
+IPs = ['127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
+       '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000', 'localhost']
 print("go to ip test", flush=True)
 for e in IPs:
     print("I'm in the array", flush=True)
