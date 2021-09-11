@@ -38,13 +38,13 @@ def disconnect():
 # Warten, damit Apache bereit ist
 # time.sleep(20)
 
-# Testen, ob das Internet, Localhost (127.24.0.5, 0.0.0.0),
-# die feste IP 172.24.0.0-subnet und 172.24.0.1-gateway verfügbar ist.
-# Zugriff auf den Apache Server wird getestet
+# Testen, welche Verbindungen (Apache Server) verfügbar sind
+# Internet ok, Localhost=127.0.0.1 ok, 127.24.0.5 ok
+# 0.0.0.0 ok, 172.24.0.0-subnet ok, 172.24.0.1-gateway ok
 # Der Websocket läuft auf Port 3000
 
-IPs = ["www.google.de", '127.24.0.0', '127.24.0.1', '172.24.0.5', '0.0.0.0',
-       '127.24.0.0:3000', '127.24.0.1:3000', '172.24.0.5:3000', '0.0.0.0:3000', "localhost"]
+IPs = ["www.google.com", "localhost", '127.24.0.0', '127.24.0.1', '172.24.0.5', '0.0.0.0',
+       '127.24.0.0:3000', '127.24.0.1:3000', '172.24.0.5:3000', '0.0.0.0:3000']
 
 for e in IPs:
     # Ping Abfrage, um die Verfügbarkeit zu testen
