@@ -21,3 +21,6 @@ RUN mkdir /data
 # Ausführung
 ADD script.py /
 CMD ["python3", "./script.py"]
+
+# Port ist ebenfalls im compose Festgelegt
+EXPOSE 3000

@@ -47,16 +47,16 @@ IPs = ["www.google.de", '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
        '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000', "localhost"]
 
 for e in IPs:
+    # Ping Abfrage, um die Verfügbarkeit zu testen
     response = os.system("ping -n -c 1 " + e)
-    print(e + " was proofed in the array: " + str(response), flush=True)
 
     # Standard Zeitintervall zwischen den PING Ausführungen
     time.sleep(1)
 
     if response == 0:
-        print(e, 'is up: ' + str(response), flush=True)
+        print(e, 'is up: ' + str(response) + '\n', flush=True)
     else:
-        print(e, 'is down: ' + str(response), flush=True)
+        print(e, 'is down: ' + str(response) + '\n', flush=True)
 
 print("go to connection", flush=True)
 # Mit Host Verbinden
