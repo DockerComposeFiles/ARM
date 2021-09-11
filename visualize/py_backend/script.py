@@ -1,42 +1,61 @@
 import time
-from pathlib import Path
+import socketio
+import os
 
-print("reading start", flush=True)
+print("backend alive")
 
-# Wenn Datei nicht existiert, ist der Sensor_Container noch nicht Einsatzbereit
-# Warten, dass Sensor_Container mit dem schreiben begonnen hat
-fileName = r"/data/data.txt"
-fileObj = Path(fileName)
-while not fileObj.is_file:
-    print("no_File", flush=True)
-    time.sleep(5)
-if fileObj.is_file:
-    print("file exist: " + str(fileObj) + "->Objekt , Name<-" + fileName, flush=True)
+# standard Python
+sio = socketio.Client()
 
-# Einlesen der Daten (in einer Endlosschleife)
-i = 0
-while i <= 20:
-    # Zu Testzwecken wird nach 200 Werten Abgebrochen
-    i = i + 1
-    print(i, flush=True)
-    # Auslesen der Daten
-    try:
-        # Einlesen des letzten Wertes
-        fo = open('/data/data.txt', 'r')
-        for line in fo:
-            print(line.rstrip(), flush=True)
-        fo.close()
+# asyncio
+asio = socketio.AsyncClient()
 
-        # Einlesen aller Werte
-        fa = open('/data/all_data.txt', 'r')
-        for line in fa:
-            print("all:" + line, flush=True)
-        fa.close()
+# Event handler
+@sio.on('*')
+def catch_all(event, sid, data):
+    pass
 
-        # Warten bis der Controller den nächsten Wert senden kann
-        time.sleep(1)
-    except:
-        print("exception: no file")
-        time.sleep(3)
 
-quit()
+@sio.on('*')
+async def catch_all(event, sid, data):
+    pass
+
+
+@sio.event
+def connect():
+    print("I'm connected!")
+
+
+@sio.event
+def connect_error(err):
+    print("The connection failed: " + err)
+
+
+@sio.event
+def disconnect():
+    print("I'm disconnected!")
+
+
+# Warten, damit Apache bereit ist
+time.sleep(20)
+
+
+# Testen, ob Localhost (127.0.0.0, 127.0.0.1),
+# die feste IP 172.24.0.2 und ? 0.0.0.0 verfügbar ist.
+# Zugriff auf den Apache Server wird getestet
+# Der Websocket läuft auf Port 3000
+
+IPs = ["localhost", "127.0.0.0", "127.0.0.1", "172.24.0.2", "0.0.0.0",
+       "127.0.0.0:3000", "127.0.0.1:3000", "172.24.0.2:3000", "0.0.0.0:3000"]
+for e in IPs:
+    response = os.system("ping -n 1 " + e)
+
+    if response == 0:
+        print(e, 'is up')
+    else:
+        print(e, 'is down')
+
+# Mit Host Verbinden
+sio.connect('http://172.24.0.2:3000/')
+
+time.sleep(10)
