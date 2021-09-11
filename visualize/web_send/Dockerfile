@@ -26,12 +26,13 @@ RUN mkdir /data
 # Zurücksetzen des Arbeitsverzeichnisses
 WORKDIR /
 
+# Port ist ebenfalls im compose Festgelegt
+EXPOSE 3000
+
 # send_data wird des öfteren geändert
 # Der Docker context erkennt diese Änderungen nicht
 # Cacheburst deaktiviert das cachen ab diesem Layer
-ARG CACHEBUST=1
+#ARG CACHEBUST=1
 ADD send_data.py /
 CMD ["python3", "./send_data.py"]
 
-# Port ist ebenfalls im compose Festgelegt
-EXPOSE 3000
