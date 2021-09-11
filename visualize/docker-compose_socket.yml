@@ -2,8 +2,8 @@
 version: '3.8'
 services:
   backend:
-    container_name: bmp280_backend
-    build: ./web_send
+    container_name: py_backend
+    build: ./py_backend
     deploy:
       placement:
         constraints:
@@ -14,16 +14,44 @@ services:
         target: /data
         volume:
           nocopy: true
+    ports:
+      - "80"
+      - "433"
+      - "3000"
+    networks:
+      macvlan0:
+        ipv4_address: 172.24.0.5
     links:
       - "visualiser:vis"
 
   visualiser:
-    container_name: data_visualizer
+    container_name: bmp_280_web_visualizer
     build: ./visualizer
     deploy:
       placement:
         constraints:
           - node.hostname == R3
+    volumes:
+      - /htdocs/ /usr/local/apache2/htdocs/
+    ports:
+      - "80"
+      - "433"
+      - "3000"
+    networks:
+      macvlan0:
+        ipv4_address: 172.24.0.2
+
 
 volumes:
   data:
+
+networks:
+  macvlan0:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.24.0.0/24
+          gateway: 172.24.0.1
