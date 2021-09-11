@@ -1,12 +1,12 @@
 version: '3.8'
 services:
   python-backend:
+    container_name: volume_test
     build:
       context: ./
       dockerfile: ./Dockerfile
     volumes:
       - /data
-    container_name: py_backend
     #command: tail -F anything
 
 volumes:

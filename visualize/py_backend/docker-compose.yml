@@ -1,12 +1,12 @@
 version: '3.8'
 services:
   python-backend:
+    container_name: py_backend
     build:
       context: ./
       dockerfile: ./Dockerfile
     volumes:
       - /data
-    container_name: py_backend
 
 volumes:
   data:
