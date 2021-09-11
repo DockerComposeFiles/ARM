@@ -47,14 +47,14 @@ IPs = ['www.google.de', '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
 
 for e in IPs:
     print("I'm in the array: " + e, flush=True)
-    response = os.system("ping -n" + e)
+    response = os.system('ping -n 1 ' + e)
     # Standard Zeitintervall zwischen den PING Ausführungen
     time.sleep(1)
 
     if response == 0:
-        print(e, 'is up:' + response, flush=True)
+        print(e, 'is up: ' + response, flush=True)
     else:
-        print(e, 'is down' + response, flush=True)
+        print(e, 'is down: ' + response, flush=True)
 
 print("go to connection", flush=True)
 # Mit Host Verbinden
