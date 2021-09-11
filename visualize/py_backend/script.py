@@ -8,6 +8,7 @@ sio = socketio.Client()
 # asyncio
 asio = socketio.AsyncClient()
 
+
 # Event handler
 @sio.on('*')
 def catch_all(event, sid, data):
@@ -35,27 +36,27 @@ def disconnect():
 
 
 # Warten, damit Apache bereit ist
-#time.sleep(20)
+# time.sleep(20)
 
 # Testen, ob Localhost (127.0.0.0, 127.0.0.1),
 # die feste IP 172.24.0.2 und ? 0.0.0.0 verfügbar ist.
 # Zugriff auf den Apache Server wird getestet
 # Der Websocket läuft auf Port 3000
 
-IPs = ['www.google.de', '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
+IPs = ["www.google.de", '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
        '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000', 'localhost']
 
 for e in IPs:
     response = os.system('ping -n 1 ' + e)
-    print(e + "was proof in the array: " + response, flush=True)
+    print(e + "was proof in the array: " + str(response), flush=True)
 
     # Standard Zeitintervall zwischen den PING Ausführungen
     time.sleep(1)
 
     if response == 0:
-        print(e, 'is up: ' + response, flush=True)
+        print(e, 'is up: ' + str(response), flush=True)
     else:
-        print(e, 'is down: ' + response, flush=True)
+        print(e, 'is down: ' + str(response), flush=True)
 
 print("go to connection", flush=True)
 # Mit Host Verbinden
