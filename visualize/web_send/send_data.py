@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf8 -*-
-import time
 
+import time
 import socketio
 import os
 
