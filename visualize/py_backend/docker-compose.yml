@@ -1,14 +1,12 @@
 version: '3.8'
 services:
   python-backend:
-    #image: 326567/python:v7
     build:
       context: ./
       dockerfile: ./Dockerfile
     volumes:
       - /data
     container_name: py_backend
-    #command: tail -F anything
 
 volumes:
   data:

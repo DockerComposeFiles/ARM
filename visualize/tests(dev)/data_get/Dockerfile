@@ -1,4 +1,3 @@
-# FROM arm32v7/python:rc-buster
 FROM python:rc-buster AS python_def
 
 # Updaten des Images
