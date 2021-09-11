@@ -44,10 +44,10 @@ def disconnect():
 # Der Websocket läuft auf Port 3000
 
 IPs = ["www.google.de", '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
-       '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000', 'localhost']
+       '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000', "localhost"]
 
 for e in IPs:
-    response = os.system("ping -n 1 " + e)
+    response = os.system("ping -n " + e)
     print(e + "was proof in the array: " + str(response), flush=True)
 
     # Standard Zeitintervall zwischen den PING Ausführungen
