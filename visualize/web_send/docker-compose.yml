@@ -9,7 +9,7 @@ services:
       - "3000"
     networks:
       macvlan0:
-        ipv4_address: 172.24.0.4
+        ipv4_address: 172.24.0.3
 
 volumes:
   data:
@@ -22,5 +22,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.24.2.0/24
-          gateway: 172.24.2.1
+        - subnet: 172.24.0.0/24
+          gateway: 172.24.0.1
