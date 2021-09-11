@@ -33,6 +33,5 @@ ARG CACHEBUST=1
 ADD send_data.py /
 CMD ["python3", "./send_data.py"]
 
-RUN echo("im_alive")
 # Port ist ebenfalls im compose Festgelegt
-#EXPOSE 3000
+EXPOSE 3000
