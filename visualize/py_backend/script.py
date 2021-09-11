@@ -2,7 +2,7 @@ import time
 import socketio
 import os
 
-print("backend alive")
+print("backend alive", flush=True)
 
 # standard Python
 sio = socketio.Client()
@@ -23,17 +23,17 @@ async def catch_all(event, sid, data):
 
 @sio.event
 def connect():
-    print("I'm connected!")
+    print("I'm connected!", flush=True)
 
 
 @sio.event
 def connect_error(err):
-    print("The connection failed: " + err)
+    print("The connection failed: " + err, flush=True)
 
 
 @sio.event
 def disconnect():
-    print("I'm disconnected!")
+    print("I'm disconnected!", flush=True)
 
 
 # Warten, damit Apache bereit ist
@@ -51,9 +51,9 @@ for e in IPs:
     response = os.system("ping -n 1 " + e)
 
     if response == 0:
-        print(e, 'is up')
+        print(e, 'is up', flush=True)
     else:
-        print(e, 'is down')
+        print(e, 'is down', flush=True)
 
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
