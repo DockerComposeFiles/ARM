@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  backend:
+    container_name: bmp280_backend
+    build: .
+    volumes:
+      - /data
+    ports:
+      - "3000"
+    networks:
+      macvlan0:
+        ipv4_address: 172.24.0.3
+
+volumes:
+  data:
+
+networks:
+  macvlan0:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.24.0.0/24
+          gateway: 172.24.0.1

@@ -1,4 +1,4 @@
-FROM arm32v7/python:3.7 AS base
+FROM arm32v7/debian:buster-slim AS base
 
 # Behebt Fehler
 RUN apt clean
@@ -10,7 +10,7 @@ RUN apt install -y nano && apt install tree && apt install -y lynx && apt instal
 FROM base AS python_backend
 
 # Installieren von Python (angepasste Version)
-#RUN apt install -y python3.7 && apt install -y python-pip && apt install -y python3-pip
+RUN apt install -y python3.7 && apt install -y python-pip && apt install -y python3-pip
 
 # Bibliothek zum senden der Daten
 RUN pip3 install "python-socketio[client]"
