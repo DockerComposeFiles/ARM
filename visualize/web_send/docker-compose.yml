@@ -9,7 +9,7 @@ services:
       - "3000"
     networks:
       macvlan0:
-        ipv4_address: 172.24.0.3
+        ipv4_address: 172.24.0.3 # 2-visualiser, 4-fork with python
 
 volumes:
   data:
