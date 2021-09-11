@@ -45,17 +45,19 @@ print("go to ip test", flush=True)
 # Zugriff auf den Apache Server wird getestet
 # Der Websocket läuft auf Port 3000
 
-IPs = ['localhost', '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
-       '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000']
-for e in IPs:
-    response = os.system("ping -n 1 " + e)
-
-    if response == 0:
-        print(e, 'is up', flush=True)
-    else:
-        print(e, 'is down', flush=True)
+#IPs = ['localhost', '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
+#       '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000']
+#
+#for e in IPs:
+#    response = os.system("ping -n 1 " + e)
+#
+#    if response == 0:
+#        print(e, 'is up', flush=True)
+#    else:
+#        print(e, 'is down', flush=True)
 
 print("go to connection", flush=True)
+
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
 
