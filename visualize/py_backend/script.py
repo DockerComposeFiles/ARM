@@ -46,8 +46,9 @@ IPs = ['www.google.de', '127.0.0.0', '127.0.0.1', '172.24.0.2', '0.0.0.0',
        '127.0.0.0:3000', '127.0.0.1:3000', '172.24.0.2:3000', '0.0.0.0:3000', 'localhost']
 
 for e in IPs:
-    print("I'm in the array: " + e, flush=True)
-    response = os.system('ping -n ' + e)
+    print("proof in the array: " + e, flush=True)
+    response = os.system('ping -n -c 3 ' + e)
+
     # Standard Zeitintervall zwischen den PING Ausführungen
     time.sleep(1)
 
