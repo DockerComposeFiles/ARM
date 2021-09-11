@@ -55,6 +55,7 @@ for e in IPs:
     else:
         print(e, 'is down', flush=True)
 
+print("go to connection", flush=True)
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
 
