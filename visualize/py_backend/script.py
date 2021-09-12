@@ -41,9 +41,9 @@ def disconnect():
 # Testen, welche Verbindungen (Apache Server) verfügbar sind
 # Internet down?, Localhost=127.0.0.1 ok, 127.24.0.5 ok
 # 0.0.0.0 ok, 172.24.0.0-subnet ok, 172.24.0.1-gateway ok
-# Der Websocket läuft auf Port 3000
+# Der Websocket läuft auf Port 3000 und IPs 5, 2
 
-IPs = ["www.google.com", "localhost", '127.24.0.0', '127.24.0.1', '172.24.0.5', '0.0.0.0',
+IPs = ["https://duckduckgo.com", "localhost", '127.24.0.0', '127.24.0.1', '172.24.0.5', '0.0.0.0',
        '172.24.0.5:3000', '172.24.0.2', '172.24.0.2:3000']
 
 for e in IPs:
@@ -58,7 +58,7 @@ for e in IPs:
     else:
         print(e, 'is down: ' + str(response) + '\n', flush=True)
 
-print("go to connection", flush=True)
+print("create connection", flush=True)
 # Mit Host Verbinden
 sio.connect('http://172.24.0.2:3000/')
 
