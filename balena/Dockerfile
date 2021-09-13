@@ -2,8 +2,8 @@
 #FROM balenalib/raspberry-pi2-alpine-node:latest
 
 FROM balenalib/raspberrypi3-debian:latest
-RUN apt update
-RUN apt install -y nano
+#RUN apt update
+#RUN apt install -y nano
 
 # Kamera Bibliothek
 RUN pip install picamera
