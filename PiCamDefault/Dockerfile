@@ -13,7 +13,7 @@ FROM arm32v7/python:rc-buster
 WORKDIR /
 #RUN mkdir "/picam3"
 COPY picam3 /
-RUN cd picam3 && ls -al
+RUN ls -al
 WORKDIR /
 # Installer Ausführungsberechtigungen geben
 RUN chmod -+X picam3/setup.py
