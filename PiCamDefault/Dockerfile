@@ -12,14 +12,14 @@ FROM arm32v7/python:rc-buster
 #Manuelle Installation
 WORKDIR /
 RUN mkdir "/picam"
-COPY picamera-release-1.10 /
+COPY ./picamera/* /picam/
 
 # Installer Ausführungsberechtigungen geben
-RUN chmod -+X /picamera-release-1.10/setuo.py
+RUN chmod -+X /picam/setuo.py
 # Gesamten Ordner Ausführungsberechtigungen geben
-RUN chmod -R +X /picamera-release-1.10
+RUN chmod -R +X /picam
 # Installieren
-RUN bash /picamera-release-1.10/setuo.py
+RUN bash /picam/setuo.py
 
 # Ausführung des Hauptscriptes
 ADD script.py /
