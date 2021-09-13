@@ -6,11 +6,14 @@ FROM arm32v7/python:rc-buster
 # Python 2 ist nicht notwendig
 #RUN apt install python2 && apt install python-pip
 
-# Systemvariable, um die Prüfung des System auf PI-OS zu deaktivieren.
-RUN export READTHEDOCS=True
 
-# Kamera Bibliothek
-RUN pip3 install picamera
+
+# Kamera Bibliothek kann nicht
+#RUN pip3 install picamera
+
+#Manuelle Installation
+ /
+
 
 # Ausführung des Hauptscriptes
 ADD script.py /

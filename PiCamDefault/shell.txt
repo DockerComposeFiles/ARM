@@ -1,3 +1,0 @@
-# command to run raspberry container with camera connection
-
-docker run 326567/raspi-cam-default -p 344:80 -v /opt/vc:/opt/vc --env LD_LIBRARY_PATH=/opt/vc/lib
