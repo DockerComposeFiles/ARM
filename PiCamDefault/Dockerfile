@@ -18,7 +18,7 @@ RUN chmod -+X picam3/setup.py
 # Gesamten Ordner Ausführungsberechtigungen geben
 RUN chmod -R +X picam3
 # Installieren
-RUN bash picam3/setuo.py
+RUN bash picam3/setup.py
 
 # Ausführung des Hauptscriptes
 ADD script.py /
