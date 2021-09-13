@@ -7,7 +7,7 @@ FROM python:3
 #RUN apt install python2 && apt install python-pip
 
 # Kamera Bibliothek kann nicht
-RUN pip3 install picamera
+RUN pip install picamera
 
 ##Manuelle Installation
 #WORKDIR /
