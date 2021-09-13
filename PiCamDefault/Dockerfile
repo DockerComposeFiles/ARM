@@ -15,11 +15,11 @@ WORKDIR /
 COPY picam3 /
 
 # Installer Ausführungsberechtigungen geben
-RUN chmod -+X picam3/setup.py
+RUN chmod -+X /picam3/setup.py
 # Gesamten Ordner Ausführungsberechtigungen geben
-RUN chmod -R +X picam3
+RUN chmod -R +X /picam3
 # Installieren
-RUN bash picam3/setuo.py
+RUN bash /picam3/setuo.py
 
 # Ausführung des Hauptscriptes
 ADD script.py /
