@@ -10,7 +10,7 @@ FROM arm32v7/python:rc-buster
 RUN export READTHEDOCS=True
 
 # Kamera Bibliothek
-RUN pip install picamera
+RUN pip3 install picamera
 
 # Ausführung des Hauptscriptes
 ADD script.py /
