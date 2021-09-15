@@ -1,10 +1,10 @@
 # Genaue Image Angabe
-FROM arm32v7/python:rc-buster
+FROM arm32v7/python:3.10.0rc2-slim-buster
 # Ungefähre Image Angabe. Wählt Debian:bullseye als Distro -> apt funktioniert nicht
 #FROM python:3
 
 RUN apt update
-#RUN apt -y upgrade
+RUN apt -y upgrade
 
 # Die Picamera Bibliothek kann alternativ unter Python 2 ab Version 2.7 verwendet werden
 #RUN apt install python2 && apt install python-pip
