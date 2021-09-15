@@ -1,6 +1,5 @@
 # This container will connect to the Raspberry Camera
 # initial it only shot a picture
-
 version: '3.8'
 
 services:
@@ -12,8 +11,8 @@ services:
       - LD_LIBRARY_PATH=/opt/vc/lib
     devices:
       - /dev/vchiq
-    # not allowed
-    #device_cgroup_rules:
+    # Weitere Einbindung, nicht erlaubt
+    # device_cgroup_rules:
     #  - /dev/vchiq
     ports:
       - 144:80
