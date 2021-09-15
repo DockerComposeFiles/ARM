@@ -1,7 +1,8 @@
 # Genaue Image Angabe
-#FROM arm32v7/python:rc-buster
-# Ungefähre Image Angabe
-FROM python:3
+FROM arm32v7/python:rc-buster
+# Ungefähre Image Angabe. Wählt Debian:bullseye als Distro -> apt funktioniert nicht
+#FROM python:3
+
 RUN apt update
 #RUN apt -y upgrade
 
