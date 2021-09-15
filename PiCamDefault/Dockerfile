@@ -1,4 +1,6 @@
+# Genaue Image Angabe
 #FROM arm32v7/python:rc-buster
+# Ungefähre Image Angabe
 FROM python:3
 RUN apt update
 #RUN apt -y upgrade
@@ -8,13 +10,13 @@ RUN apt update
 
 # Installation der Kamera-Bibliothek
 # picamera stellt ausschließlich die neueste version unter den Python
-RUN pip install picamera
+#RUN pip install picamera
 
 # Manuelle Installation.
 # Der modifizierte picamera Quellcode wurde mittels SPC direkt an den Raspberry übertragen.
 WORKDIR /
 RUN mkdir "/picam"
-COPY picam3 /picam3
+COPY picam /picam
 # Installer Ausführungsberechtigungen geben
 RUN chmod -+X picam/setup.py
 # Gesamten Ordner Ausführungsberechtigungen geben
