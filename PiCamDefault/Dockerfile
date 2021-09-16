@@ -14,10 +14,15 @@ RUN apt -y upgrade
 #RUN pip install picamera
 
 # Manuelle Installation.
-# Der modifizierte picamera Quellcode wurde mittels SPC direkt an den Raspberry übertragen.
+## Deaktivierung der Abfrage der Systemvariablen
+RUN export READTHEDOCS=true
+
+## Der picamera Quellcode wurde mittels SPC direkt an den Raspberry übertragen
+## und befindet sich daher nicht im Repository.
 WORKDIR /
 RUN mkdir "/picam"
 COPY picam /picam
+
 # Installer Ausführungsberechtigungen geben
 RUN chmod -+X picam/setup.py
 # Gesamten Ordner Ausführungsberechtigungen geben
