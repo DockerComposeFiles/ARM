@@ -13,7 +13,8 @@ FROM base AS visualizer
 COPY /htdocs/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
-
+# Port im BS freigeben
+RUN iptables -A INPUT -p udp --dport 3000 -j ACCEPT
 
 # Apache startet ohne Angabe con CMD automatisch,
 # sofern kein anderes Programm über CMD gestartet wird
@@ -25,4 +26,4 @@ COPY httpd.conf /usr/local/apache2/httpd.conf
 #CMD ["/usr/local/apache2/bin/apachectl", "-D", "FOREGROUND"]
 
 # Port ist im compose Festgelegt
-EXPOSE 433 80
+EXPOSE 433 80 3000
