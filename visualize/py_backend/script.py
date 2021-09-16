@@ -22,17 +22,17 @@ async def catch_all(event, sid, data):
 
 @sio.event
 def connect():
-    print("I'm connected!", flush=True)
+    print("I'm connected", flush=True)
 
 
 @sio.event
 def connect_error(err):
-    print("The connection failed: " + err, flush=True)
+    print("The connection failed- ", flush=True)
 
 
 @sio.event
 def disconnect():
-    print("I'm disconnected!", flush=True)
+    print("I'm disconnected", flush=True)
 
 
 # Warten, damit Apache bereit ist
@@ -63,6 +63,6 @@ for e in IPs:
 
 print("create connection", flush=True)
 # Mit Host Verbinden
-sio.connect('http://172.24.0.2/')
+sio.connect('http://172.24.0.2')
 
 time.sleep(10)
