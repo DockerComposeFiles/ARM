@@ -23,6 +23,7 @@ async def catch_all(event, sid, data):
 @sio.event
 def connect():
     print("I'm connected", flush=True)
+    # TODO etwas senden
 
 
 @sio.event
@@ -63,6 +64,6 @@ for e in IPs:
 
 print("create connection", flush=True)
 # Mit Host Verbinden
-sio.connect('http://172.24.0.2')
+sio.connect('http://172.24.0.2:3000')
 
 time.sleep(10)
