@@ -14,7 +14,7 @@ COPY /htdocs/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/httpd.conf
 
 # Port im BS freigeben
-RUN iptables -A INPUT -p udp --dport 3000 -j ACCEPT
+#RUN iptables -A INPUT -p tcp --dport 3000 -j ACCEPT
 
 # Apache startet ohne Angabe con CMD automatisch,
 # sofern kein anderes Programm über CMD gestartet wird
