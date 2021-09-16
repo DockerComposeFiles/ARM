@@ -48,6 +48,9 @@ IPs = ["https://duckduckgo.com", "localhost", '127.24.0.0', '127.24.0.1', '172.2
 
 for e in IPs:
     # Ping Abfrage, um die Verfügbarkeit zu testen
+    # -n weist dem Befehl an, eine binäre Ausgabe zurückzugeben
+    # -c 1 weist dem Befehl an, nur eine Anfrage abzuschicken
+    # ping sendet standardmäßig eine sequenzielle Abfrage bis zum Abbruch
     response = os.system("ping -n -c 1 " + e)
 
     # Standard Zeitintervall zwischen den PING Ausführungen
@@ -60,6 +63,6 @@ for e in IPs:
 
 print("create connection", flush=True)
 # Mit Host Verbinden
-sio.connect('http://172.24.0.2:3000/')
+sio.connect('http://172.24.0.2/')
 
 time.sleep(10)
