@@ -12,6 +12,6 @@ io.on("connection", (socket) => {
         console.log("Verbindung geschlossen");
     });
 });
-httpServer.listen();
+httpServer.listen(3000);
 console.log("get_data.js success");
 //# sourceMappingURL=get_data.js.map

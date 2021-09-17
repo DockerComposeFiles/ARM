@@ -36,7 +36,6 @@ services:
     ports:
       - "80"
       - "433"
-      - "3000"
     networks:
       macvlan0:
         ipv4_address: 172.24.0.2
