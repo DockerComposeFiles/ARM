@@ -62,6 +62,7 @@ config-pin p8.19 pw
 #config-pin p9.20 can
 #config-pin p9.24 can
 #config-pin p9.26 ca
+
 #SPI setup
 config-pin p9.28 spi_cs
 config-pin p9.29 spi
