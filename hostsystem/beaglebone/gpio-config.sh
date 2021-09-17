@@ -47,9 +47,10 @@ config-pin p9.41 gpio
 #config-pin p8.46 gpi
 
 # configure PWM ports
-config-pin p9.14 pwm
-config-pin p9.16 pwm
-config-pin p9.42 pwm
+##config-pin p9.14 pwm
+##config-pin p9.16 pwm
+##config-pin p9.42 pwm
+
 #config-pin p8.13 pwm
 #config-pin p8.19 pw
 
@@ -64,9 +65,15 @@ config-pin p9.42 pwm
 #config-pin p9.26 ca
 
 #SPI setup
-config-pin p9.28 spi_cs
-config-pin p9.29 spi
-config-pin p9.30 spi
-config-pin p9.31 spi_scl
+##config-pin p9.28 spi_cs
+##config-pin p9.29 spi
+##config-pin p9.30 spi
+##config-pin p9.31 spi_scl
+
+# GereatePins
+echo 48 > /sys/class/gpio/export
+echo 50 > /sys/class/gpio/export
+echo 51 > /sys/class/gpio/export
+echo 60 > /sys/class/gpio/export
 
 exit 0
