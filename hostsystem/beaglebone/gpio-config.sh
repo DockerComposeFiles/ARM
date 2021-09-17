@@ -7,8 +7,8 @@
 # configure UART
 config-pin p9.11 uart
 config-pin p9.13 uart
-config-pin p8.37 uart
-config-pin p8.38 uar
+#config-pin p8.37 uart
+#config-pin p8.38 uar
 
 # configure P9 GPIO ports
 config-pin p9.12 gpio
@@ -17,41 +17,41 @@ config-pin p9.23 gpio
 config-pin p9.27 gpio
 config-pin p9.41 gpio
 
-# configure P8 GPIO ports
-config-pin p8.11 gpio
-config-pin p8.12 gpio
-config-pin p8.14 gpio
-config-pin p8.16 gpio
-config-pin p8.18 gpio
+# configure P8 GPIO ports (nicht nötig)
+#config-pin p8.11 gpio
+#config-pin p8.12 gpio
+#config-pin p8.14 gpio
+#config-pin p8.16 gpio
+#config-pin p8.18 gpio
 #config-pin p8.21 gpio
 #config-pin p8.23 gpio
 #config-pin p8.25 gpio
-config-pin p8.26 gpio
-config-pin p8.27 gpio
-config-pin p8.28 gpio
-config-pin p8.29 gpio
-config-pin p8.30 gpio
-config-pin p8.31 gpio
-config-pin p8.32 gpio
-config-pin p8.33 gpio
-config-pin p8.34 gpio
-config-pin p8.35 gpio
-config-pin p8.36 gpio
-config-pin p8.39 gpio
-config-pin p8.40 gpio
-config-pin p8.41 gpio
-config-pin p8.42 gpio
-config-pin p8.43 gpio
-config-pin p8.44 gpio
-config-pin p8.45 gpio
-config-pin p8.46 gpi
+#config-pin p8.26 gpio
+#config-pin p8.27 gpio
+#config-pin p8.28 gpio
+#config-pin p8.29 gpio
+#config-pin p8.30 gpio
+#config-pin p8.31 gpio
+#config-pin p8.32 gpio
+#config-pin p8.33 gpio
+#config-pin p8.34 gpio
+#config-pin p8.35 gpio
+#config-pin p8.36 gpio
+#config-pin p8.39 gpio
+#config-pin p8.40 gpio
+#config-pin p8.41 gpio
+#config-pin p8.42 gpio
+#config-pin p8.43 gpio
+#config-pin p8.44 gpio
+#config-pin p8.45 gpio
+#config-pin p8.46 gpi
 
 # configure PWM ports
 config-pin p9.14 pwm
 config-pin p9.16 pwm
 config-pin p9.42 pwm
-config-pin p8.13 pwm
-config-pin p8.19 pw
+#config-pin p8.13 pwm
+#config-pin p8.19 pw
 
 # configure CAN ports
 # P9_19 -> dCAN0 Rx
