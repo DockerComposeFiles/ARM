@@ -33,14 +33,14 @@ services:
           - node.labels.project == visualizer
     volumes:
       - /htdocs/ /usr/local/apache2/htdocs/
-#    ports:
-    networks:
-      macvlan0:
-        ipv4_address: 172.24.0.2
-    expose:
+    ports:
       - "80"
       - "433"
       - "3000"
+    networks:
+      macvlan0:
+        ipv4_address: 172.24.0.2
+#    expose:
 
 
 volumes:
