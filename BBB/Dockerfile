@@ -1,0 +1,16 @@
+FROM arm32v7/python:3.10.0rc2-slim-buster AS base
+
+RUN apt update
+RUN apt -y upgrade
+# Debug Programme
+RUN apt install -y nano && apt install tree
+
+FROM base
+
+# Bibliotheken
+RUN apt install -y apt-utils i2c-tools python-smbus
+RUN pip3 install smbus
+
+# Script zum sammeln der Daten
+ADD /script.py /script.py
+CMD [ "python3", "./script.py" ]

@@ -1,0 +1,25 @@
+# Speichert die Daten des HTU in einem volume
+version: '3.8'
+services:
+  HTU_get:
+    container_name: HTU_get
+    build: .
+    deploy:
+      placement:
+        constraints:
+          - node.labels.project == lc
+    volumes:
+      - type: volume
+        source: data  # volume Name
+        target: /data
+        volume:
+          nocopy: true
+        # GPIO Anbindung
+      - /sys/class/gpio/
+        # ?
+      - /sys/kernel/debug/omap_mux/
+        # Anbindung der 4 LED Lampen
+      - /sys/class/leds/
+
+volumes:
+  data:
