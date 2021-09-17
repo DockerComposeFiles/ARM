@@ -15,8 +15,6 @@ services:
         volume:
           nocopy: true
     ports:
-      - "80"
-      - "433"
       - "3000"
     networks:
       macvlan0:
@@ -34,9 +32,9 @@ services:
     volumes:
       - /htdocs/ /usr/local/apache2/htdocs/
     ports:
-      - "80"
-      - "433"
-      - "3000"
+      - "80:80"
+      - "433:433"
+      - "3000:3000"
     networks:
       macvlan0:
         ipv4_address: 172.24.0.2
