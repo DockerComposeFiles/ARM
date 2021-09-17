@@ -25,5 +25,5 @@ COPY httpd.conf /usr/local/apache2/httpd.conf
 # Docker spez. Ordner
 #CMD ["/usr/local/apache2/bin/apachectl", "-D", "FOREGROUND"]
 
-# Port ist im compose Festgelegt
+# Portfreigabe im BS
 EXPOSE 433 80 3000

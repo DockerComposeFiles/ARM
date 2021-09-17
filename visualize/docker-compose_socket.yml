@@ -40,6 +40,8 @@ services:
     networks:
       macvlan0:
         ipv4_address: 172.24.0.2
+    expose:
+      - "3000"
 
 
 volumes:
