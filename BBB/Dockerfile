@@ -5,11 +5,15 @@ RUN apt -y upgrade
 # Debug Programme
 RUN apt install -y nano && apt install tree
 
-FROM base
+FROM base AS driver
 
 # Bibliotheken
 RUN apt install -y apt-utils i2c-tools python-smbus
 RUN pip3 install smbus
+
+FROM driver
+RUN sudo pip3 install adafruit-circuitpython-htu21d
+
 
 # Script zum sammeln der Daten
 ADD /script.py /script.py
