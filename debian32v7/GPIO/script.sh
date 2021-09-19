@@ -7,20 +7,6 @@ grep GPIOLIB /boot/config-$(uname -r)
 echo
 grep GPIO_SYSFS /boot/config-$(uname -r)
 echo
-# Abfrage, ob pin 7 in "gpio mode" geschaltet ist.
-echo 7 > /sys/kernel/debug/omap_mux/gpmc_ad4
-echo
-
-## PIN Abfragen
-# Informationen über PINs in Verwendung
-/sys/kernel/debug/pinctrl/44e10800.pinmux# cat pingroups
-
-# Information über zugewiesene PINs in verwendung
-sys/kernel/debug/pinctrl/44e10800.pinmux# cat pinmux-pins |more
-
-# Liste alles PINs
-/sys/kernel/debug/pinctrl/44e10800.pinmux# cat pins |more
-
 
 # I2C Abfragen
 # Zeigt installierte BUS Adapter an
