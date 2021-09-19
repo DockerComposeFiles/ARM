@@ -10,8 +10,8 @@ services:
           - node.labels.project == lc
     volumes:
       - type: volume
-        source: data  # volume Name
-        target: /data
+        source: dat  # volume Name
+        target: /dat
         volume:
           nocopy: true
         # GPIO Anbindung
@@ -22,4 +22,4 @@ services:
       - /sys/class/leds/
 
 volumes:
-  data:
+  dat:
