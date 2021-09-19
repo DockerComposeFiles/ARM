@@ -9,7 +9,6 @@ FROM base AS driver
 
 # Bibliotheken
 RUN apt install -y apt-utils i2c-tools python-smbus
-RUN pip3 install smbus
 
 FROM driver
 RUN sudo pip3 install adafruit-circuitpython-htu21d
