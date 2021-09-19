@@ -78,10 +78,16 @@
 ##echo 19 > /sys/class/gpio/export
 ##echo 20 > /sys/class/gpio/export
 
-# konfiguriere HTU21D Pins mittels config-pin
+# konfiguriere I2C PINS
 #config-pin p9.1 gpio #ground
-#config-pin p9.3 gpio #ground
-config-pin p9.19 gpio
-config-pin p9.20 gpio
+#config-pin p9.3 gpio #3,3V Power
+config-pin p9.17 gpio # normal
+config-pin p9.18 gpio # normal
+
+config-pin p9.19 gpio # shared
+config-pin p9.20 gpio # shared
+
+# konfiguriere testpin 7 an P8
+config-pin p8.17 gpio # shared
 
 exit 0

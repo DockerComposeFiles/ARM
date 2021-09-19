@@ -12,7 +12,8 @@ ls -al /sys/class/gpio
 echo
 # Abfrage, ob pin 1 in "gpio mode" geschaltet ist.
 echo "ask single Pin 1 of gpio-mode:"
-echo 1 > /sys/kernel/debug/omap_mux/gpmc_ad4
+echo 4 > /sys/kernel/debug/omap_mux/gpmc_ad4
+echo 17 > /sys/kernel/debug/omap_mux/gpmc_ad4
 echo
 
 ## PIN Abfragen
