@@ -13,7 +13,8 @@ RUN pip3 install smbus
 
 FROM driver
 RUN sudo pip3 install adafruit-circuitpython-htu21d
-
+ADD /config.sh /
+RUN sh ./config.sh
 
 # Script zum sammeln der Daten
 ADD /script.py /script.py
