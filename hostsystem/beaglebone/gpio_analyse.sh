@@ -16,13 +16,13 @@ echo
 
 ## PIN Abfragen
 # Informationen über PINs in Verwendung
-echo $cat /sys/kernel/debug/pinctrl/44e10800.pinmux #pingroups
+cat /sys/kernel/debug/pinctrl/44e10800.pinmux #pingroups
 
 # Information über zugewiesene PINs in verwendung
-echo $cat /sys/kernel/debug/pinctrl/44e10800.pinmux/pinmux-pins |more
+cat /sys/kernel/debug/pinctrl/44e10800.pinmux/pinmux-pins |more
 
 # Liste alles PINs
-echo $cat /sys/kernel/debug/pinctrl/44e10800.pinmux/pins |more
+cat /sys/kernel/debug/pinctrl/44e10800.pinmux/pins |more
 
 ## I2C Abfragen
 # Zeigt installierte BUS Adapter an
