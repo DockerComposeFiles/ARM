@@ -15,6 +15,3 @@ services:
       - /sys/kernel/debug/omap_mux/
         # Anbindung der 4 LED Lampen
       - /sys/class/leds/
-
-volumes:
-  dat:
