@@ -79,8 +79,8 @@
 ##echo 20 > /sys/class/gpio/export
 
 # konfiguriere HTU21D Pins mittels config-pin
-config-pin p9.1 gpio
-config-pin p9.3 gpio
+#config-pin p9.1 gpio #ground
+#config-pin p9.3 gpio #ground
 config-pin p9.19 gpio
 config-pin p9.20 gpio
 
