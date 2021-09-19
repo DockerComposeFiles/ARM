@@ -9,11 +9,6 @@ services:
         constraints:
           - node.labels.project == lc
     volumes:
-      - type: volume
-        source: dat  # volume Name
-        target: /dat
-        volume:
-          nocopy: true
         # GPIO Anbindung
       - /sys/class/gpio/
         # ?
