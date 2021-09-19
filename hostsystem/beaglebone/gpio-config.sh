@@ -71,15 +71,17 @@
 ##config-pin p9.30 spi
 ##config-pin p9.31 spi_scl
 
+
 # konfiguriere HTU21D Pins direkt
-echo 1 > /sys/class/gpio/export
-echo 3 > /sys/class/gpio/export
-echo 19 > /sys/class/gpio/export
-echo 20 > /sys/class/gpio/export
+##echo 1 > /sys/class/gpio/export
+##echo 3 > /sys/class/gpio/export
+##echo 19 > /sys/class/gpio/export
+##echo 20 > /sys/class/gpio/export
+
 # konfiguriere HTU21D Pins mittels config-pin
-##config-pin p9.12 gpio
-##config-pin p9.15 gpio
-##config-pin p9.23 gpio
-##config-pin p9.27 gpio
+config-pin p9.1 gpio
+config-pin p9.3 gpio
+config-pin p9.19 gpio
+config-pin p9.20 gpio
 
 exit 0
