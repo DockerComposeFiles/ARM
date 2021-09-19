@@ -2,7 +2,7 @@
 version: '3.8'
 services:
   HTU_get:
-    container_name: HTU_get
+    container_name: htu_get
     build: .
     deploy:
       placement:
