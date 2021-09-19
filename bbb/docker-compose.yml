@@ -11,7 +11,5 @@ services:
     volumes:
         # GPIO Anbindung
       - /sys/class/gpio/
-        # ?
-      - /sys/kernel/debug/omap_mux/
         # Anbindung der 4 LED Lampen
       - /sys/class/leds/
