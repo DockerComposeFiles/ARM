@@ -10,3 +10,6 @@ sys/kernel/debug/pinctrl/44e10800.pinmux# cat pinmux-pins |more
 
 # Liste alles PINs
 /sys/kernel/debug/pinctrl/44e10800.pinmux# cat pins |more
+
+# Angeschlossene USB-Geräte anzeigen lassen
+lsusb
