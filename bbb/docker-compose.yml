@@ -1,7 +1,7 @@
 # Speichert die Daten des HTU in einem volume
 version: '3.8'
 services:
-  HTU_get:
+  htu_get:
     container_name: htu_get
     build: .
     deploy:
