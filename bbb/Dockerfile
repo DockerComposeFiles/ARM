@@ -15,6 +15,7 @@ RUN pip3 install adafruit-circuitpython-htu21d
 ADD /config.sh /
 RUN sh ./config.sh
 
+RUN mkdir /dat
 # Script zum sammeln der Daten
 ADD /script.py /script.py
 CMD [ "python3", "./script.py" ]
