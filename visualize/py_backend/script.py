@@ -64,6 +64,6 @@ for e in IPs:
 
 print("create connection", flush=True)
 # Mit Host Verbinden
-sio.connect('http://172.24.0.2:3000/')
+sio.connect('http://visualizer:3000/')
 
 time.sleep(10)
