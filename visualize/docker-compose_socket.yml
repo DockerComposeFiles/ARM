@@ -46,7 +46,7 @@ volumes:
 
 networks:
   macvlan:
-    driver: macvlan
+    driver: macvlan0
     driver_opts:
       parent: eth0
     ipam:
