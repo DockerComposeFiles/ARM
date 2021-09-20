@@ -15,7 +15,7 @@ services:
         volume:
           nocopy: true
     ports:
-      - "3000"
+      - "3000:3000"
     networks:
       macvlan:
         ipv4_address: 172.24.0.5
@@ -37,7 +37,7 @@ services:
       - "3000:3000"
     networks:
       macvlan:
-        ipv4_address: 172.24.0.2
+#        ipv4_address: 172.24.0.2
 #    expose:
 
 
