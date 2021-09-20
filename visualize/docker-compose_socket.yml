@@ -17,7 +17,7 @@ services:
     ports:
       - "3000"
     networks:
-      macvlan0:
+      macvlan:
         ipv4_address: 172.24.0.5
     links:
       - "visualiser:vis"
@@ -36,7 +36,7 @@ services:
       - "433:433"
       - "3000:3000"
     networks:
-      macvlan0:
+      macvlan:
         ipv4_address: 172.24.0.2
 #    expose:
 
