@@ -45,7 +45,7 @@ volumes:
   data:
 
 networks:
-  macvlan0:
+  macvlan:
     driver: macvlan
     driver_opts:
       parent: eth0
