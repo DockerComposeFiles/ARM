@@ -16,9 +16,6 @@ services:
           nocopy: true
     ports:
       - "3000:3000"
-    networks:
-      macvlan:
-        ipv4_address: 172.24.0.5
     links:
       - "visualiser:vis"
 
@@ -35,22 +32,6 @@ services:
       - "80:80"
       - "433:433"
       - "3000:3000"
-    networks:
-      macvlan:
-#        ipv4_address: 172.24.0.2
-#    expose:
-
 
 volumes:
   data:
-
-networks:
-  macvlan:
-    driver: macvlan0
-    driver_opts:
-      parent: eth0
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.24.0.0/24
-          gateway: 172.24.0.1
