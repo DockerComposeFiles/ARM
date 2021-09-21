@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 ## HTU21D
 
 #### Nicht Möglich, da config Programm nicht verfügbar
