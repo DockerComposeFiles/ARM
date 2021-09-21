@@ -21,4 +21,4 @@ WORKDIR /
 COPY script.sh /
 
 #CMD [ "python", "./your-daemon-or-script.py" ]
-CMD ["./script.sh"]
+CMD ./script.sh
