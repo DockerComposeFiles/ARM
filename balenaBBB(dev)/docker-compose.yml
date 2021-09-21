@@ -6,8 +6,8 @@ services:
   htu21d:
     container_name: htu21d
     build: .
-#    volumes:
-#      -
+    volumes:
+      - /sys/class/gpio
     deploy:
       mode: global
       placement:

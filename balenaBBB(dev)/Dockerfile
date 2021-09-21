@@ -8,7 +8,7 @@ RUN apt install -y nano && apt install tree && apt install -y lynx && apt instal
 
 FROM base AS htu21d
 
-#TODO htu bib
+RUN pip install adafruit-circuitpython-HTU21D
 
 #WORKDIR /usr/src/app
 COPY script.sh ./
