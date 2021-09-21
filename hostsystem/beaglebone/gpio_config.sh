@@ -18,7 +18,7 @@ config-pin p9.23 gpio
 config-pin p9.27 gpio
 config-pin p9.41 gpio
 
-# configure P8 GPIO ports (nicht nötig)
+# configure P8 GPIO ports
 config-pin p8.11 gpio
 config-pin p8.12 gpio
 config-pin p8.14 gpio
