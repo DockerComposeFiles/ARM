@@ -33,8 +33,9 @@ echo "installed i2c adapters:"
 i2cdetect -l
 echo
 echo "connected devices:"
-# Scannt den I2C Adressbereich und zeigt I2C antworten von Geraeten an
-i2cdetect -y 1
+# Scannt den I2C Adressbereich auf dem BBB
+# und zeigt I2C antworten von angeschlossenen Geraeten an.
+i2cdetect -r 2
 echo
 ## Angeschlossene USB-Geräte anzeigen lassen
 lsusb
