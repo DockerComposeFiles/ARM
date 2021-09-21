@@ -8,8 +8,7 @@ RUN apt install -y nano && apt install tree && apt install -y lynx && apt instal
 
 FROM base AS python_backend
 # Bibliothek zum senden der Daten
-RUN pip3 install "python-socketio[client]"
-RUN pip3 install "python-socketio[asyncio_client]"
+RUN pip3 install python-socketio
 
 RUN apt clean
 
