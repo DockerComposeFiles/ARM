@@ -35,7 +35,8 @@ echo
 echo "connected devices:"
 # Scannt den I2C Adressbereich auf dem BBB
 # und zeigt I2C antworten von angeschlossenen Geraeten an.
-i2cdetect -r -y
+i2cdetect -r -y 0
+i2cdetect -r -y 1
 i2cdetect -r -y 2
 echo
 ## Angeschlossene USB-Geräte anzeigen lassen

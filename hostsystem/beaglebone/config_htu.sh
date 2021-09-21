@@ -10,11 +10,9 @@
 # p9.1 gpio # Ground
 # p9.3 gpio # 3,3V Power
 
-
-
-# konfiguriere 1 - I2C PINS
-config-pin p9.17 gpio
-config-pin p9.18 gpio
+# konfiguriere 1 - I2C PINS (funktioniert nicht)
+#config-pin p9.17 gpio
+#config-pin p9.18 gpio
 
 # konfiguriere 2 - shared I2C PINS
 config-pin p9.19 gpio
