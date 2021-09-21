@@ -1,4 +1,4 @@
-FROM balenalib/beaglebone-black-debian-python:latest AS debug
+FROM arm32v7/python:rc-buster AS debug
 # Behebt Fehler
 
 # Updaten des Images
