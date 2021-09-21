@@ -1,0 +1,15 @@
+# This container will use HTU21D
+
+version: '3.8'
+
+services:
+  htu21d:
+    container_name: htu21d
+    build: .
+#    volumes:
+#      -
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.project==

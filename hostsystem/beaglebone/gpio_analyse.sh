@@ -35,7 +35,7 @@ echo
 echo "connected devices:"
 # Scannt den I2C Adressbereich auf dem BBB
 # und zeigt I2C antworten von angeschlossenen Geraeten an.
-i2cdetect -r -y 0 # Channel, dem P9 anhängt
+i2cdetect -r -y 0 # Channel, dem die 2c Ports anhängen
 #i2cdetect -r -y 1
 #i2cdetect -r -y 2
 echo
