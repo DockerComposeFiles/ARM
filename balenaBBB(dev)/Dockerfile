@@ -9,7 +9,7 @@ RUN apt install -y nano && apt install tree && apt install -y lynx && apt instal
 FROM debug AS i2c
 # Bibliotheken
 RUN apt install -y apt-utils i2c-tools python-smbus
-RUN pip3 install smbus
+#RUN pip3 install smbus
 
 FROM i2c AS htu21d
 #RUN apt install python3 && apt install python3-pip
