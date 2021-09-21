@@ -1,11 +1,4 @@
 #!/bin/sh -e
-## HTU21D
-# konfiguriere I2C Pins direkt
-#echo 1 > /sys/class/gpio/export
-#echo 3 > /sys/class/gpio/export
-#echo 19 > /sys/class/gpio/export
-#echo 20 > /sys/class/gpio/export
-
 # Anschlüsse
 # p9.1 gpio # Ground
 # p9.3 gpio # 3,3V Power
