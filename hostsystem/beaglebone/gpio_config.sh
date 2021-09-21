@@ -8,8 +8,8 @@ echo 0 > /sys/class/leds/beaglebone:green:usr3/brightnes
 config-pin p9.11 uart
 config-pin p9.13 uart
 
-config-pin p8.37 uart
-config-pin p8.38 uar
+#config-pin p8.37 uart
+#config-pin p8.38 uart
 
 # configure P9 GPIO ports
 config-pin p9.12 gpio
@@ -53,17 +53,17 @@ config-pin p9.16 pwm
 config-pin p9.42 pwm
 
 config-pin p8.13 pwm
-config-pin p8.19 pw
+config-pin p8.19 pwm
 
-# configure CAN ports
-P9_19 -> dCAN0 Rx
-P9_20 -> dCAN0 Tx
-P9_24 -> dCAN1 Rx
-P9_26 -> dCAN1 Tx
-config-pin p9.19 can
-config-pin p9.20 can
-config-pin p9.24 can
-config-pin p9.26 ca
+# configure CAN ports (Instead of i2c)
+#P9_19 -> dCAN0 Rx
+#P9_20 -> dCAN0 Tx
+#P9_24 -> dCAN1 Rx
+#P9_26 -> dCAN1 Tx
+#config-pin p9.19 can
+#config-pin p9.20 can
+#config-pin p9.24 can
+#config-pin p9.26 can
 
 # SPI setup
 config-pin p9.28 spi_cs
