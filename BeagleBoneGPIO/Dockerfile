@@ -19,6 +19,6 @@ RUN pip install adafruit-circuitpython-HTU21D
 RUN apt clean
 WORKDIR /
 COPY script.sh /
-
+RUN chmod +x script.sh
 #CMD [ "python", "./your-daemon-or-script.py" ]
 CMD ./script.sh
