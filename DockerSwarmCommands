@@ -1,2 +1,0 @@
-docker swarm init –advertise-addr eth0
-

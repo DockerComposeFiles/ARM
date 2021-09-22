@@ -1,6 +1,6 @@
 # Deutsch
-Dieses Repository enthält Dockerfiles und Compose Dateien zum Ausführen von Arm Containern.
-Mit (dev) gekennzeichnete Ordner beinhalten keine lauffähigen Daten
+Dieses Repository enthält Dockerfiles und Compose Dateien zum Ausführen von Containern auf Hardware der Arm-Architektur.
+Mit (dev) gekennzeichnete Ordner beinhalten keine lauffähigen Versionen.
 
 ## Setup
 Auf dem raspberry Pi muss Docker durch das Convenience Skript installiert werden. Die Dokumentation befindet sich unter:
@@ -16,7 +16,7 @@ usermod -aG docker pi
 
 ---
 
-# Englisch
+# English
 This repository contains dockerfiles and compose files to run arm container
 
 ## Docker setup
