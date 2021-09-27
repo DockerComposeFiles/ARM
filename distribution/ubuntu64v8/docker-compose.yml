@@ -1,7 +1,6 @@
 version: '3.8'
 services:
   ubuntuDef: # Standard Ubuntu Image
-    #image: 326567/ubuntu_default:v8
     build:
       context: /
       dockerfile: /Dockerfile
