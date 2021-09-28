@@ -17,5 +17,6 @@ RUN sh ./config.sh
 
 RUN mkdir /dat
 # Script zum sammeln der Daten
-ADD /script.py /script.py
+ADD script.py /
+ADD adafruit.py /
 CMD [ "python3", "./script.py" ]
