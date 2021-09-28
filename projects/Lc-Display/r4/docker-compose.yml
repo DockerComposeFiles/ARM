@@ -1,0 +1,18 @@
+# Anzeige der HTU21D Daten
+version: '3.8'
+
+services:
+  raspi_set:
+    # Gibt die HTU21D Daten aus
+    container_name: raspi_set
+    build: .
+    deploy:
+      placement:
+        constraints:
+          - node.labels.project == lc
+          - node.hostname == raspi4
+    volumes:
+      - /htu_data
+
+volumes:
+  htu_data:

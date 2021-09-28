@@ -1,0 +1,22 @@
+# Anzeige der HTU21D Daten
+version: '3.8'
+
+services:
+  # Speichert die Daten des HTU in einem volume
+  htu_get:
+    container_name: htu_get
+    build: .
+    deploy:
+      placement:
+        constraints:
+          - node.labels.project == lc
+    volumes:
+      # GPIO Anbindung
+      - /sys/class/gpio/
+      # Anbindung der 4 LED Lampen
+      - /sys/class/leds/
+      # speichern der Daten
+      - /htu_data
+
+volumes:
+  htu_data:
