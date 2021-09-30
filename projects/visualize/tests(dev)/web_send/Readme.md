@@ -1,1 +1,0 @@
-Version muss genau angegeben werden
