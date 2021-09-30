@@ -9,8 +9,8 @@ RUN pip3 install smbus
 
 # BMP Bibliothek, Als Adresse ist 76 eingetragen
 ADD /bme280.py /
-ADD /script.py /
+ADD /script.py /script.py
 
-# Vergeben der Berechtigung zum Ausführen des Skriptes
-#RUN chmod +x script.py && chmod +x bme280.py
+#RUN chmod 777 script.py
+#RUN chmod 777 bme280.py
 CMD ["python3" ,"./script.py" ]
