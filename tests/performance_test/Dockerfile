@@ -13,4 +13,4 @@ COPY ./read_write_test_v2.py /
 # Berechtigungen
 RUN chmod +x ./passwords.txt && chmod +x ./read_write_test_v2.py
 # Ausführung des Skriptes
-CMD [ "python", "./read_write_test_v2" ]
+CMD [ "python", "./read_write_test_v2.py" ]
