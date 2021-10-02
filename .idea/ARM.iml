@@ -27,7 +27,7 @@
       <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/to-regex-range" />
       <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules/yuicompressor" />
       <excludeFolder url="file://$MODULE_DIR$/webserver/visualizer/htdocs/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/PiCamDefault/picamera" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/PiCamera/picamera" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
