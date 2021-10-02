@@ -46,6 +46,5 @@ writeTime = (time.time() - writeStart)
 print(writeTime)
 print("access-Test end")
 
-# container bleibt zum Debuggen fuer weitere drei minuten in Betrieb
+# container bleibt für Debug-Zwecke fuer weitere drei minuten in Betrieb
 time.sleep(180)
-
