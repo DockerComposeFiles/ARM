@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  performance: # Berechnungen der Leistung auf den Mikrocontrollern
+    container_name: read_write_test
+    build: .
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.test==performance

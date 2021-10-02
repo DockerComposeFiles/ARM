@@ -1,33 +1,27 @@
-#!/bin/sh
+#!/bin/bash
 
-# NOCH Zwischengespeichert
+# nohub style
+nohup python3 ./send_data &
+# Command line style
+cli-app
+# python style
+/usr/bin/python ./python_app.py
 
-# Apache Frontend
-#/usr/local/apache2/bin/apachectl &
-#status=$?
-#if [ $status -ne 0 ]; then
-#  echo "Failed to start Apache_Frontend: $status"
-#  exit $status
-#else echo "Apache arbeitet"
-#fi
-#
-#echo "start Apache fin"
-#sleep 10
-#echo "10 sec vergangen"
-
-# Python Backend
-python3 /send_data.py &
+/usr/local/app &
 status=$?
 if [ $status -ne 0 ]; then
-  echo "Failed to start Backend: $status"
+  echo "Failed to start app: $status"
   exit $status
-else echo "Python-Backend run"
+else echo "app run"
 fi
 
-echo "start backend fin"
-sleep 10
-echo "2 x 10 sec vergangen"
+python3 /python_app.py &
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Failed to start python_app: $status"
+  exit $status
+else echo "python_app run"
+fi
 
-# nohub Schreibweise
-#nohup python3 ./send_data &
-echo "start.sh_finished"
+
+
