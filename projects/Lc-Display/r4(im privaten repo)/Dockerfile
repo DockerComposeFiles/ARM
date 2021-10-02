@@ -10,9 +10,7 @@ FROM debug AS i2c
 RUN apt install -y apt-utils i2c-tools python-smbus
 
 FROM i2c AS htu21d
-#RUN apt install python3 && apt install python3-pip
-#RUN pip install adafruit-circuitpython-HTU21D
-#RUN pip install --no-cache-dir -r requirements.txt
+
 
 RUN apt clean
 WORKDIR /
