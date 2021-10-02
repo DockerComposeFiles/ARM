@@ -11,13 +11,14 @@ RUN speedtest-cli
 
 
 # Testdatei zum auslesen
-ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
+#ADD https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt /passwords
 # Skript zum testen der Lese- und Schreibleistung.
 # Ein Lokales hinzufügen der Datei über den ADD oder COPY Befehl schlug Fehl. Deswegen wird die Datei über Github hinzugefügt.
-ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/alpine32v7/performance/read_write_speedtest.py /read_write_speedtest.py
-COPY ./read_write_speedtest.py /read_write_speedtest.py
-#
-# Vergeben von Berechtigung
+#ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/alpine32v7/performance/read_write_speedtest.py /read_write_speedtest.py
+COPY /passwords /
+COPY ./read_write_speedtest.py /
+
+# Vergeben von Ausführungsberechtigung
 RUN chown root /read_write_speedtest.py
 RUN chmod 777 /read_write_speedtest.py
 # Ausführung des Skriptes
