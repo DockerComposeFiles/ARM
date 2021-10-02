@@ -15,7 +15,7 @@ RUN speedtest-cli
 # Skript zum testen der Lese- und Schreibleistung.
 # Ein Lokales hinzufügen der Datei über den ADD oder COPY Befehl schlug Fehl. Deswegen wird die Datei über Github hinzugefügt.
 #ADD https://raw.githubusercontent.com/DockerComposeFiles/ARM/main/alpine32v7/performance/read_write_speedtest.py /read_write_speedtest.py
-COPY /passwords /
+COPY /passwords.txt /
 COPY ./read_write_speedtest.py /
 
 # Vergeben von Ausführungsberechtigung
