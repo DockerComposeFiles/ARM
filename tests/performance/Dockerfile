@@ -1,4 +1,4 @@
-FROM arm32v7/python:rc-alpine
+FROM arm32v7/python:rc-buster
 
 # APK gewährt aufgrund der angepassten Arm-Version kein Zugriff auf die Paketquellen.
 # RUN apk update
