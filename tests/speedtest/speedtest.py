@@ -10,7 +10,7 @@ print("access-Test start")
 readStart = time.time()
 
 # Testdatei
-readFile = "passwords"
+readFile = "passwords.txt"
 # Datei wird in f geoeffnet und gelesen
 with open(readFile) as f:
     content = f.readlines()

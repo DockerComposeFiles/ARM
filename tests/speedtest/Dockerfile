@@ -12,7 +12,7 @@ RUN pip install speedtest-cli
 # Die Originaldatei ist unter
 # https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt
 # zu finden.
-COPY passwords.txt /passwords
+COPY passwords.txt /passwords.txt
 
 # Skript zum testen der Lese- und Schreibleistung.
 COPY speedtest.py /speedtest.py
