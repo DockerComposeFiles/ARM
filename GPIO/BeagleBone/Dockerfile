@@ -4,11 +4,11 @@ RUN apt update && apt -y upgrade
 # Debug Programme
 RUN apt install -y nano tree lynx iputils-ping
 
-FROM arm32v7/golang:rc-bullseye AS go-base
+FROM arm32v7/golang:rc-buster AS go-base
 RUN apt update && apt -y upgrade
 RUN apt install -y nano tree lynx iputils-ping
 
-FROM arm32v7/bullseye AS base
+FROM arm32v7/debian:stable AS base
 RUN apt update && apt -y upgrade
 RUN apt install -y nano tree lynx iputils-ping
 
@@ -20,15 +20,15 @@ RUN apt install -y apt-utils i2c-tools python-smbus
 #RUN pip3 install smbus
 
 FROM go-base AS go-debug
-RUN apt install -y apt-utils i2c-tools python-smbus
+RUN apt install -y apt-utils i2c-tools
 
 FROM base AS debug
-RUN apt install -y apt-utils i2c-tools python-smbus
+RUN apt install -y apt-utils i2c-tools
 
 
 
 FROM py-debug AS py-i2c
-FROM py-i2c AS py-htu
+ARG environment=py-htu
 # Zugriff auf den HTU21D
 #RUN apt install python3 python3-pip
 RUN pip install adafruit-circuitpython-HTU21D
@@ -39,19 +39,23 @@ RUN chmod +x script.py
 CMD ["python", "script.py"]
 
 FROM go-debug AS go-i2c
+ARG environment=go_htu
 # TODO go-bib for ctrl
 # TODO go-lib blink
 
 FROM debug AS shell-i2c
+ARG environment=shell_htu
 COPY script.sh /
 RUN chmod +x script.sh
 CMD ./script.sh
 
 FROM debug AS c-i2c
+ARG environment=c_htu
 RUN apt install -y git && mkdir development && cd development
 RUN git clone https://github.com/shabaz123/iobb.git
 RUN cd iobb && make && make install
 
 FROM debug AS c-i2c_local
+ARG environment=c_local_htu
 COPY iofunc/* /
 #RUN gcc pin_2.c -iofunc -o main
