@@ -28,16 +28,15 @@ RUN apt install -y apt-utils i2c-tools python-smbus
 
 
 FROM py-debug AS py-i2c
-# Initialisieren der GPIO
-COPY script.py /
-RUN chmod +x script.py
-CMD ["python", "script.py"]
-
 FROM py-i2c AS py-htu
 # Zugriff auf den HTU21D
 #RUN apt install python3 python3-pip
 RUN pip install adafruit-circuitpython-HTU21D
 #RUN pip install --no-cache-dir -r requirements.txt
+COPY script.py /
+RUN chmod +x script.py
+# Initialisieren / Überprfuefen der GPIO
+CMD ["python", "script.py"]
 
 FROM go-debug AS go-i2c
 # TODO go-bib for ctrl

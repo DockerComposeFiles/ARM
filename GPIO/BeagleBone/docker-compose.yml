@@ -1,4 +1,4 @@
-# This container will use HTU21D
+# This container will use BeagleBone Black GPIO
 
 version: '3.8'
 
