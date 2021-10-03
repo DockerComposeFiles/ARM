@@ -24,4 +24,7 @@ echo 22 > /sys/class/gpio/export
 i2cdetect -l
 i2cdetect -r -y 0
 
+# TODO run python
+
+
 exit 0
