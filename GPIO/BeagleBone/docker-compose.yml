@@ -8,7 +8,7 @@ services:
     container_name: bbb_python
     build:
       context: .
-      dockerfile: Dockerfile build py-i2c
+      dockerfile: Dockerfile/py-htu
     volumes:
       - /sys/class/gpio
       - /dev/i2c-0
