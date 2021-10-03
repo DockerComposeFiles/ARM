@@ -6,3 +6,4 @@ TODO to project:
 - volume script
 - HTU21D script
 
+docker-compose build -d bbb_gpio_python
