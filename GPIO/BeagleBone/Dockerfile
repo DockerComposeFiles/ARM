@@ -1,4 +1,4 @@
-FROM arm32v7/python:rc-buster AS python-base
+FROM arm32v7/python:rc-buster AS py-base
 # Updaten des Images
 RUN apt update && apt -y upgrade
 # Debug Programme
@@ -14,7 +14,7 @@ RUN apt install -y nano tree lynx iputils-ping
 
 
 
-FROM python-base AS python-debug
+FROM py-base AS py-debug
 # Bibliotheken
 RUN apt install -y apt-utils i2c-tools python-smbus
 #RUN pip3 install smbus
@@ -27,13 +27,17 @@ RUN apt install -y apt-utils i2c-tools python-smbus
 
 
 
-FROM python-debug AS python-i2c
-#RUN apt install python3 && apt install python3-pip
-RUN pip install adafruit-circuitpython-HTU21D
-#RUN pip install --no-cache-dir -r requirements.txt
+FROM py-debug AS py-i2c
+# Initialisieren der GPIO
 COPY script.py /
 RUN chmod +x script.py
 CMD ["python", "script.py"]
+
+FROM py-i2c AS py-htu
+# Zugriff auf den HTU21D
+#RUN apt install python3 python3-pip
+RUN pip install adafruit-circuitpython-HTU21D
+#RUN pip install --no-cache-dir -r requirements.txt
 
 FROM go-debug AS go-i2c
 # TODO go-bib for ctrl
@@ -48,4 +52,7 @@ FROM debug AS c-i2c
 RUN apt install -y git && mkdir development && cd development
 RUN git clone https://github.com/shabaz123/iobb.git
 RUN cd iobb && make && make install
+
+FROM debug AS c-i2c_local
+COPY iofunc/* /
 #RUN gcc pin_2.c -iofunc -o main
