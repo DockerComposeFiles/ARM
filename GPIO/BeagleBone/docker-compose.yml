@@ -1,0 +1,46 @@
+# This container will use HTU21D
+
+version: '3.8'
+
+services:
+
+  bbb_gpio_python:
+    container_name: bbb_python
+    build:
+      context: .
+      dockerfile: Dockerfile build python-i2c
+    volumes:
+      - /sys/class/gpio
+      - /dev/i2c-0
+      - /dev/i2c-1
+
+  bbb_gpio_go:
+    container_name: bbb_go
+    build:
+      context: .
+      dockerfile: Dockerfile build go-i2c
+    volumes:
+      - /sys/class/gpio
+      - /dev/i2c-0
+      - /dev/i2c-1
+
+  bbb_gpio_sh:
+    container_name: bbb_sh
+    build:
+      context: .
+      dockerfile: Dockerfile build shell-i2c
+    volumes:
+      - /sys/class/gpio
+      - /dev/i2c-0
+      - /dev/i2c-1
+
+  bbb_gpio_c:
+    container_name: bbb_c
+    build:
+      context: .
+      dockerfile: Dockerfile build c-i2c
+    volumes:
+      - /sys/class/gpio
+      - /dev/i2c-0
+      - /dev/i2c-1
+

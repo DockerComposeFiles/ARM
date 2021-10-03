@@ -21,10 +21,8 @@ echo 20 > /sys/class/gpio/export
 echo 21 > /sys/class/gpio/export
 echo 22 > /sys/class/gpio/export
 
+# teste Konfiguration
 i2cdetect -l
 i2cdetect -r -y 0
-
-# TODO run python
-
 
 exit 0
