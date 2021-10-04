@@ -1,4 +1,4 @@
-FROM arm32v7/debian AS base
+FROM arm32v7/debian:buster AS base
 RUN apt update && apt -y upgrade
 RUN apt install -y nano tree lynx iputils-ping
 
