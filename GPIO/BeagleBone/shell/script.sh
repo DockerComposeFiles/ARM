@@ -8,6 +8,7 @@ grep GPIOLIB /boot/config-$(uname -r)
 grep GPIO_SYSFS /boot/config-$(uname -r)
 echo
 # Abfrage der erkannten GPIO
+echo "detected GPIO:"
 ls -al /sys/class/gpio
 echo
 
@@ -18,14 +19,7 @@ echo
 #echo
 
 ## PIN Abfragen
-# Abfragen uber Debug Informationen
-echo "debug:"
-cat /sys/kernel/debug/pinctrl/pinctrl-devices
-echo
-cat /sys/kernel/debug/pinctrl/44e3e000.rtc/pins |more
-cat /sys/kernel/debug/pinctrl/44e3e000.rtc/pingroups |more
-echo
-cat /sys/kernel/debug/pinctrl/44e3e000.rtc/pinconf-config |more
+
 
 ## I2C Abfragen
 # Zeigt installierte BUS Adapter an
