@@ -7,7 +7,7 @@ RUN apt install -y nano tree lynx iputils-ping
 FROM py-base AS py-debug
 # Bibliotheken
 RUN apt install build-essential python-dev python-setuptools apt-utils i2c-tools python-smbus -y
-RUN pip install smbus
+RUN pip install smbus Adafruit_BBIO
 
 FROM py-debug AS py-i2c
 ARG environment=py-htu
