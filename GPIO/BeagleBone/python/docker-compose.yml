@@ -10,6 +10,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /sys/class/gpio # GPIO Gerät
-      - /dev/i2c-0
+      - /sys/class/gpio
+      - /dev/i2c-0 # P9 I2C PINs
       - /dev/i2c-1
+      - /dev/i2c-2

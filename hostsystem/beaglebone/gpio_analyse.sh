@@ -41,3 +41,5 @@ i2cdetect -r -y 0 # Channel, dem die 2c Ports anhängen
 echo
 ## Angeschlossene USB-Geräte anzeigen lassen
 lsusb
+
+exit 0

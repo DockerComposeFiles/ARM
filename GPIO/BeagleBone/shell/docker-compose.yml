@@ -11,5 +11,11 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /sys/class/gpio
-      - /dev/i2c-0
+      - /dev/i2c-0 # P9 I2C PINs
       - /dev/i2c-1
+      - /dev/i2c-2
+      - gpiochip0
+      - gpiochip1
+      - gpiochip2
+      - gpiochip3
+      - /sys/class/leds/beaglebone
