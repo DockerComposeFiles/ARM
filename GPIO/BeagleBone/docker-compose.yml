@@ -8,9 +8,9 @@ services:
     container_name: bbb_python
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        environment: py-htu
+      dockerfile: python/Dockerfile
+#      args:
+#        environment: py-htu
     volumes:
       - /sys/class/gpio
       - /dev/i2c-0
@@ -20,9 +20,9 @@ services:
     container_name: bbb_go
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        environment: go_htu
+      dockerfile: go/Dockerfile
+#      args:
+#        environment: go_htu
     volumes:
       - /sys/class/gpio
       - /dev/i2c-0
@@ -32,9 +32,9 @@ services:
     container_name: bbb_sh
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        environment: shell_htu
+      dockerfile: shell/Dockerfile
+#      args:
+#        environment: shell_htu
     volumes:
       - /sys/class/gpio
       - /dev/i2c-0
@@ -44,9 +44,9 @@ services:
     container_name: bbb_c
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        environment: c_htu
+      dockerfile: c/Dockerfile
+#      args:
+#        environment: c_htu
     volumes:
       - /sys/class/gpio
       - /dev/i2c-0

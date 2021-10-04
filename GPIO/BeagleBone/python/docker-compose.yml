@@ -1,0 +1,15 @@
+# This container will use BeagleBone Black GPIO
+
+version: '3.8'
+
+services:
+
+  bbb_gpio_python:
+    container_name: bbb_python
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+    volumes:
+      - /sys/class/gpio
+      - /dev/i2c-0
+      - /dev/i2c-1
