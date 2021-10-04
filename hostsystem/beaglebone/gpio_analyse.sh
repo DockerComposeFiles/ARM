@@ -8,6 +8,7 @@ grep GPIOLIB /boot/config-$(uname -r)
 grep GPIO_SYSFS /boot/config-$(uname -r)
 echo
 # Abfrage der erkannten GPIO
+echo "detected GPIO:"
 ls -al /sys/class/gpio
 echo
 
