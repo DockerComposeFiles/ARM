@@ -4,12 +4,12 @@ version: '3.8'
 
 services:
 
-  bbb_gpio_python:
-    container_name: bbb_python
+  bbb_gpio_sh:
+    container_name: bbb_sh
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /sys/class/gpio # GPIO Gerät
+      - /sys/class/gpio
       - /dev/i2c-0
       - /dev/i2c-1
