@@ -18,4 +18,4 @@ services:
       - gpiochip1
       - gpiochip2
       - gpiochip3
-      - /sys/class/leds/beaglebone
+      #- /sys/class/leds/beaglebone Ordner nicht vorhanden
