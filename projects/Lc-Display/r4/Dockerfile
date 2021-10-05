@@ -7,16 +7,17 @@ RUN apt install -y nano && apt install tree && apt install -y lynx && apt instal
 
 FROM debug AS rpi
 # Bibliotheken
-#RUN apt install -y apt-utils i2c-tools python-smbus
-#RUN apt install rpi.gpio
-# Manuell
+RUN apt install -y apt-utils i2c-tools python-smbus
+RUN apt install python-dev
+RUN apt install rpi.gpio python-rpi.gpio python3-rpi.gpio -y
 
-RUN wget https://pypi.python.org/packages/source/R/RPi.GPIO/RPi.GPIO-0.5.11.tar.gz
-RUN tar -xvf RPi.GPIO-0.5.11.tar.gz
-RUN cd RPi.GPIO-0.5.11
-RUN python setup.py install
-RUN cd ~ && rm -rf RPi.GPIO-0.*
-WORKDIR /
+# Manuell
+#RUN wget https://pypi.python.org/packages/source/R/RPi.GPIO/RPi.GPIO-0.5.11.tar.gz
+#RUN tar -xvf RPi.GPIO-0.5.11.tar.gz
+#RUN cd RPi.GPIO-0.5.11
+#RUN python setup.py install
+#RUN cd ~ && rm -rf RPi.GPIO-0.*
+#WORKDIR /
 
 FROM rpi AS lc
 RUN apt clean
