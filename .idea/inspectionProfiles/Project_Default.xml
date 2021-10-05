@@ -6,6 +6,8 @@
         <list>
           <option value="debian32v7.camDefault.script.picamera" />
           <option value="GPIO.BeagleBone.python.script.Adafruit_BBIO" />
+          <option value="hostsystem.beaglebone.htu_get.adafruit_htu21d" />
+          <option value="board" />
         </list>
       </option>
     </inspection_tool>

@@ -5,11 +5,12 @@ RUN apt update && apt -y upgrade
 # Debug Programme
 RUN apt install -y nano && apt install tree && apt install -y lynx && apt install -y iputils-ping
 
-FROM debug AS i2c
+FROM debug AS rpi
 # Bibliotheken
-RUN apt install -y apt-utils i2c-tools python-smbus
+#RUN apt install -y apt-utils i2c-tools python-smbus
+RUN apt install rpi.gpio
 
-FROM i2c AS htu21d
+FROM rpi AS lc
 
 
 RUN apt clean
