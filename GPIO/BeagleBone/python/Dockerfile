@@ -10,6 +10,7 @@ RUN apt install python python-dev python-pip -y
 RUN apt install build-essential python-setuptools apt-utils i2c-tools libi2c-dev python-smbus -y
 # I2C ist nur mit python 2 smbus kompatibel
 RUN pip install smbus Adafruit_BBIO
+RUN pip3 install adafruit-circuitpython-htu21d
 
 FROM py-debug AS py-i2c
 ARG environment=py-htu
