@@ -11,10 +11,8 @@ FROM debug AS rpi
 RUN apt install rpi.gpio
 
 FROM rpi AS lc
-
-
 RUN apt clean
-WORKDIR /
+#WORKDIR /
 COPY script.py /
-RUN chmod +x script.sh
+RUN chmod +x script.py
 CMD [ "python", "./script.py" ]
