@@ -6,7 +6,13 @@ RUN apt update && apt upgrade -y
 RUN apt install nano tree lynx iputils-ping -y
 
 FROM debug AS rpi
-# Bibliotheken
+# update python
+RUN -H pip2 install --upgrade pip
+RUN -H pip3 install --upgrade pip
+# installiere Bibliotheken
+RUN python -m pip install RPi.GPIO
+RUN python3 -m pip install RPi.GPIO
+# installiere Treiber
 RUN apt install -y apt-utils i2c-tools python-smbus -y
 RUN apt install rpi.gpio python-rpi.gpio python3-rpi.gpio python-dev -y
 
