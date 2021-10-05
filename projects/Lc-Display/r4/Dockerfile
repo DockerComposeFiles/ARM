@@ -1,14 +1,14 @@
 FROM arm32v7/python:rc-buster AS debug
 
 # Updaten des Images
-RUN apt update && apt -y upgrade
+RUN apt update && apt upgrade -y
 # Debug Programme
-RUN apt install -y nano && apt install tree && apt install -y lynx && apt install -y iputils-ping
+RUN apt install nano && apt install tree && apt install lynx && apt install iputils-ping -y
 
 FROM debug AS rpi
 # Bibliotheken
-RUN apt install -y apt-utils i2c-tools python-smbus
-RUN apt install python-dev
+RUN apt install -y apt-utils i2c-tools python-smbus -y
+RUN apt install python-dev -y
 RUN apt install rpi.gpio python-rpi.gpio python3-rpi.gpio -y
 
 # Manuell
