@@ -20,10 +20,9 @@ RUN export READTHEDOCS=true
 RUN pip3 install picamera
 
 # Manuelle Installation.
-# Der picamera Quellcode wurde mittels SPC direkt an den Raspberry übertragen
-# und befindet sich daher nicht im Repository.
 
-# Mögliche Installation ueber git erhöht git-Head enorm
+
+# Mögliche Installation ueber git wuerde die Dateien-Anzahl und damit den Git-Head enorm erhoehen
 WORKDIR /
 RUN mkdir "/picam"
 COPY picam /picam
