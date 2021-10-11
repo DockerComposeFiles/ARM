@@ -3,7 +3,7 @@ FROM arm32v7/httpd AS base
 # Updaten des Images
 RUN apt update && apt -y upgrade
 # Debug Programme
-RUN apt install -y nano && apt install tree && apt install -y lynx && apt install -y iputils-ping
+RUN apt install nano tree lynx iputils-ping -y
 
 RUN apt clean
 
