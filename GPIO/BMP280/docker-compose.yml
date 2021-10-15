@@ -12,3 +12,6 @@ services:
       placement:
         constraints:
           - node.hostname==R3
+#    networks:
+#      none:
+#   In Swarm nicht verfügbar
