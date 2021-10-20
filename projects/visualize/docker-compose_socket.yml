@@ -1,4 +1,4 @@
-# Verbindet den Websocket miteinander
+# Verbindet den Websocket mit dem Backend
 version: '3.8'
 services:
   backend:

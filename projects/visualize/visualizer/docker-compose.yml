@@ -8,7 +8,7 @@ services:
     ports:
       - "80"
       - "433"
-      - "3000"
+      - "3000"  # Löst das Port Problem des Frameworks nicht
     networks:
       macvlan0:
         ipv4_address: 172.24.0.2
@@ -16,6 +16,7 @@ services:
     #command: tail -F anything
 
 networks:
+  # Mac-Adressen Basiert
   macvlan0:
     driver: macvlan
     driver_opts:
@@ -25,3 +26,5 @@ networks:
       config:
         - subnet: 172.24.0.0/24
           gateway: 172.24.0.1
+
+ # IP-Adressen basiert

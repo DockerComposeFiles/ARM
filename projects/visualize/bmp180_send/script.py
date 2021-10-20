@@ -12,7 +12,7 @@ os.remove('/data/all_data.txt')
 # Hauptschleife
 i = 0
 while i <= 200:
-    i = i + 1
+    i = i + 1  # Zu Testzwecken auf die Aufnahme von 200 Werten begrenzt.
     # Messdaten Holen
     temperatur, druck, x = bme280.readBME280All()
 
