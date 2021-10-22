@@ -9,4 +9,4 @@ Der Ordner besitzt Compose Dateien mit spezifischem Namen.
 
 Sie können mittels dieser Syntax gebaut / ausgeführt werden:
 
-docker-compose -f {compose file name} build / up
+> docker-compose -f {compose file name} build / up
