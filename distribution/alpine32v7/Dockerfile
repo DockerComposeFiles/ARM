@@ -2,7 +2,7 @@ FROM arm32v7/alpine:latest
 
 #Update Methode funktioniert nicht
 
-RUN apt update
+RUN apk update
 RUN apk -y upgrade
 RUN apk install -y nano
 #RUN su root apk clean
