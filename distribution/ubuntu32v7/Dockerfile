@@ -5,8 +5,8 @@ FROM arm32v7/ubuntu
 # Einen angepasste Version kann heruntergeladen manuell installiert werden.
 # https://packages.debian.org/sid/armhf/libseccomp2/download
 
-#RUN apt clean && apt update && apt -y upgrade
-#RUN apt update && apt install -y nano
+RUN apt clean && apt update && apt upgrade -y
+RUN apt install nano -y
 
 # Festlegen des entrypoint, um den Container dauerhaft laufen zu lassen. Funktion gibt folgenden Fehler zurück:
 # „tail: cannot read realtime clock: Operation not permitted”

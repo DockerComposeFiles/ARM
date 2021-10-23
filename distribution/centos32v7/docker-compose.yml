@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  alpine-default:
+  centos-default:
     build: .
     container_name: cent32b7
     restart: unless-stopped

@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  centos-default:
+  fedora-default:
     build: .
-    container_name: cent64b8
+    container_name: fedora32b7
     restart: unless-stopped
     command: tail -F anything
 

@@ -1,13 +1,10 @@
 version: '3.8'
 services:
-  ubuntuDef: # Standard Ubuntu Image
+  ubuntu_default: # Standard Ubuntu Image
     build:
       context: /
       dockerfile: /Dockerfile
-    container_name: ubuntuv7
+    container_name: ubuntu32v7
     restart: on-failure
     deploy:
       mode: replicated
-      placement:
-        constraints:
-          - node.labels.?==?
