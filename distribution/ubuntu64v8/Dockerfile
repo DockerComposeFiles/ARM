@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu
+FROM arm64v8/ubuntu:focal
 
 # Ungetestet
 #RUN apt clean && apt update && apt -y upgrade

@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu
+FROM arm32v7/ubuntu:focal
 
 # Aufgrund eines permission Fehlers in der Datei "libseccomp2"
 # schlägt die Signatureüberprüfung in den apt Repositorys fehl.
