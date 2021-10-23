@@ -2,8 +2,6 @@ version: '3.8'
 services:
   debian-default:
     container_name: debv8
-    build:
-      context: /
-      dockerfile: /Dockerfile
+    build: .
     restart: unless-stopped
     command: tail -F anything
