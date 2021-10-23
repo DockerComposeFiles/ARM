@@ -1,9 +1,7 @@
 version: '3.8'
 services:
   ubuntu_default: # Standard Ubuntu Image
-    build:
-      context: /
-      dockerfile: /Dockerfile
+    build: .
     container_name: ubuntu32v7
     restart: on-failure
     deploy:
