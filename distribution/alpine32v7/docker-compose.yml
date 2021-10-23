@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   alpine-default:
-    build:
-      context: /
-      dockerfile: /Dockerfile
+    build: .
     container_name: ap7
     restart: unless-stopped
     command: tail -F anything

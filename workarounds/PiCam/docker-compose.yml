@@ -4,9 +4,13 @@ services:
   python-pic-save:
     build: .
     volumes:
-      - /pictures:/
+      - /pictures:/pics
     deploy:
       mode: global
       placement:
         constraints:
           - node.labels.connect==cam
+
+volumes:
+  pics:
+    external: true
