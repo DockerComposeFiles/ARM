@@ -5,7 +5,7 @@ RUN su root apk clean
 RUN apt update
 RUN apk -y upgrade
 RUN apk install -y nano
-RUN apk clean
+#RUN apk clean
 
 # Entrypoint ist zusätzlich in docker-compose festgelegt
 ENTRYPOINT ["tail"]
