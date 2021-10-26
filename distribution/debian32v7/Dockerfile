@@ -1,9 +1,9 @@
 FROM arm32v7/debian
 
-RUN apt update
-# RUN apt -y upgrade
-RUN apt install -y nano
-RUN apt clean
+RUN apt update \
+    && apt upgrade -y \
+    && apt install nano -y \
+    && apt clean
 
-# Standard Entrypoint
+# Standard Entrypoint in Debian
 ENTRYPOINT ["/bin/sh", "-c"]
