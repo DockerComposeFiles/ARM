@@ -1,4 +1,4 @@
-FROM arm32v7/buster
+FROM arm32v7/debian:buster
 
 RUN apt update \
     && apt upgrade -y \
