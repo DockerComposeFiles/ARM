@@ -4,7 +4,7 @@ FROM arm32v7/python:rc-buster
 # Installiert nano, für eine bessere Analyse
 RUN apt update \
     && apt install nano -y \
-    && apt clean \
+    && apt clean
 
 # "command line interface" zum testen der Internetgeschwindigkeit
 RUN pip install speedtest-cli && pip3 install speedtest-cli

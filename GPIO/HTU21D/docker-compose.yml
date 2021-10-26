@@ -1,0 +1,15 @@
+# This container will use Raspberry GPIO
+
+version: '3.8'
+
+services:
+
+  rasp_gpio_python:
+    container_name: rasp_python
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /sys/class/gpio
+      - /dev/i2c-0
+      - /dev/i2c-1
