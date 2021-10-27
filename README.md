@@ -14,6 +14,11 @@ usermod -aG docker pi
 ## Images bauen
 "Docker build" sollte auf einem Arm-Gerät ausgeführt werden, um Fehler vorzubeugen.
 
+
+## Übersicht
+Folgendes Bild zeigt den Aufbau des Repositorys
+![Repository Übersicht](/Docker Repository Struktur DE.jpg?raw=true "DE")
+
 ---
 
 # English
