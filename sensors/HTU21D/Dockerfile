@@ -15,8 +15,8 @@ RUN apt update \
     && apt clean
 
 # Benötigte Python Bibliotheken, wenn Circuit verwendet
-#RUN pip install smbus Adafruit_BBIO
-#RUN pip3 install --upgrade setuptools adafruit-circuitpython-htu21d
+RUN pip install smbus Adafruit_BBIO
+RUN pip3 install --upgrade setuptools adafruit-circuitpython-htu21d
 
 # Benötigte Python Bibliotheken, wenn RPI verwendet
 RUN pip install python3-rpi.gpio RPi.GPIO
