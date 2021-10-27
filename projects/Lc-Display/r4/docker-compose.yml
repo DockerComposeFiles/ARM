@@ -13,6 +13,8 @@ services:
           - node.hostname == raspi4
     volumes:
       - /htu_data
+    command:
+      - "--privileged"
 
 volumes:
   htu_data:

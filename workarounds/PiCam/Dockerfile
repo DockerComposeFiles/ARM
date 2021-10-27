@@ -1,7 +1,8 @@
-FROM arm32v7/debian
+FROM arm32v7/debian:buster
 
-RUN apt update && apt upgrade -y
-RUN apt install nano -y
-RUN apt clean
+RUN apt update \
+    && apt upgrade -y \
+    && apt install nano -y \
+    && apt clean
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]

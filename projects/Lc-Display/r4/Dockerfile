@@ -13,10 +13,10 @@ RUN -H pip3 install --upgrade pip
 RUN python -m pip install RPi.GPIO
 RUN python3 -m pip install RPi.GPIO
 # installiere Treiber
-RUN apt install -y apt-utils i2c-tools python-smbus -y
-RUN apt install rpi.gpio python-rpi.gpio python3-rpi.gpio python-dev -y
+RUN apt install -y apt-utils i2c-tools python-smbus -y \
+    && apt install rpi.gpio python-rpi.gpio python3-rpi.gpio python-dev -y
 
-# Manuell
+# Manuelle Installation
 #RUN wget https://pypi.python.org/packages/source/R/RPi.GPIO/RPi.GPIO-0.5.11.tar.gz
 #RUN tar -xvf RPi.GPIO-0.5.11.tar.gz
 #RUN cd RPi.GPIO-0.5.11
@@ -25,8 +25,9 @@ RUN apt install rpi.gpio python-rpi.gpio python3-rpi.gpio python-dev -y
 #WORKDIR /
 
 FROM rpi AS lc
-RUN apt clean
 
+# Python Skript des LC-Display ist Lizensiert
+# und daher hier nicht verfügbar
 COPY script.py /
 RUN chmod +x script.py
 CMD [ "python", "./script.py" ]
