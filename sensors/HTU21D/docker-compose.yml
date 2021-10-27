@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+
+  rasp_i2c_htu21d:
+    container_name: rasp_i2c_htu21d
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /dev/gpiomem
+      - /dev/i2c-1
