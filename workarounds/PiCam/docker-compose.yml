@@ -4,7 +4,7 @@ services:
   python-pic-save:
     build: .
     volumes:
-      - /pictures:/pics
+      - /pictures:/pictures
     deploy:
       mode: global
       placement:
