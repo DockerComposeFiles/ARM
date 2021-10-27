@@ -1,5 +1,3 @@
-# Dieses Skript schießt ein Bild über die Raspberry Kamera und speichert es lokal.
-
 from time import sleep
 from picamera import PiCamera
 
