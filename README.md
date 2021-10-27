@@ -16,7 +16,7 @@ usermod -aG docker pi
 
 
 ## Übersicht
-Folgendes Bild zeigt den Aufbau des Repositorys
+Folgendes Bild zeigt den Aufbau des Repositorys:
 
 ![Repository Übersicht](Docker_Repository_Struktur_DE.jpg?raw=true "DE")
 

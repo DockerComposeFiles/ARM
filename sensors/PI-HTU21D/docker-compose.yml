@@ -9,4 +9,5 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /dev/gpiomem
+      - /dev/i2c-0
       - /dev/i2c-1
