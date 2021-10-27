@@ -16,7 +16,8 @@ RUN apt update \
 
 # Benötigte Python Bibliotheken, wenn Circuit verwendet
 RUN pip install smbus Adafruit_BBIO
-RUN pip3 install --upgrade setuptools adafruit-circuitpython-htu21d
+# No module named 'board' (AdaFruit): adafruit-blinka
+RUN pip3 install setuptools adafruit-circuitpython-htu21d adafruit-blinka
 
 # Benötigte Python Bibliotheken, wenn RPI verwendet
 RUN pip install  RPi.GPIO
@@ -25,4 +26,6 @@ RUN pip install  RPi.GPIO
 #python3-rpi.gpio
 
 ADD /script.py /
+
+#Setzt Python3 vorraus
 CMD ["python3" ,"./script.py" ]
