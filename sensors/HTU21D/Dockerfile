@@ -11,7 +11,7 @@ RUN apt update \
 # Python3 (kann, kann, muss, muss)
     python3-pip python3 python3-dev python3-rpi.gpio \
 # Erweiterte Tools
-    build-essential picap nano -y \
+    build-essential nano -y \
     && apt clean
 
 # Benötigte Python Bibliotheken, wenn Circuit verwendet
