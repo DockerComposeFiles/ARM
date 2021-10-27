@@ -27,5 +27,5 @@ RUN pip install  RPi.GPIO
 
 ADD /script.py /
 
-#Setzt Python3 vorraus
+# Setzt Python3 vorraus
 CMD ["python3" ,"./script.py" ]
