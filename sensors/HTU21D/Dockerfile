@@ -14,9 +14,12 @@ RUN apt update \
     build-essential picap nano -y \
     && apt clean
 
-# Benötigte Python Bibliotheken, wenn Circuit Verwendet
+# Benötigte Python Bibliotheken, wenn Circuit verwendet
 RUN pip install smbus Adafruit_BBIO
 RUN pip3 install --upgrade setuptools adafruit-circuitpython-htu21d
+
+# Benötigte Python Bibliotheken, wenn RPI verwendet
+pip install python3-rpi.gpio RPi.GPIO
 
 ADD /script.py /
 CMD ["python3" ,"./script.py" ]
