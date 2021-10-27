@@ -3,7 +3,7 @@ FROM arm32v7/python:rc-buster
 # Container auf den neuesten Stand bringen
 # Installation von benötigten und optionalen Paketen
 RUN apt update \
-    && apt upgrade -y \
+#    && apt upgrade -y \
 # I2C Tools
     && apt install apt-utils i2c-tools python-smbus \
 # Python 2 (kann, kann, muss, muss)
@@ -19,7 +19,10 @@ RUN pip install smbus Adafruit_BBIO
 RUN pip3 install --upgrade setuptools adafruit-circuitpython-htu21d
 
 # Benötigte Python Bibliotheken, wenn RPI verwendet
-RUN pip install python3-rpi.gpio RPi.GPIO
+RUN pip install  RPi.GPIO
+
+# No matching distribution found: Fehler
+#python3-rpi.gpio
 
 ADD /script.py /
 CMD ["python3" ,"./script.py" ]
