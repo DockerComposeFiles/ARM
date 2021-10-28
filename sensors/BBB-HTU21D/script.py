@@ -2,7 +2,7 @@
 import struct, array, time, io, fcntl
 
 I2C_SLAVE = 0x0703
-HTU21D_ADDR = 0x40
+HTU21D_ADDR = 0x34 # BeagleBone Einstellung
 CMD_READ_TEMP_HOLD = "\xE3"
 CMD_READ_HUM_HOLD = "\xE5"
 CMD_READ_TEMP_NOHOLD = "\xF3"
