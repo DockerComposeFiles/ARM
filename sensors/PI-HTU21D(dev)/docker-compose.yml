@@ -10,4 +10,4 @@ services:
     devices:
       - /dev/gpiomem
       - /dev/mem    # Nicht notwendig
-      - /dev/i2c-1
+      - "/dev/i2c-1:/dev/i2c-1"
