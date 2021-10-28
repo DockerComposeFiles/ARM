@@ -11,13 +11,13 @@ services:
         constraints:
           - node.labels.project == lc
           - node.hostname == B1
-    volumes:
+    devices:
       # GPIO Anbindung
       - /sys/class/gpio/
       # Anbindung der 4 LED Lampen
       - /sys/class/leds/
-      # speichern der Daten
-      - /htu_data
+    volumes:
+      - /htu_data # speichern der Daten
 
   # Speichert die Daten des HTU in einem volume
   htu_get2:
@@ -28,13 +28,13 @@ services:
         constraints:
           - node.labels.project == lc
           - node.hostname == B2
-    volumes:
+    devices:
       # GPIO Anbindung
       - /sys/class/gpio/
       # Anbindung der 4 LED Lampen
       - /sys/class/leds/
-      # speichern der Daten
-      - /htu_data
+    volumes:
+      - /htu_data # speichern der Daten
 
 
   raspi_set:

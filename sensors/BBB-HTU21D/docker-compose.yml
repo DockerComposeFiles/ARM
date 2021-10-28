@@ -8,8 +8,7 @@ services:
       context: .
       dockerfile: Dockerfile
 #    privileged: true
-    volumes:
-      - /sys/class/gpio
     devices:
+      - /sys/class/gpio
       - /dev/i2c-0
       - /dev/i2c-1

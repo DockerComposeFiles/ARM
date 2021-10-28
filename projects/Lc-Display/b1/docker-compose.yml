@@ -10,11 +10,12 @@ services:
       placement:
         constraints:
           - node.labels.project == lc
-    volumes:
+    devices:
       # GPIO Anbindung
       - /sys/class/gpio/
       # Anbindung der 4 LED Lampen
       - /sys/class/leds/
+    volumes:
       # speichern der Daten
       - /htu_data
 
