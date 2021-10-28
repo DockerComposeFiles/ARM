@@ -40,19 +40,19 @@ while True:
 
     # Sensor 1
     if bmp180_:
-        bmp180()
         bmp180_ = False
+        bmp180()
 
     # Sensor 2
     time.sleep(.3)
     if bmp280_:
-        bmp280()
         bmp280_ = False
+        bmp280()
 
     # Sensor 3
     time.sleep(.3)
     if htu21d_:
-        htu21d()
         htu21d_ = False
+        htu21d()
 
 done
