@@ -10,5 +10,4 @@ services:
     devices:
       - /dev/gpiomem
       - /dev/mem    # Nicht notwendig
-      - /dev/i2c-0  #Nicht im Raspi
       - /dev/i2c-1
