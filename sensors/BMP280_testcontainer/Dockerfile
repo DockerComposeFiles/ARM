@@ -1,4 +1,4 @@
-FROM arm32v7/python:rc-bullseye
+FROM arm32v7/python:rc-buster
 
 # Container auf den neuesten Stand bringen
 # Installation von benötigten Paketen
