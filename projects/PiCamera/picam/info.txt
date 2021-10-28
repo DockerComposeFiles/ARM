@@ -1,2 +1,0 @@
-Der picamera Quellcode wurde mittels SPC direkt an den Raspberry übertragen
-und befindet sich daher nicht im Repository.

@@ -8,6 +8,9 @@ Wenn euer Nutzername pi ist, dann sind diese Eintragungen notwendig:
 Das Image MUSS auf einem Raspberry Pi kompiliert werden,
 um die "picamera" Bibliothek installieren zu können.
 
+Der picamera Quellcode wurde mittels SPC direkt an den Raspberry übertragen
+und befindet sich daher nicht im Repository.
+
 
 ## en
 With this container, you would be able to access the Raspberry Pi camera.
