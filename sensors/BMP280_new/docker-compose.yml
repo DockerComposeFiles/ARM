@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  gpio-bmp280:
+    container_name: bmp280
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    devices:
+      - /dev/gpiomem
+      - /dev/i2c-1
+    deploy:
+      placement:
+        constraints:
+          - node.hostname==R3
