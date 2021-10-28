@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
 #    privileged: true
     devices:
-      - /sys/class/gpio
       - /dev/i2c-0
       - /dev/i2c-1
+    volumes:
+      - /sys/class/gpio

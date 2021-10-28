@@ -10,12 +10,14 @@ services:
       context: .
       dockerfile: Dockerfile
     devices:
-      - /sys/class/gpio
       - /dev/i2c-0 # P9 I2C PINs
       - /dev/i2c-1
       - /dev/i2c-2
+      #- /sys/class/leds/beaglebone Ordner nicht vorhanden
+    volumes:
+      - /sys/class/gpio
       - /dev/gpiochip0
       - /dev/gpiochip1
       - /dev/gpiochip2
       - /dev/gpiochip3
-      #- /sys/class/leds/beaglebone Ordner nicht vorhanden
+

@@ -13,6 +13,7 @@ services:
 #        environment: py-htu
     volumes:
       - /sys/class/gpio
+    devices:
       - /dev/i2c-0
       - /dev/i2c-1
 
@@ -25,6 +26,7 @@ services:
 #        environment: go_htu
     volumes:
       - /sys/class/gpio
+    devices:
       - /dev/i2c-0
       - /dev/i2c-1
 
@@ -37,6 +39,7 @@ services:
 #        environment: shell_htu
     volumes:
       - /sys/class/gpio
+    devices:
       - /dev/i2c-0
       - /dev/i2c-1
 
@@ -49,6 +52,7 @@ services:
 #        environment: c_htu
     volumes:
       - /sys/class/gpio
+    devices:
       - /dev/i2c-0
       - /dev/i2c-1
 

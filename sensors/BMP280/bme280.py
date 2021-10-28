@@ -24,7 +24,7 @@ from ctypes import c_short
 from ctypes import c_byte
 from ctypes import c_ubyte
 
-DEVICE = 0x76  # Default device I2C address
+DEVICE = 0x76  # Standard I2C-Device-Adresse fuer den BMP280
 
 bus = smbus.SMBus(1)  # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
 
