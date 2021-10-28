@@ -12,9 +12,10 @@ htu21d_ = True
 
 def bmp180():
     x = chr(os.system("i2cdetect -y 1"))
+    print("gr" + x)
     if x.__contains__("77"):
         os.system("docker run --device /dev/i2c-1 myimage")
-    print("bmp180 Container will deploy", flush=True)
+        print("bmp180 Container will deploy", flush=True)
 
     # Wenn Sensor 2
 
@@ -22,7 +23,7 @@ def bmp280():
     x = chr(os.system("i2cdetect -y 1"))
     if x.__contains__("76"):
         os.system("docker run --device /dev/i2c-1 myimage")
-    print("bmp280 Container will deploy", flush=True)
+        print("bmp280 Container will deploy", flush=True)
 
     # Wenn Sensor 3
 
@@ -54,3 +55,6 @@ while True:
         htu21d()
 
 done
+
+# i2cdetect lässt alles durch
+# Images müssen angegeben werden
