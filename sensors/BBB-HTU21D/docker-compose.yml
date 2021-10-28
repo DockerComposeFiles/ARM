@@ -2,12 +2,14 @@ version: '3.8'
 
 services:
 
-  rasp_i2c_htu21d:
+  bbb_i2c_htu21d:
     container_name: bbb_i2c_htu21d
     build:
       context: .
       dockerfile: Dockerfile
+#    privileged: true
     volumes:
       - /sys/class/gpio
+    devices:
       - /dev/i2c-0
       - /dev/i2c-1
