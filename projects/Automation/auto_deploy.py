@@ -2,36 +2,36 @@
 import os
 import time
 
-# Nur einmal Container starten
+# Skript zum Automatischen Deployen von Anwendungen
+# x = chr(os.system("i2cdetect -y 1"))
+#
+
+# Container maximal einmal starten
 bmp180_ = True
 bmp280_ = True
 htu21d_ = True
 
+
 # Deploy Funktionen
-# Wenn Sensor 1
-
+# Sensor 1
 def bmp180():
-    x = chr(os.system("i2cdetect -y 1"))
-    print("gr" + x)
-    if x.__contains__("77"):
-        os.system("docker run --device /dev/i2c-1 myimage")
+    if os.system("i2cget -y 1") == 0x76:
         print("bmp180 Container will deploy", flush=True)
+        os.system("docker run --device /dev/i2c-1 326567/bmp180")
 
-    # Wenn Sensor 2
 
+# Sensor 2
 def bmp280():
-    x = chr(os.system("i2cdetect -y 1"))
-    if x.__contains__("76"):
-        os.system("docker run --device /dev/i2c-1 myimage")
+    if os.system("i2cget -y 1") == 0x77:
         print("bmp280 Container will deploy", flush=True)
+        os.system("docker run --device /dev/i2c-1 326567/bmp280")
 
-    # Wenn Sensor 3
 
+# Sensor 3
 def htu21d():
-    x = chr(os.system("i2cdetect -y 1"))
-    if x.__contains__("40"):
-        os.system("docker run --device /dev/i2c-1 myimage")
+    if os.system("i2cget -y 1") == 0x40:
         print("htu21d Container will deploy", flush=True)
+        os.system("docker run --device /dev/i2c-1 326567/htu21d")
 
 
 # Hauptschleife
@@ -54,7 +54,5 @@ while True:
         htu21d_ = False
         htu21d()
 
+    time.sleep(10)
 done
-
-# i2cdetect lässt alles durch
-# Images müssen angegeben werden
