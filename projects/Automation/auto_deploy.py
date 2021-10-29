@@ -15,21 +15,21 @@ htu21d_ = True
 # Deploy Funktionen
 # Sensor 1
 def bmp180():
-    if os.system("i2cget -y 1") == 0x76:
+    if os.system("i2cget -y 1 0x77"):
         print("bmp180 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp180")
 
 
 # Sensor 2
 def bmp280():
-    if os.system("i2cget -y 1") == 0x77:
+    if os.system("i2cget -y 1 0x76"):
         print("bmp280 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp280")
 
 
 # Sensor 3
 def htu21d():
-    if os.system("i2cget -y 1") == 0x40:
+    if os.system("i2cget -y 1 0x40"):
         print("htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/htu21d")
 
