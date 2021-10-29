@@ -16,6 +16,8 @@ htu21d_ = True
 # Sensor 1
 def bmp180():
     if os.system("i2cget -y 1 0x77"):
+        print("bmp180 Container will download", flush=True)
+        os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp180")
 
@@ -23,6 +25,8 @@ def bmp180():
 # Sensor 2
 def bmp280():
     if os.system("i2cget -y 1 0x76"):
+        print("bmp280 Container will download", flush=True)
+        os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp280")
 
@@ -30,6 +34,8 @@ def bmp280():
 # Sensor 3
 def htu21d():
     if os.system("i2cget -y 1 0x40"):
+        print("htu21d Container will download", flush=True)
+        os.system("docker pull 326567/htu21d")
         print("htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/htu21d")
 
