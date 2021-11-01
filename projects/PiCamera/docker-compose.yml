@@ -4,7 +4,8 @@ version: '3.8'
 
 services:
   python-cam:
-    # image: 326567/raspi-cam-default
+    container_name: picam
+    privileged: true
     build: .
     restart: unless-stopped
     environment:
