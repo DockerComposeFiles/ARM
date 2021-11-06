@@ -20,6 +20,8 @@ def bmp180():
         #os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp180")
+    else:
+        print("bmp180 no connection", flush=True)
 
 
 # Sensor 2
@@ -29,7 +31,8 @@ def bmp280():
         #os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp280")
-
+    else:
+        print("bmp280 no connection", flush=True)
 
 # Sensor 3
 def htu21d():
@@ -38,10 +41,15 @@ def htu21d():
         #os.system("docker pull 326567/htu21d")
         print("htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/htu21d")
-
+    else:
+        print("htu21d no connection", flush=True)
 
 # Hauptschleife
 while True:
+
+    print("bmp180" + os.system("i2cget -y 1 0x77"), flush=True)
+    print("bmp280" + os.system("i2cget -y 1 0x76"), flush=True)
+    print("htu21d" + os.system("i2cget -y 1 0x40"), flush=True)
 
     # Sensor 1
     if bmp180_:
