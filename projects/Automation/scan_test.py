@@ -1,10 +1,11 @@
 import os
 
-print(os.system("i2cget -V"), flush=True)
+print(os.system("i2cget -V" + "\n"), flush=True)
 
 print(os.system("i2cget -y 1 0x77"), flush=True)
 print(os.system("i2cget -y 1 0x76"), flush=True)
 print(os.system("i2cget -y 1 0x40"), flush=True)
+print("\n", flush=True)
 
 # Konvertierung des Scan Objektes
 def object_converter(current_object):
@@ -18,4 +19,4 @@ def object_converter(current_object):
 obj77 = os.system("i2cget -y 1 0x77")
 res77 = object_converter(obj77)
 
-print(res77, flush=True)
+print(77 + res77, flush=True)
