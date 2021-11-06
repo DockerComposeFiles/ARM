@@ -1,0 +1,1 @@
+x = chr(os.system("i2cdetect -y 1"))

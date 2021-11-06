@@ -14,24 +14,26 @@ def object_converter(current_object):
 # Vergleich
 print(os.system("i2cget -V"), flush=True)
 print("\n", flush=True)
+# Einfache Ausgabe
 print(os.system("i2cget -y 1 0x77"), flush=True)
 print(os.system("i2cget -y 1 0x76"), flush=True)
 print(os.system("i2cget -y 1 0x40"), flush=True)
 print("\n", flush=True)
 
-# Scann des 1 Sensors
+# Funktion zru Ausgabe
+# BMP180 erkennen
 obj77 = os.system("i2cget -y 1 0x77 0x00")
 res77 = object_converter(obj77)
 print(77 + res77, flush=True)
-# Ergebnis: 589
+# Ergebnis bei Fehler: 589
 
-# Scann des 1 Sensors
+# BMP280 erkennen
 obj76 = os.system("i2cget -y 1 0x76 0x00")
 res76 = object_converter(obj76)
 print(76 + res76, flush=True)
-# Ergebnis: 588
+# Ergebnis bei Fehler: 588
 
-# Scann des 3 Sensors
+# HTU21D wird nicht erkannt
 obj40 = os.system("i2cget -y 1 0x40 0x00")
 res40 = object_converter(obj40)
 print(40 + res40, flush=True)
@@ -39,6 +41,7 @@ print(40 + res40, flush=True)
 print("\n", flush=True)
 
 # Alle Scannen
+""""
 print("scan all", flush=True)
 i = 2
 while i < 77:
@@ -47,3 +50,4 @@ while i < 77:
     res = object_converter(all_obj)
     #    print(os.system("i2cget -y 1 0x" + i), flush=True)
     print(all_obj + i)
+"""
