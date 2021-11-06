@@ -47,9 +47,9 @@ def htu21d():
 # Hauptschleife
 while True:
 
-    print("bmp180" + os.system("i2cget -y 1 0x77"), flush=True)
-    print("bmp280" + os.system("i2cget -y 1 0x76"), flush=True)
-    print("htu21d" + os.system("i2cget -y 1 0x40"), flush=True)
+    print(os.system("i2cget -y 1 0x77"), flush=True)
+    print(os.system("i2cget -y 1 0x76"), flush=True)
+    print(os.system("i2cget -y 1 0x40"), flush=True)
 
     # Sensor 1
     if bmp180_:
