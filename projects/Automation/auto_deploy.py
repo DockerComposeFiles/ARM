@@ -13,7 +13,7 @@ bmp280_ = True
 def bmp180():
     bmp180_scan = os.system("i2cget -y 1 0x77")
     print(bmp180_scan)
-    if bmp180_scan == 0x00 or 77 or 0 or "0x17\n0":
+    if bmp180_scan == "0x17\n0":
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy\n", flush=True)
@@ -33,7 +33,7 @@ def bmp180():
 def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76")
     print(bmp280_scan)
-    if bmp280_scan == 0x00 or 77 or 0:
+    if bmp280_scan == "0x17\n0":
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy\n", flush=True)
