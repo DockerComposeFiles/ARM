@@ -15,7 +15,7 @@ htu21d_ = True
 # Deploy Funktionen
 # Sensor 1
 def bmp180():
-    if os.system("i2cget -y 1 0x77"):
+    if os.system("i2cget -y 1 0x77" == True):
         #print("bmp180 Container will download", flush=True)
         #os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy", flush=True)
