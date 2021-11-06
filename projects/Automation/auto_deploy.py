@@ -5,9 +5,7 @@ import time
 # Skript zum Automatischen Deployen von Anwendungen
 
 # Container maximal einmal starten
-global bmp180_is_started
 bmp180_is_started = False
-global bmp280_is_started
 bmp280_is_started = False
 
 
@@ -27,15 +25,16 @@ def bmp180():
     #print(chr(bmp180_int))
 
     if bmp180_int == 0:
+        global bmp180_is_started
         bmp180_is_started = True
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("BMP180 Container will deploy\n", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp180 &")
-
+        return True
     else:
         print("bmp180 no connection\n", flush=True)
-
+        return False
 
 # Deploy Funktionen BMP280
 def bmp280():
@@ -49,12 +48,13 @@ def bmp280():
         # os.system("docker pull 326567/bmp280")
         print("BMP280 Container will deploy\n", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
-
+        return True
     #    elif bmp280_int.__contains__("Error: Read failed"):
     #        print("bmp180 no connection: not connected \n", flush=True)
 
     else:
         print("bmp280 no connection\n", flush=True)
+        return False
 
 
 """
@@ -74,11 +74,11 @@ while True:
 
     # BMP180 Prüfen
     if not bmp180_is_started:
-        bmp180()
+        bmp180_is_started = bmp180()
 
     # BMP280 Prüfen
     time.sleep(.3)
     if not bmp280_is_started:
-        bmp280()
+        bmp280_is_started = bmp280()
 
     time.sleep(10)
