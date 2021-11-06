@@ -12,7 +12,7 @@ bmp280_ = True
 # Deploy Funktionen BMP180
 def bmp180():
     bmp180_scan = os.system("i2cget -y 1 0x77")
-    if bmp180_scan == "0x00":
+    if bmp180_scan == 0x00:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy", flush=True)
@@ -31,7 +31,7 @@ def bmp180():
 # Deploy Funktionen BMP280
 def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76")
-    if bmp280_scan == "0x00":
+    if bmp280_scan == 0x00:
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy", flush=True)
