@@ -12,7 +12,7 @@ for bus in range(2):
         if h >= 0:
             s = pi.i2c_read_byte(h)
             if s >= 0:
-                print("device {} found on bus {}".format(x, bus))
+                print("device {} found on bus {}".format(x, bus), flush=True)
             pi.i2c_close(h)
 
 pi.stop()
