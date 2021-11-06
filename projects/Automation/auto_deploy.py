@@ -22,8 +22,8 @@ def object_converter(current_object):
 def bmp180():
     bmp180_scan = os.system("i2cget -y 1 0x77")
     bmp180_int = object_converter(bmp180_scan)
-    print("\n" + chr(bmp180_int))
-    if bmp180_int == 0:
+    print(chr(bmp180_int))
+    if bmp180_int == 1:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy\n", flush=True)
@@ -50,11 +50,12 @@ def bmp280():
         print("bmp280 Container will deploy\n", flush=True)
         # os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
 
-#    elif bmp280_int.__contains__("Error: Read failed"):
-#        print("bmp180 no connection: not connected \n", flush=True)
+    #    elif bmp280_int.__contains__("Error: Read failed"):
+    #        print("bmp180 no connection: not connected \n", flush=True)
 
     else:
         print("bmp280 no connection: unknown message\n", flush=True)
+
 
 """
 # HTU21D wird nicht erkannt
@@ -83,4 +84,3 @@ while True:
         bmp280()
 
     time.sleep(10)
-done
