@@ -13,20 +13,21 @@ bmp280_ = True
 def bmp180():
     bmp180_scan = os.system("i2cget -y 1 0x77")
     print(bmp180_scan)
-    if bmp180_scan == "0x17" or bmp180_scan == "0":
+    if bmp180_scan == "0x17" or bmp180_scan == "0" \
+            or bmp180_scan == "0x53" or bmp180_scan == "0x53\n0":
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy\n", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp180 &")
 
     elif bmp180_scan == "Error: Read failed\n512":
-        print("\nbmp180 no connection by 512", flush=True)
+        print("bmp180 no connection by 512\n", flush=True)
 
     elif bmp180_scan == "Error: Read failed\n589":
-        print("\nbmp180 no connection by 589", flush=True)
+        print("bmp180 no connection by 589\n", flush=True)
 
     else:
-        print("\nbmp180 no connection: unknown message", flush=True)
+        print("bmp180 no connection: unknown message\n", flush=True)
 
 
 # Deploy Funktionen BMP280
@@ -40,13 +41,13 @@ def bmp280():
         # os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
 
     elif bmp280_scan == "Error: Read failed\n512":
-        print("\nbmp180 no connection by 512", flush=True)
+        print("bmp180 no connection by 512\n", flush=True)
 
     elif bmp280_scan == "Error: Read failed\n588":
-        print("\nbmp180 no connection by 588", flush=True)
+        print("bmp180 no connection by 588\n", flush=True)
 
     else:
-        print("\nbmp280 no connection: unknown message", flush=True)
+        print("bmp280 no connection: unknown message\n", flush=True)
 
 
 """
