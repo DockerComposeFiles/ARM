@@ -35,6 +35,7 @@ obj40 = os.system("i2cget -y 1 0x40 0x11")
 res40 = object_converter(obj40)
 print(40 + res40, flush=True)
 # Ergebnis: 552
+print("\n", flush=True)
 
 # Alle Scannen
 print("scan all", flush=True)
