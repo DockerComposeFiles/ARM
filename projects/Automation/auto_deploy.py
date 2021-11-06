@@ -14,13 +14,13 @@ def object_converter(current_object):
     try:
         obj = int(current_object)
     except:
-        obj = 0
+        obj = -1
     return obj
 
 
 # Deploy Funktionen BMP180
 def bmp180():
-    bmp180_scan = os.system("i2cget -y 1 0x77")
+    bmp180_scan = os.system("i2cget -y 1 0x77 \n")
     bmp180_obj = object_converter(bmp180_scan)
     print(bmp180_obj)
     if bmp180_obj == "0x17" or bmp180_obj == "0" \
@@ -42,7 +42,7 @@ def bmp180():
 
 # Deploy Funktionen BMP280
 def bmp280():
-    bmp280_scan = os.system("i2cget -y 1 0x76")
+    bmp280_scan = os.system("i2cget -y 1 0x76 \n")
     bmp280_obj = object_converter(bmp280_scan)
     print(bmp280_obj)
     if bmp280_obj.contains(0):
