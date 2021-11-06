@@ -16,7 +16,7 @@ def bmp180():
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy", flush=True)
-        os.system("docker run --device /dev/i2c-1 326567/bmp180")
+        os.system("docker run --device /dev/i2c-1 326567/bmp180 &")
 
     elif bmp180_scan == "Error: Read failed\n512":
         print("bmp180 no connection by 512", flush=True)
@@ -35,7 +35,7 @@ def bmp280():
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy", flush=True)
-        os.system("docker run --device /dev/i2c-1 326567/bmp280")
+        os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
 
     elif bmp280_scan == "Error: Read failed\n512":
         print("bmp180 no connection by 512", flush=True)
