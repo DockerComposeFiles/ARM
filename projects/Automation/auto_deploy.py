@@ -1,4 +1,3 @@
-#!/bin/bash
 import os
 import time
 
@@ -15,7 +14,7 @@ htu21d_ = True
 # Deploy Funktionen
 # Sensor 1
 def bmp180():
-    if os.system("i2cget -y 1 0x77" == True):
+    if os.system("i2cget -y 1 0x77"):
         #print("bmp180 Container will download", flush=True)
         #os.system("docker pull 326567/bmp180")
         print("bmp180 Container will deploy", flush=True)
@@ -47,9 +46,6 @@ def htu21d():
 # Hauptschleife
 while True:
 
-    print(os.system("i2cget -y 1 0x77"), flush=True)
-    print(os.system("i2cget -y 1 0x76"), flush=True)
-    print(os.system("i2cget -y 1 0x40"), flush=True)
 
     # Sensor 1
     if bmp180_:
