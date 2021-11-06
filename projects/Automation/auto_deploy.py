@@ -43,7 +43,7 @@ def bmp180():
 # Deploy Funktionen BMP280
 def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76 \n")
-    bmp280_obj = object_converter(bmp280_scan)
+    bmp280_obj = chr(object_converter(bmp280_scan))
     print(bmp280_obj)
     if bmp280_obj.contains(0):
         # print("bmp280 Container will download", flush=True)
