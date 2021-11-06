@@ -22,39 +22,35 @@ def object_converter(current_object):
 def bmp180():
     bmp180_scan = os.system("i2cget -y 1 0x77")
     bmp180_int = object_converter(bmp180_scan)
-    print(chr(bmp180_int))
+    #print(chr(bmp180_int))
+
     if bmp180_int == 1:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
-        print("bmp180 Container will deploy\n", flush=True)
+        print("BMP180 Container will deploy\n", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/bmp180 &")
 
-    elif bmp180_int == "Error: Read failed\n512":
-        print("bmp180 no connection by 512\n", flush=True)
-
-    elif bmp180_int == "Error: Read failed\n589":
-        print("bmp180 no connection by 589\n", flush=True)
-
     else:
-        print("bmp180 no connection: unknown message\n", flush=True)
+        print("bmp180 no connection\n", flush=True)
 
 
 # Deploy Funktionen BMP280
 def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76 \n")
     bmp280_int = (object_converter(bmp280_scan))
-    print("\n" + chr(bmp280_int))
+    #print("\n" + chr(bmp280_int))
+
     if bmp280_int == 0:
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
-        print("bmp280 Container will deploy\n", flush=True)
-        # os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
+        print("BMP280 Container will deploy\n", flush=True)
+        os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
 
     #    elif bmp280_int.__contains__("Error: Read failed"):
     #        print("bmp180 no connection: not connected \n", flush=True)
 
     else:
-        print("bmp280 no connection: unknown message\n", flush=True)
+        print("bmp280 no connection\n", flush=True)
 
 
 """
