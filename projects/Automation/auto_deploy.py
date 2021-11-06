@@ -43,7 +43,7 @@ def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76")
     bmp280_obj = object_converter(bmp280_scan)
     print(bmp280_obj)
-    if bmp280_obj == "0x17\n0":
+    if bmp280_obj == "Error: Read failed\n512":
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy\n", flush=True)
