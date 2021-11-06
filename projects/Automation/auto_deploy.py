@@ -5,8 +5,10 @@ import time
 # Skript zum Automatischen Deployen von Anwendungen
 
 # Container maximal einmal starten
-bmp180_ = True
-bmp280_ = True
+global bmp180_is_started
+bmp180_is_started = False
+global bmp280_is_started
+bmp280_is_started = False
 
 
 # Konvertierung des Scan Objektes
@@ -25,6 +27,7 @@ def bmp180():
     #print(chr(bmp180_int))
 
     if bmp180_int == 0:
+        bmp180_is_started = True
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("BMP180 Container will deploy\n", flush=True)
@@ -41,6 +44,7 @@ def bmp280():
     #print("\n" + chr(bmp280_int))
 
     if bmp280_int == 0:
+        bmp280_is_started = True
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("BMP280 Container will deploy\n", flush=True)
@@ -68,15 +72,13 @@ def htu21d():
 # Hauptschleife
 while True:
 
-    # Sensor 1
-    if bmp180_:
-        bmp180_ = False
+    # BMP180 Prüfen
+    if not bmp180_is_started:
         bmp180()
 
-    # Sensor 2
+    # BMP280 Prüfen
     time.sleep(.3)
-    if bmp280_:
-        bmp280_ = False
+    if not bmp280_is_started:
         bmp280()
 
     time.sleep(10)
