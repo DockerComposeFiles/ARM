@@ -24,7 +24,7 @@ def bmp180():
     bmp180_int = object_converter(bmp180_scan)
     #print(chr(bmp180_int))
 
-    if bmp180_int == 1:
+    if bmp180_int == 0:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("BMP180 Container will deploy\n", flush=True)
