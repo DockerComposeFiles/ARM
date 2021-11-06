@@ -8,6 +8,7 @@ import time
 bmp180_ = True
 bmp280_ = True
 
+
 # Konvertierung des Scan Objektes
 def object_converter(current_object):
     try:
@@ -15,6 +16,7 @@ def object_converter(current_object):
     except:
         obj = 0
     return obj
+
 
 # Deploy Funktionen BMP180
 def bmp180():
@@ -43,17 +45,17 @@ def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76")
     bmp280_obj = object_converter(bmp280_scan)
     print(bmp280_obj)
-    if bmp280_obj == "Error: Read failed\n512":
+    if bmp280_obj.contains(0):
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("bmp280 Container will deploy\n", flush=True)
         # os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
 
-    elif bmp280_obj == "Error: Read failed":
-        print("bmp180 no connection by 512\n", flush=True)
+    elif bmp280_obj.contains("Error: Read failed\n512"):
+        print("bmp180 no connection by 512-588\n", flush=True)
 
-    elif bmp280_obj == "Error: Read failed\n588":
-        print("bmp180 no connection by 588\n", flush=True)
+    elif bmp280_obj.contains("Error: Read failed"):
+        print("bmp180 no connection: not connected \n", flush=True)
 
     else:
         print("bmp280 no connection: unknown message\n", flush=True)
