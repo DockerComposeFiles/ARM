@@ -40,7 +40,7 @@ def bmp280():
         print("bmp280 Container will deploy\n", flush=True)
         # os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
 
-    elif bmp280_scan == "Error: Read failed\n512":
+    elif bmp280_scan == "Error: Read failed":
         print("bmp180 no connection by 512\n", flush=True)
 
     elif bmp280_scan == "Error: Read failed\n588":
