@@ -22,11 +22,9 @@ def object_converter(current_object):
 def bmp180():
     bmp180_scan = os.system("i2cget -y 1 0x77")
     bmp180_int = object_converter(bmp180_scan)
-    #print(chr(bmp180_int))
+    # print(chr(bmp180_int))
 
     if bmp180_int == 0:
-        global bmp180_is_started
-        bmp180_is_started = True
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("BMP180 Container will deploy\n", flush=True)
@@ -36,14 +34,14 @@ def bmp180():
         print("bmp180 no connection\n", flush=True)
         return False
 
+
 # Deploy Funktionen BMP280
 def bmp280():
     bmp280_scan = os.system("i2cget -y 1 0x76 \n")
     bmp280_int = (object_converter(bmp280_scan))
-    #print("\n" + chr(bmp280_int))
+    # print("\n" + chr(bmp280_int))
 
     if bmp280_int == 0:
-        bmp280_is_started = True
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("BMP280 Container will deploy\n", flush=True)
@@ -65,8 +63,6 @@ def htu21d():
         #os.system("docker pull 326567/htu21d")
         print("htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 326567/htu21d")
-    else:
-        print("htu21d no connection", flush=True)
 """
 
 # Hauptschleife
