@@ -41,7 +41,7 @@ print("\n", flush=True)
 # Alle Scannen
 print("scan all", flush=True)
 i = 2
-while i < 71:
+while i < 131:
     i = i + 1
     all_obj = os.system("i2cget -y 1 0x" + str(i))
     res = object_converter(all_obj)
