@@ -19,7 +19,7 @@ def object_converter(current_object):
 
 
 # Deploy Funktionen BMP180
-def bmp180():
+def bmp180_start():
     bmp180_scan = os.system("i2cget -y 1 0x77")
     bmp180_int = object_converter(bmp180_scan)
     # print(chr(bmp180_int))
@@ -28,15 +28,24 @@ def bmp180():
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
         print("BMP180 Container will deploy\n", flush=True)
-        os.system("docker run --device /dev/i2c-1 326567/bmp180 &")
+        os.system("docker run --device /dev/i2c-1 --name=bmp180 -d 326567/bmp180 &")
         return True
     else:
         print("bmp180 no connection\n", flush=True)
         return False
 
+def bmp180_stop():
+    bmp180_scan = os.system("i2cget -y 1 0x77")
+    bmp180_int = object_converter(bmp180_scan)
+
+    if bmp180_int == 0:
+        return True
+    else:
+        os.system("docker stop bmp180 && docker rm bmp180 &")
+        return False
 
 # Deploy Funktionen BMP280
-def bmp280():
+def bmp280_start():
     bmp280_scan = os.system("i2cget -y 1 0x76 \n")
     bmp280_int = (object_converter(bmp280_scan))
     # print("\n" + chr(bmp280_int))
@@ -45,7 +54,7 @@ def bmp280():
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
         print("BMP280 Container will deploy\n", flush=True)
-        os.system("docker run --device /dev/i2c-1 326567/bmp280 &")
+        os.system("docker run --device /dev/i2c-1 --name=bmp280 -d 326567/bmp280 &")
         return True
     #    elif bmp280_int.__contains__("Error: Read failed"):
     #        print("bmp180 no connection: not connected \n", flush=True)
@@ -54,6 +63,15 @@ def bmp280():
         print("bmp280 no connection\n", flush=True)
         return False
 
+def bmp280_stop():
+    bmp280_scan = os.system("i2cget -y 1 0x76")
+    bmp280_int = object_converter(bmp280_scan)
+
+    if bmp280_int == 0:
+        return True
+    else:
+        os.system("docker stop bmp280 && docker rm bmp280 &")
+        return False
 
 """
 # HTU21D wird nicht erkannt
@@ -70,11 +88,15 @@ while True:
 
     # BMP180 Prüfen
     if not bmp180_is_started:
-        bmp180_is_started = bmp180()
+        bmp180_is_started = bmp180_start()
+    else:
+        bmp180_is_started = bmp180_stop()
 
     # BMP280 Prüfen
     time.sleep(.3)
     if not bmp280_is_started:
-        bmp280_is_started = bmp280()
+        bmp280_is_started = bmp280_start()
+    else:
+        bmp280_is_started = bmp280_stop()
 
     time.sleep(10)
