@@ -2,7 +2,6 @@
 # Einbindung der Python Bibliothek
 # Angepasste Form
 import time
-
 import bme280
 
 # Messdaten Holen

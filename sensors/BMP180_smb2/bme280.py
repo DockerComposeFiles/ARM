@@ -18,7 +18,7 @@
 # https://www.raspberrypi-spy.co.uk/
 #
 # --------------------------------------
-import smbus
+import smbus2
 import time
 from ctypes import c_short
 from ctypes import c_byte
@@ -26,7 +26,7 @@ from ctypes import c_ubyte
 
 DEVICE = 0x77  # Standard I2C-Device-Adresse fuer den BMP180
 
-bus = smbus.SMBus(1)  # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
+bus = smbus2.SMBus(1)  # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
 
 
 # Rev 1 Pi uses bus 0
