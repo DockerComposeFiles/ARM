@@ -7,7 +7,7 @@ import time
 # Container maximal einmal starten
 bmp180_is_started = False
 bmp280_is_started = False
-
+htu21d_is_started = False
 
 # Konvertierung des Scan Objektes
 def object_converter(current_object):
@@ -73,15 +73,31 @@ def bmp280_stop():
         os.system("docker stop bmp280 && docker rm bmp280 &")
         return False
 
-"""
+
 # HTU21D wird nicht erkannt
-def htu21d():
-    if os.system("i2cget -y 1 0x40"):
+def htu21d_start():
+
+    htu21d_scan = os.system("i2cget -y 1 0x40 \n")
+    htu21d_int = (object_converter(htu21d_scan))
+
+    if htu21d_int == 0:
         #print("htu21d Container will download", flush=True)
         #os.system("docker pull 326567/htu21d")
-        print("htu21d Container will deploy", flush=True)
-        os.system("docker run --device /dev/i2c-1 326567/htu21d")
-"""
+        print("htu21d Container will deploy\n", flush=True)
+        os.system("docker run --device /dev/i2c-1 --name=htu21d -d 326567/htu21d &")
+        return True
+    else:
+        print("htu21d no connection\n",flush=True)
+        return False
+
+def htu21d_stop():
+    htu21d_scan = os.system("i2cget -y 1 0x40")
+    htu21d_int = object_converter(htu21d_scan)
+    if htu21d_int == 0:
+        return True
+    else:
+        os.system("docker stop htu21d && docker rm htu21d &")
+        return False
 
 # Hauptschleife
 while True:
@@ -91,12 +107,18 @@ while True:
         bmp180_is_started = bmp180_start()
     else:
         bmp180_is_started = bmp180_stop()
+    time.sleep(10)
 
     # BMP280 Prüfen
-    time.sleep(.3)
     if not bmp280_is_started:
         bmp280_is_started = bmp280_start()
     else:
         bmp280_is_started = bmp280_stop()
+    time.sleep(10)
 
+    # htu21d prüfen
+    if not htu21d_is_started:
+        htu21d_is_started = htu21d_start()
+    else:
+        htu21d_is_started = htu21d_stop()
     time.sleep(10)
