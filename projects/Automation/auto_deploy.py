@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 import os
 import time
-
+import datetime
 # Skript zum Automatischen Deployen von Anwendungen
 
 # Container maximal einmal starten
 bmp180_is_started = False
 bmp280_is_started = False
 htu21d_is_started = False
+
 
 # Konvertierung des Scan Objektes
 def object_converter(current_object):
@@ -27,12 +28,13 @@ def bmp180_start():
     if bmp180_int == 0:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
-        print("BMP180 Container will deploy", flush=True)
+        print(str(datetime.datetime.now()) + "BMP180 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=bmp180 -d 326567/bmp180 &")
         return True
     else:
         # print("bmp180 no connection\n", flush=True)
         return False
+
 
 def bmp180_stop():
     bmp180_scan = os.system("i2cget -y 1 0x77")
@@ -41,9 +43,10 @@ def bmp180_stop():
     if bmp180_int == 0:
         return True
     else:
-        print("BMP180 will be shutdown")
+        print(str(datetime.datetime.now()) + "BMP180 will be shutdown")
         os.system("docker stop bmp180 && docker rm bmp180 &")
         return False
+
 
 # Deploy Funktionen BMP280
 def bmp280_start():
@@ -54,7 +57,7 @@ def bmp280_start():
     if bmp280_int == 0:
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
-        print("BMP280 Container will deploy", flush=True)
+        print(str(datetime.datetime.now()) + "BMP280 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=bmp280 -d 326567/bmp280 &")
         return True
     #    elif bmp280_int.__contains__("Error: Read failed"):
@@ -64,6 +67,7 @@ def bmp280_start():
         # print("bmp280 no connection\n", flush=True)
         return False
 
+
 def bmp280_stop():
     bmp280_scan = os.system("i2cget -y 1 0x76")
     bmp280_int = object_converter(bmp280_scan)
@@ -71,26 +75,26 @@ def bmp280_stop():
     if bmp280_int == 0:
         return True
     else:
-        print("BMP280 will be shutdown")
+        print(str(datetime.datetime.now()) + "BMP280 will be shutdown")
         os.system("docker stop bmp280 && docker rm bmp280 &")
         return False
 
 
 # HTU21D wird nicht erkannt
 def htu21d_start():
-
     htu21d_scan = os.system("i2cget -y 1 0x40 \n")
     htu21d_int = (object_converter(htu21d_scan))
 
     if htu21d_int == 0:
-        #print("htu21d Container will download", flush=True)
-        #os.system("docker pull 326567/htu21d")
-        print("htu21d Container will deploy", flush=True)
+        # print("htu21d Container will download", flush=True)
+        # os.system("docker pull 326567/htu21d")
+        print(str(datetime.datetime.now()) + "htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=htu21d -d 326567/htu21d &")
         return True
     else:
         # print("htu21d no connection\n",flush=True)
         return False
+
 
 def htu21d_stop():
     htu21d_scan = os.system("i2cget -y 1 0x40")
@@ -98,9 +102,10 @@ def htu21d_stop():
     if htu21d_int == 0:
         return True
     else:
-        print("HTU21D will be shutdown")
+        print(str(datetime.datetime.now()) + "HTU21D will be shutdown")
         os.system("docker stop htu21d && docker rm htu21d &")
         return False
+
 
 # Hauptschleife
 while True:
@@ -126,4 +131,3 @@ while True:
     else:
         htu21d_is_started = htu21d_stop()
     time.sleep(5)
-
