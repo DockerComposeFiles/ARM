@@ -27,11 +27,11 @@ def bmp180_start():
     if bmp180_int == 0:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
-        print("BMP180 Container will deploy\n", flush=True)
+        print("BMP180 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=bmp180 -d 326567/bmp180 &")
         return True
     else:
-        print("bmp180 no connection\n", flush=True)
+        # print("bmp180 no connection\n", flush=True)
         return False
 
 def bmp180_stop():
@@ -41,6 +41,7 @@ def bmp180_stop():
     if bmp180_int == 0:
         return True
     else:
+        print("BMP180 will be shutdown")
         os.system("docker stop bmp180 && docker rm bmp180 &")
         return False
 
@@ -53,14 +54,14 @@ def bmp280_start():
     if bmp280_int == 0:
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
-        print("BMP280 Container will deploy\n", flush=True)
+        print("BMP280 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=bmp280 -d 326567/bmp280 &")
         return True
     #    elif bmp280_int.__contains__("Error: Read failed"):
     #        print("bmp180 no connection: not connected \n", flush=True)
 
     else:
-        print("bmp280 no connection\n", flush=True)
+        # print("bmp280 no connection\n", flush=True)
         return False
 
 def bmp280_stop():
@@ -70,6 +71,7 @@ def bmp280_stop():
     if bmp280_int == 0:
         return True
     else:
+        print("BMP280 will be shutdown")
         os.system("docker stop bmp280 && docker rm bmp280 &")
         return False
 
@@ -83,11 +85,11 @@ def htu21d_start():
     if htu21d_int == 0:
         #print("htu21d Container will download", flush=True)
         #os.system("docker pull 326567/htu21d")
-        print("htu21d Container will deploy\n", flush=True)
+        print("htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=htu21d -d 326567/htu21d &")
         return True
     else:
-        print("htu21d no connection\n",flush=True)
+        # print("htu21d no connection\n",flush=True)
         return False
 
 def htu21d_stop():
@@ -96,29 +98,32 @@ def htu21d_stop():
     if htu21d_int == 0:
         return True
     else:
+        print("HTU21D will be shutdown")
         os.system("docker stop htu21d && docker rm htu21d &")
         return False
 
 # Hauptschleife
 while True:
 
+    print("\nmonitoring run")
     # BMP180 Prüfen
     if not bmp180_is_started:
         bmp180_is_started = bmp180_start()
     else:
         bmp180_is_started = bmp180_stop()
-    time.sleep(10)
+    time.sleep(5)
 
     # BMP280 Prüfen
     if not bmp280_is_started:
         bmp280_is_started = bmp280_start()
     else:
         bmp280_is_started = bmp280_stop()
-    time.sleep(10)
+    time.sleep(5)
 
     # htu21d prüfen
     if not htu21d_is_started:
         htu21d_is_started = htu21d_start()
     else:
         htu21d_is_started = htu21d_stop()
-    time.sleep(10)
+    time.sleep(5)
+
