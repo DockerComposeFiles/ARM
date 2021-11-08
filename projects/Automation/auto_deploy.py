@@ -28,7 +28,7 @@ def bmp180_start():
     if bmp180_int == 0:
         # print("bmp180 Container will download", flush=True)
         # os.system("docker pull 326567/bmp180")
-        print(str(datetime.datetime.now()) + "BMP180 Container will deploy", flush=True)
+        print(str(datetime.datetime.now()) + " BMP180 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=bmp180 -d 326567/bmp180 &")
         return True
     else:
@@ -43,7 +43,7 @@ def bmp180_stop():
     if bmp180_int == 0:
         return True
     else:
-        print(str(datetime.datetime.now()) + "BMP180 will be shutdown")
+        print(str(datetime.datetime.now()) + " BMP180 will be shutdown")
         os.system("docker stop bmp180 && docker rm bmp180 &")
         return False
 
@@ -57,7 +57,7 @@ def bmp280_start():
     if bmp280_int == 0:
         # print("bmp280 Container will download", flush=True)
         # os.system("docker pull 326567/bmp280")
-        print(str(datetime.datetime.now()) + "BMP280 Container will deploy", flush=True)
+        print(str(datetime.datetime.now()) + " BMP280 Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=bmp280 -d 326567/bmp280 &")
         return True
     #    elif bmp280_int.__contains__("Error: Read failed"):
@@ -75,7 +75,7 @@ def bmp280_stop():
     if bmp280_int == 0:
         return True
     else:
-        print(str(datetime.datetime.now()) + "BMP280 will be shutdown")
+        print(str(datetime.datetime.now()) + " BMP280 will be shutdown")
         os.system("docker stop bmp280 && docker rm bmp280 &")
         return False
 
@@ -88,7 +88,7 @@ def htu21d_start():
     if htu21d_int == 0:
         # print("htu21d Container will download", flush=True)
         # os.system("docker pull 326567/htu21d")
-        print(str(datetime.datetime.now()) + "htu21d Container will deploy", flush=True)
+        print(str(datetime.datetime.now()) + " htu21d Container will deploy", flush=True)
         os.system("docker run --device /dev/i2c-1 --name=htu21d -d 326567/htu21d &")
         return True
     else:
@@ -102,7 +102,7 @@ def htu21d_stop():
     if htu21d_int == 0:
         return True
     else:
-        print(str(datetime.datetime.now()) + "HTU21D will be shutdown")
+        print(str(datetime.datetime.now()) + " HTU21D will be shutdown")
         os.system("docker stop htu21d && docker rm htu21d &")
         return False
 
