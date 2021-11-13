@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import time
 import board
 from adafruit_htu21d import HTU21D
